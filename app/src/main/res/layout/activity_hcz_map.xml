@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/title_layout"
+        layout="@layout/activity_head" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/bmapview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true" />
+
+
+        <!-- 定位按钮 -->
+
+        <RelativeLayout
+            android:id="@+id/children_info_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <LinearLayout
+                android:id="@+id/children_num_rl"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/children_head_iv"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/activity_add_web_margin_left_20dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/children_num_name_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#505050"
+                            android:text="@string/app_name"
+                            android:textSize="18sp"></TextView>
+                        <TextView
+                            android:id="@+id/children_nettype_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/activity_margin_20dp"
+                            android:layout_gravity="center"
+                            android:text="(在线)"
+                            android:textColor="#006cff"
+                            ></TextView>
+                        <ImageView
+                            android:id="@+id/children_battery_iv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/activity_margin_10dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_battery_mid"
+                            ></ImageView>
+                        <TextView
+                            android:id="@+id/children_battery_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/activity_margin_5dp"
+                            android:layout_gravity="center"
+                            android:text="55%"
+                            android:textColor="#69c25f"
+                            ></TextView>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/children_num_juli_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#333333"
+                        android:textSize="11sp"></TextView>
+
+                    <TextView
+                        android:id="@+id/children_num_address_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="#333333"
+                        android:textSize="12sp"></TextView>
+
+                    <TextView
+                        android:id="@+id/children_num_time_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:singleLine="true"
+                        android:textColor="#333333"
+                        android:textSize="11sp"></TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/ZoomControlView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/children_num_rl"
+                android:layout_marginBottom="10.0dip">
+
+                <Button
+                    android:id="@+id/locate_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/hcz_map_location_bt_bg"
+                    android:visibility="visible" />
+
+                <Button
+                    android:id="@+id/reflash_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/locate_btn"
+                    android:layout_alignParentLeft="true"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/hcz_map_location_reflash_bg"
+                    android:visibility="visible" />
+
+                <Button
+                    android:id="@+id/zoomout"
+                    android:layout_width="40dip"
+                    android:layout_height="40dip"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5.0dip"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/zoom_in_btn" />
+
+                <Button
+                    android:id="@+id/zoomin"
+                    android:layout_width="40dip"
+                    android:layout_height="40dip"
+                    android:layout_above="@id/zoomout"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5.0dip"
+                    android:background="@drawable/zoom_out_btn" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

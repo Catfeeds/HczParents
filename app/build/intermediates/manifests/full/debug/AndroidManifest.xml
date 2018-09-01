@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.goodsurfing.app"
+    android:versionCode="61"
+    android:versionName="6.1" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="27" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
+    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.screen.landscape"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+
+    <application
+        android:name="com.goodsurfing.app.HaoUpApplication"
+        android:allowBackup="false"
+        android:debuggable="true"
+        android:exported="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="ctsDO8G6KPOXubaGEVL7SifxMsiWROkO" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.goodsurfing.app.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name="com.goodsurfing.main.WelcomeActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.goodsurfing.main.MoreActivity"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.DynamicActivity"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.BindPhoneActivity"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.UserAgreementActivity"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.PayOkActivity"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.map.MapActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.map.HczMapActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.map.HczTrajectoryMapActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.addchild.BindScanActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.EditPhoneActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.HczMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.TimeControllerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.TimeControllerActivity1"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.ModeChangeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.fundlock.GestureEditActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.fundlock.GestureVerifyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.map.AddChildrenActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.map.SettingChildrenActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.map.SettingChildrenNameActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.map.InfoChildrenActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.map.ChangePictureActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.goodsurfing.addchild.ShowChildAppLoadCodeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.addchild.AddChildActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.addchild.ChildInfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.addchild.ChildListActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.TerminalControlActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.HczPersonInfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.HczLoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.HczFindPwdActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.HczSetPwdActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.LoginActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.WebActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.WebFiltersActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.BlackAndWhiteListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.AddBlackWhiteListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.AddWebsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.app.wxapi.ShareWeiXinActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.TimerCountsListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.AddTimerCardsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.GuideView"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.ChargeChoicesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.ChargeListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="wx7b49afd96ad69fba" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.goodsurfing.main.FindPasswordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.ApplicationControlsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.EditPasswordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.ModeChangeActivity1"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.HczBindActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.AboutActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.RegisterActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.BindActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.RegisterNextActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.PersonInfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+        <activity
+            android:name="com.goodsurfing.main.ModifyPasswordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HaoUp.Transparent.Theme" />
+
+        <!-- alipay sdk begin -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="59a41c108630f5101e000c9e" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="HSW_GW" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <receiver android:name="net.sourceforge.simcpux.AppRegister" >
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
+            </intent-filter>
+        </receiver>
+        <!-- 注册QQ SDKActivity -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="101492008" /> <!-- 开放平台获取的APPID -->
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- 微信分享 -->
+        <activity
+            android:name="com.goodsurfing.app.wxapi.WXEntryActivity"
+            android:exported="true"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.goodsurfing.app.wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- 自定义服务声明 -->
+        <service
+            android:name="com.goodsurfing.service.RegisterCodeTimerService"
+            android:enabled="true" />
+
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:clearTaskOnLaunch="true"
+            android:screenOrientation="sensorLandscape"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+    </application>
+
+</manifest>

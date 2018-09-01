@@ -1,0 +1,126 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_tips_height">40dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_head_title">50dp</dimen>
+    <dimen name="activity_pading_left_15dp">15dp</dimen>
+    <dimen name="activity_pading_right_15dp">15dp</dimen>
+    <dimen name="activity_pading_5dp">5dp</dimen>
+    <dimen name="activity_pading_10dp">10dp</dimen>
+    <dimen name="activity_pading_15dp">15dp</dimen>
+    <dimen name="activity_pading_20dp">20dp</dimen>
+    <dimen name="activity_margin_left_10dp">10dp</dimen>
+    <dimen name="activity_margin_5dp">5dp</dimen>
+    <dimen name="activity_margin_10dp">10dp</dimen>
+    <dimen name="activity_margin_15dp">15dp</dimen>
+    <dimen name="activity_margin_20dp">20dp</dimen>
+    <dimen name="activity_title_text_size_26sp">26sp</dimen>
+    <dimen name="activity_title_button_text_size_18sp">18sp</dimen>
+    <dimen name="activity_fragment_mian_tab_textsize_16dp">10sp</dimen>
+    <dimen name="activity_margin_left_20dp">20dp</dimen>
+    <dimen name="activity_margin_right_20dp">20dp</dimen>
+    <dimen name="activity_margin_top_40dp">40dp</dimen>
+    <dimen name="activity_margin_top_30dp">30dp</dimen>
+    <dimen name="activity_margin_top_20dp">20dp</dimen>
+    <dimen name="activity_margin_top_10dp">10dp</dimen>
+    <dimen name="activity_title_size_20dp">20dp</dimen>
+    <dimen name="activity_text_size_18sp">18sp</dimen>
+    <dimen name="activity_split_padding_top_5dp">5dp</dimen>
+    <dimen name="activity_split_padding_bottom_5dp">5dp</dimen>
+    <!-- activity_add_timer_cards -->
+    <dimen name="activity_add_time_button_head_40dp">40dp</dimen>
+    <dimen name="activity_add_time_head_50dp">50dp</dimen>
+    <dimen name="activity_add_time_view_margin_top_20dp">20dp</dimen>
+    <dimen name="activity_add_time_view_margin_top_10dp">10dp</dimen>
+    <dimen name="activity_add_time_view_margin_top_50dp">50dp</dimen>
+    <dimen name="activity_add_time_view_margin_left_15dp">21dp</dimen>
+    <dimen name="activity_add_time_edit_head_50dp">55dp</dimen>
+    <dimen name="activity_add_time_edit_margin_right_10dp">10dp</dimen>
+    <dimen name="activity_add_time_padding_left_140dp">140dp</dimen>
+    <dimen name="activity_add_time_margin_left_20dp">20dip</dimen>
+    <dimen name="activity_add_time_margin_right_20dp">20dip</dimen>
+    <!-- activity_add_webs -->
+    <dimen name="activity_add_web_button_head_40dp">40dp</dimen>
+    <dimen name="activity_add_web_head_50dp">50dp</dimen>
+    <dimen name="activity_add_web_view_margin_top_20dp">20dp</dimen>
+    <dimen name="activity_add_web_view_margin_top_30dp">30dp</dimen>
+    <dimen name="activity_add_web_view_margin_top_50dp">50dp</dimen>
+    <dimen name="activity_add_web_view_margin_left_15dp">15dp</dimen>
+    <dimen name="activity_add_web_edit_head_50dp">50dp</dimen>
+    <dimen name="activity_add_web_edit_margin_right_10dp">10dp</dimen>
+    <dimen name="activity_add_web_padding_left_120dp">120dp</dimen>
+    <dimen name="activity_add_web_margin_left_20dp">20dip</dimen>
+    <dimen name="activity_add_web_margin_right_20dp">20dip</dimen>
+    <!-- activity_allow_webs -->
+    <dimen name="activity_allow_web_head_50dp">50dp</dimen>
+    <dimen name="activity_allow_web_padding_left_10dp">10dp</dimen>
+    <dimen name="activity_allow_web_padding_right_10dp">10dp</dimen>
+    <dimen name="activity_allow_web_margin_10dp">10dip</dimen>
+    <dimen name="item_right_delete">60dp</dimen>
+    <dimen name="item_right_pading_delete">-60dp</dimen>
+    <!-- activity_charge_choices -->
+    <dimen name="activity_charge_choice_margin_top_40dp">40dp</dimen>
+    <!-- activity_charge_list -->
+    <dimen name="activity_charge_list_head_50dp">50dp</dimen>
+    <dimen name="activity_charge_list_view_margin_top_20dp">20dp</dimen>
+    <dimen name="activity_charge_list_view_margin_top_30dp">30dp</dimen>
+    <dimen name="activity_charge_list_view_margin_top_50dp">50dp</dimen>
+    <dimen name="activity_charge_list_view_margin_left_15dp">15dp</dimen>
+    <dimen name="activity_charge_list_edit_margin_right_10dp">10dp</dimen>
+    <dimen name="activity_charge_list_margin_left_20dp">20dip</dimen>
+    <dimen name="activity_charge_list_margin_left_10dp">10dip</dimen>
+    <dimen name="activity_charge_list_margin_left_15dp">15dip</dimen>
+    <dimen name="activity_charge_list_margin_right_15dp">15dip</dimen>
+    <dimen name="activity_charge_list_margin_right_20dp">20dip</dimen>
+    <dimen name="activity_charge_list_rl_head_60dp">60dip</dimen>
+    <dimen name="activity_charge_list_button_head_40dp">40dp</dimen>
+
+    <!-- activity_find_password -->
+    <dimen name="activity_find_password_margin_top_50dp">50dp</dimen>
+    <dimen name="activity_find_password_ll_head_40dp">45dp</dimen>
+    <dimen name="activity_find_password_margin_left_20dp">20dp</dimen>
+    <dimen name="activity_find_password_margin_right_20dp">20dp</dimen>
+    <dimen name="activity_find_password_margin_top_10dp">10dp</dimen>
+    <dimen name="activity_find_password_padding_left_10dp">10dip</dimen>
+    <dimen name="activity_find_password_padding_left_120dp">120dp</dimen>
+    <dimen name="activity_find_password_margin_top_30dp">30dp</dimen>
+
+    <!-- activity_gesture_edit -->
+    <dimen name="activity_gesture_edit_margin_top_20dp">20dp</dimen>
+    <dimen name="activity_gesture_edit_margin_top_60dp">60dp</dimen>
+    <dimen name="activity_gesture_edit_margin_top_100dp">100dp</dimen>
+    <dimen name="activity_gesture_edit_margin_bottom_50dp">50dp</dimen>
+    <dimen name="activity_gesture_edit_margin_bottom_30dp">30dp</dimen>
+    <dimen name="activity_gesture_edit_margin_left_40dp">40dp</dimen>
+    <dimen name="activity_gesture_edit_margin_right_40dp">40dp</dimen>
+
+    <!-- activity_fragment_my -->
+    <dimen name="activity_fragment_my_rl_head_50dp">50dp</dimen>
+    <dimen name="activity_fragment_my_margin_top_10dp">20dp</dimen>
+    <!-- activity_fragment_time -->
+    <dimen name="activity_fragment_time_circularseekbar_height">280dp</dimen>
+    <dimen name="activity_fragment_time_circularseekbar_textsize">31sp</dimen>
+    <dimen name="activity_fragment_time_circularseekbar_time_hint_textsize">17sp</dimen>
+    <dimen name="activity_fragment_time_circularseekbar_magin_top">40dp</dimen>
+    <dimen name="activity_fragment_time_circularseekbar_magin_bottom">10dp</dimen>
+    <dimen name="activity_fragment_time_title_height">100dp</dimen>
+    <!-- activity_add_children -->
+    <dimen name="activity_add_ll_head_50dp">50dp</dimen>
+    <dimen name="activity_add_ll_head_40dp">40dp</dimen>
+    <dimen name="activity_add_ll_head_45dp">45dp</dimen>
+ <!-- change photo -->
+    <dimen name="activity_change_photo_padding_bottom">25dp</dimen>
+    <dimen name="activity_change_photo_padding_top">25dp</dimen>
+    <dimen name="activity_change_photo_padding_left">30dp</dimen>
+    <dimen name="activity_change_photo_padding_right">30dp</dimen>
+    <dimen name="activity_change_photo_button_height">45dp</dimen>
+    <dimen name="activity_change_photo_layout_margintop1">13dp</dimen>
+    <dimen name="activity_change_photo_layout_margintop2">25dp</dimen>
+    <dimen name="activity_change_photo_button_textsize">18sp</dimen>
+    
+    <dimen name="activity_price_ll_height">62dp</dimen>
+    <dimen name="dimen_155dp">155dp</dimen>
+    <dimen name="width_80dp">80dp</dimen>
+</resources>

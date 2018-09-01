@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rTW\\values-zh-rTW.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\OK\\.gradle\\caches\\transforms-1\\files-1.1\\zxing-android-embedded-3.3.0.aar\\62cd13ae44dd00a97cf1935ae2495f28\\res\\values-zh-rTW\\values-zh-rTW.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,104,151,244",
+                        "endColumns": "48,46,92,69",
+                        "endOffsets": "99,146,239,309"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "156,205,252,345",
+                        "endColumns": "48,46,92,69",
+                        "endOffsets": "200,247,340,410"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\OK\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\e53807b32052fdc57e8c304dde6d059b\\res\\values-zh-rTW\\values-zh-rTW.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}

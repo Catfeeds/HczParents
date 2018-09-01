@@ -1,0 +1,64 @@
+{
+    "logs": [
+        {
+            "outputFile": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
+            "map": [
+                {
+                    "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\values-v11\\styles.xml",
+                    "from": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "182",
+                        "endLines": "8",
+                        "endColumns": "12",
+                        "endOffsets": "316"
+                    },
+                    "to": {
+                        "startLines": "13",
+                        "startColumns": "4",
+                        "startOffsets": "639",
+                        "endLines": "15",
+                        "endColumns": "12",
+                        "endOffsets": "771"
+                    }
+                },
+                {
+                    "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\values-v11\\dimens.xml",
+                    "from": {
+                        "startLines": "9,10,7,6,14,15,12,13,11,5,4",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "329,389,280,221,614,669,506,560,447,175,123",
+                        "endColumns": "58,56,41,57,53,53,52,52,57,44,50",
+                        "endOffsets": "383,441,317,274,663,718,554,608,500,215,169"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,114,171,213,271,325,379,432,485,543,588",
+                        "endColumns": "58,56,41,57,53,53,52,52,57,44,50",
+                        "endOffsets": "109,166,208,266,320,374,427,480,538,583,634"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\OK\\.gradle\\caches\\transforms-1\\files-1.1\\zxing-android-embedded-3.3.0.aar\\62cd13ae44dd00a97cf1935ae2495f28\\res\\values-v11\\values-v11.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "3",
+                        "endColumns": "10",
+                        "endOffsets": "150"
+                    },
+                    "to": {
+                        "startLines": "16",
+                        "startColumns": "4",
+                        "startOffsets": "776",
+                        "endLines": "17",
+                        "endColumns": "10",
+                        "endOffsets": "871"
+                    }
+                }
+            ]
+        }
+    ]
+}
