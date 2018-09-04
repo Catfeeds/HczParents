@@ -430,21 +430,30 @@ public class MainTimeActivity extends BaseFragment implements CircularSeekBar.On
 	}
 
 	@Override
+	public void setUserVisibleHint(boolean isVisibleToUser) {
+		if(this.isVisible()){
+			if(isVisibleToUser){
+				isStartQuick = false;
+				isStop = false;
+				setTipsText4Mode();
+				if (!"".equals(Constants.userId)) {
+					createTimerInit();
+				} else {
+					currentStateImageView.setImageResource(R.drawable.ic_current_unlock);
+					timeLayout.setVisibility(View.VISIBLE);
+					seekBar.setLock(false);
+					clearTime();
+				}
+				ActivityUtil.sendEvent4UM(getActivity(), "functionSwitch", "unlock", 19);
+			}
+		}
+		super.setUserVisibleHint(isVisibleToUser);
+	}
+
+	@Override
 	public void onResume() {
 		super.onResume();
 		CommonUtil.HandLockPassword(getActivity());
-		isStartQuick = false;
-		isStop = false;
-		setTipsText4Mode();
-		if (!"".equals(Constants.userId)) {
-			createTimerInit();
-		} else {
-			currentStateImageView.setImageResource(R.drawable.ic_current_unlock);
-			timeLayout.setVisibility(View.VISIBLE);
-			seekBar.setLock(false);
-			clearTime();
-		}
-		ActivityUtil.sendEvent4UM(getActivity(), "functionSwitch", "unlock", 19);
 	}
 
 	@Override

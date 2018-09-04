@@ -124,6 +124,28 @@ public class MainTimeActivity1 extends BaseFragment implements CircularSeekBar.O
     }
 
     @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        if (this.isVisible()) {
+            if (isVisibleToUser) {
+                isStartQuick = false;
+                isStop = false;
+                if (!"".equals(Constants.userId)&&Constants.child!=null) {
+                    setData2View();
+                } else {
+                    currentStateImageView.setImageResource(R.drawable.ic_current_lock);
+                    timeLayout.setVisibility(View.INVISIBLE);
+                    mTipsModeTv.setVisibility(View.INVISIBLE);
+                    mTipsTv.setVisibility(View.INVISIBLE);
+                    seekBar.setLock(false);
+                    clearTime();
+                }
+                ActivityUtil.sendEvent4UM(getActivity(), "functionSwitch", "unlock", 19);
+            }
+        }
+        super.setUserVisibleHint(isVisibleToUser);
+    }
+
+    @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
     }
@@ -418,23 +440,11 @@ public class MainTimeActivity1 extends BaseFragment implements CircularSeekBar.O
 
     }
 
+
     @Override
     public void onResume() {
         super.onResume();
         CommonUtil.HandLockPassword(getActivity());
-        isStartQuick = false;
-        isStop = false;
-        if (!"".equals(Constants.userId)&&Constants.child!=null) {
-            setData2View();
-        } else {
-            currentStateImageView.setImageResource(R.drawable.ic_current_lock);
-            timeLayout.setVisibility(View.INVISIBLE);
-            mTipsModeTv.setVisibility(View.INVISIBLE);
-            mTipsTv.setVisibility(View.INVISIBLE);
-            seekBar.setLock(false);
-            clearTime();
-        }
-        ActivityUtil.sendEvent4UM(getActivity(), "functionSwitch", "unlock", 19);
     }
 
     @Override

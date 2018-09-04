@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_trajectory_map"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="430dp">
+
+    <com.baidu.mapapi.map.TextureMapView
+        android:id="@+id/bmapview"
+        android:layout_width="match_parent"
+        android:layout_height="430dp"
+        android:clickable="true" />
+        <RelativeLayout
+            android:id="@+id/ZoomControlView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10.0dip">
+
+            <Button
+                android:id="@+id/locate_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/hcz_map_location_bt_bg"
+                android:visibility="visible" />
+
+
+            <Button
+                android:id="@+id/zoomout"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5.0dip"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/zoom_in_btn" />
+
+            <Button
+                android:id="@+id/zoomin"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:layout_above="@id/zoomout"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5.0dip"
+                android:background="@drawable/zoom_out_btn" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <!-- 定位按钮 -->
+
+    <LinearLayout
+        android:id="@+id/children_num_rl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/children_head_iv"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_map_youn" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/activity_add_web_margin_left_20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/children_num_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:text="小米"
+                android:textColor="#505050"
+                android:textSize="15sp"></TextView>
+
+            <TextView
+                android:id="@+id/children_num_juli_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9.7km|湖南长沙五一广场"
+                android:textColor="#959595"
+                android:textSize="11sp"></TextView>
+
+            <TextView
+                android:id="@+id/children_num_time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:singleLine="true"
+                android:text="最近刷新时间：15s"
+                android:textColor="#959595"
+                android:textSize="11sp"></TextView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
