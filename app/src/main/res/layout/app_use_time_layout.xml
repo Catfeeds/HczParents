@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_info"
+    android:layout_width="fill_parent"
+    android:layout_height="70dp"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp" >
+
+        <ImageView
+            android:id="@+id/app_use_icon_iv"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dip"
+            android:src="@drawable/add_app_deful_icon" />
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="2"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/app_use_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginLeft="15dip"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:gravity="bottom"
+                android:singleLine="true"
+                android:textColor="@color/item_edittext"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/app_use_type_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginLeft="15dip"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:textColor="#a1a1a1"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="20dp" >
+
+        <TextView
+            android:id="@+id/app_use_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="#ff999999"
+            android:textSize="14sp"
+            android:text="1小时45分钟"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#f5f5f7"  />
+
+</LinearLayout>

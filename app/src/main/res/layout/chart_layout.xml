@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/chart_view"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="center_horizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_margin_10dp"
+            android:layout_marginLeft="@dimen/activity_margin_20dp"
+            android:layout_marginRight="@dimen/activity_margin_20dp"
+            android:orientation="horizontal">
+
+            <include
+                android:id="@+id/chart_ll1"
+                layout="@layout/chart_layout_item"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/activity_margin_15dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:visibility="invisible"></include>
+
+            <include
+                android:id="@+id/chart_ll2"
+                layout="@layout/chart_layout_item"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/activity_margin_15dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:visibility="invisible"></include>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_margin_10dp"
+            android:layout_marginLeft="@dimen/activity_margin_20dp"
+            android:layout_marginRight="@dimen/activity_margin_20dp"
+            android:layout_marginTop="@dimen/activity_margin_10dp"
+            android:orientation="horizontal">
+
+            <include
+                android:id="@+id/chart_ll3"
+                layout="@layout/chart_layout_item"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/activity_margin_15dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:visibility="invisible"></include>
+
+            <include
+                android:id="@+id/chart_ll4"
+                layout="@layout/chart_layout_item"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/activity_margin_15dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:visibility="invisible"></include>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_margin_10dp"
+            android:layout_marginLeft="@dimen/activity_margin_20dp"
+            android:layout_marginRight="@dimen/activity_margin_20dp"
+            android:layout_marginTop="@dimen/activity_margin_10dp"
+            android:orientation="horizontal">
+
+            <include
+                android:id="@+id/chart_ll5"
+                layout="@layout/chart_layout_item"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/activity_margin_15dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:visibility="invisible"></include>
+
+            <include
+                android:id="@+id/chart_ll6"
+                layout="@layout/chart_layout_item"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/activity_margin_15dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:visibility="invisible"></include>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_margin_5dp"
+            android:background="#f5f5f7" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="最常使用"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/activity_margin_20dp"
+                android:textColor="#ff383838"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginLeft="@dimen/activity_margin_20dp"
+                android:layout_marginRight="@dimen/activity_margin_20dp"
+                android:background="#f5f5f7"></TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

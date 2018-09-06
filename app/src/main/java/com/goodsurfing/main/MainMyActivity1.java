@@ -94,7 +94,6 @@ public class MainMyActivity1 extends BaseFragment implements OnClickListener {
             ViewUtils.inject(this, rootView);
             initViews(rootView);
             init();
-            initLogin();
         }
         ViewGroup group = (ViewGroup) rootView.getParent();
         if (group != null) {
@@ -140,9 +139,10 @@ public class MainMyActivity1 extends BaseFragment implements OnClickListener {
     public void onResume() {
         super.onResume();
         if ("".equals(Constants.userId)) {
-            SharUtil.saveService(context, Constants.APP_USER_TYPE);
+            SharUtil.saveService(getActivity(), Constants.APP_USER_TYPE);
             myView.setVisibility(View.GONE);
             loginView.setVisibility(View.VISIBLE);
+            initLogin();
         } else {
             myView.setVisibility(View.VISIBLE);
             loginView.setVisibility(View.GONE);

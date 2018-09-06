@@ -431,7 +431,6 @@ public class MainTimeActivity extends BaseFragment implements CircularSeekBar.On
 
 	@Override
 	public void setUserVisibleHint(boolean isVisibleToUser) {
-		if(this.isVisible()){
 			if(isVisibleToUser){
 				isStartQuick = false;
 				isStop = false;
@@ -446,7 +445,6 @@ public class MainTimeActivity extends BaseFragment implements CircularSeekBar.On
 				}
 				ActivityUtil.sendEvent4UM(getActivity(), "functionSwitch", "unlock", 19);
 			}
-		}
 		super.setUserVisibleHint(isVisibleToUser);
 	}
 

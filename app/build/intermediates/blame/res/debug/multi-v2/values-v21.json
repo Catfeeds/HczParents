@@ -4,7 +4,7 @@
             "outputFile": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\OK\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\92ce49124f3a6ba7f5bb3df444f96dcb\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\OK\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\0a54165835b88a91ec6474021b9a4cbf\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,5,8,11",
                         "startColumns": "4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\OK\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\e53807b32052fdc57e8c304dde6d059b\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\OK\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5f291b337f7893b6b0c5ae724bf26e2f\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",

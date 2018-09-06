@@ -100,30 +100,38 @@ public class MainUpActivity extends BaseFragment implements OnClickListener {
 	@Override
 	public void onResume() {
 		super.onResume();
-		if (!"".equals(Constants.userId)) {
-			switch (Constants.mode) {
-			case 1:
-				Constants.modeStr = "当前模式: 网络畅游模式";
-				break;
-			case 2:
-				Constants.modeStr = "当前模式: 教育资源模式";
-				break;
-			case 3:
-				Constants.modeStr = "当前模式: 不良内容拦截模式";
-				break;
-			case 4:
-				Constants.modeStr = "当前模式: 奖励卡模式";
-				break;
-			}
-			if (Constants.IS_SHOW_LAYOUT)
-				handler.sendEmptyMessage(DISMISS_LAYOUT);
-		} else {
-			handler.sendEmptyMessage(SHOW_LAYOUT);
-			Constants.modeStr = "";
-		}
-		modeTextView.setText(Constants.modeStr);
 	}
 
+	@Override
+	public void setUserVisibleHint(boolean isVisibleToUser) {
+		if(this.isVisible()){
+			if(isVisibleToUser){
+				if (!"".equals(Constants.userId)) {
+					switch (Constants.mode) {
+						case 1:
+							Constants.modeStr = "当前模式: 网络畅游模式";
+							break;
+						case 2:
+							Constants.modeStr = "当前模式: 教育资源模式";
+							break;
+						case 3:
+							Constants.modeStr = "当前模式: 不良内容拦截模式";
+							break;
+						case 4:
+							Constants.modeStr = "当前模式: 奖励卡模式";
+							break;
+					}
+					if (Constants.IS_SHOW_LAYOUT)
+						handler.sendEmptyMessage(DISMISS_LAYOUT);
+				} else {
+					handler.sendEmptyMessage(SHOW_LAYOUT);
+					Constants.modeStr = "";
+				}
+				modeTextView.setText(Constants.modeStr);
+			}
+		}
+		super.setUserVisibleHint(isVisibleToUser);
+	}
 	@Override
 	public void onClick(View v) {
 		if (CommonUtil.isFastDoubleClick())

@@ -60,6 +60,7 @@ public class Constants {
 	public static final String HCZ_GETAPPLIST_URL = "/api/client/appslist" ;
 	public static final String HCZ_APPMANAGE_URL = "/api/mode/appManage" ;
 	public static final String HCZ_GETLOCATION_URL = "/api/Dynamic/GetData" ;
+	public static final String HCZ_GETSTATISTICS_URL = "/Api/Dynamic/GetStatistics" ;
 	public static final String HCZ_GETPOSITION_URL = "/api/client/position" ;
 	public static final String HCZ_UNBINDCHILD_URL = "/api/client/unBind" ;
 	public static final String HCZ_ALTERPWD_URL = "/api/Server/AlterPwd" ;

@@ -53,7 +53,7 @@ public class HczMainActivity extends FragmentActivity {
     private int mImageViewArray[] = {R.drawable.tab_home_btn, R.drawable.tab_message_btn, R.drawable.tab_more_btn};
     //    // Tab选项卡的文字
     private String mTextviewArray[] = {"好上网", "一键锁屏", "我的"};    // 定义数组来存放Fragment界面
-    private Class fragmentArray[] = {MainUpActivity1.class, MainTimeActivity1.class, MainMyActivity1.class};
+    private Class fragmentArray[] = {HczInfoFragment.class, MainTimeActivity1.class, MainMyActivity1.class};
     // 定义数组来存放按钮图片
 //    private int mImageViewArray[] = {R.drawable.tab_home_btn1, R.drawable.tab_message_btn1, R.drawable.tab_more_btn1};
 
@@ -218,57 +218,14 @@ public class HczMainActivity extends FragmentActivity {
     private void initViews() {
         mainPageView = findViewById(R.id.hcz_main_pv);
         MainViewPagerAdapter adapter = new MainViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new MainUpActivity1());
+        adapter.addFragment(new HczInfoFragment());
         adapter.addFragment(new MainTimeActivity1());
         adapter.addFragment(new MainMyActivity1());
         mainPageView.setAdapter(adapter);
         mainPageView.setNoScroll(true);
         initTabHost();
 
-
-//        layoutInflater = LayoutInflater.from(this);
-//        // 实例化TabHost对象，得到TabHost
-//        mTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
-//        mTabHost.setup(this, getSupportFragmentManager(), R.id.realtabcontent);
-//        // 得到fragment的个数
-//        if(mTabHost.getTabWidget()!=null){
-//            mTabHost.clearAllTabs();
-//        }
-//        for (int i = 0; i < 3; i++) {
-//            TabSpec tabSpec = mTabHost.newTabSpec(mTextviewArray[i]).setIndicator(getTabItemView(i));
-//            mTabHost.addTab(tabSpec, fragmentArray[i], null);
-//            mTabHost.getTabWidget().getChildAt(i).setBackgroundResource(R.color.white);
-//        }
-//        mTabHost.getTabWidget().setDividerDrawable(R.color.white);
-//        mTabHost.setOnTabChangedListener(new OnTabChangeListener() {
-//
-//            @Override
-//            public void onTabChanged(String arg0) {
-//                if (Constants.userId.equals("")) {
-//                    iconView.setVisibility(View.VISIBLE);
-//                } else {
-//                    iconView.setVisibility(View.GONE);
-//                }
-//                ActivityUtil.sendEvent4UM(HczMainActivity.this, "tabSwitch", arg0, 4);
-//            }
-//        });
-//        mTabHost.setCurrentTab(0);
     }
-
-//    private View getTabItemView(int index) {
-//        View view = layoutInflater.inflate(R.layout.tab_item_layout, null);
-//        ImageView imageView = (ImageView) view.findViewById(R.id.tab_imageview);
-//        imageView.setImageResource(mImageViewArray[index]);
-//        TextView textView = (TextView) view.findViewById(R.id.tab_textview);
-//        textView.setText(mTextviewArray[index]);
-//        ImageView iView = (ImageView) view.findViewById(R.id.start_red_icon);
-//        if (index != 2 || !Constants.userId.equals("")) {
-//            iView.setVisibility(View.GONE);
-//        }
-//        if (index == 2)
-//            iconView = iView;
-//        return view;
-//    }
 
     @Override
     protected void onNewIntent(Intent intent) {
@@ -298,7 +255,6 @@ public class HczMainActivity extends FragmentActivity {
                     }
                 }
             }
-            // 没有执行return,则说明当前无网络连接
             Constants.isNetWork = false;
         }
 
@@ -333,7 +289,6 @@ public class HczMainActivity extends FragmentActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            // back监听 返回
             moveTaskToBack(false);
             return true;
 

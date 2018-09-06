@@ -83,12 +83,21 @@ public class MainUpActivity1 extends BaseFragment implements OnClickListener {
     @Override
     public void onResume() {
         super.onResume();
-        if (Constants.userId.equals("")) {
-            addChildLl.setVisibility(View.GONE);
-            tipsLayout.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        if(this.isVisible()){
+            if(isVisibleToUser){
+                if (Constants.userId.equals("")) {
+                    addChildLl.setVisibility(View.GONE);
+                    tipsLayout.setVisibility(View.GONE);
+                }
+                adapter.notifyDataSetChanged();
+                getBindChild();
+            }
         }
-        adapter.notifyDataSetChanged();
-        getBindChild();
+        super.setUserVisibleHint(isVisibleToUser);
     }
 
     private void setTitleTime(Calendar calendar) {
@@ -109,7 +118,7 @@ public class MainUpActivity1 extends BaseFragment implements OnClickListener {
             return;
         switch (v.getId()) {
             case R.id.main_help_tv:
-                Intent help = new Intent(getActivity(), GuideView.class);
+                Intent help = new Intent(getActivity(), WebActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("TYPE_GUIDE", "1");
                 help.putExtras(bundle);

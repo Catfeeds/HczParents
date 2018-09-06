@@ -1,20 +1,14 @@
 package com.goodsurfing.main;
 
-import android.app.Dialog;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -51,6 +45,7 @@ public class MainTimeActivity1 extends BaseFragment implements CircularSeekBar.O
     protected static Thread mThread;
     private CircularSeekBar seekBar;
     private boolean isStartQuick = false;
+    private View rootView;
     // handler类接收数据
     Handler handler = new Handler() {
         public void handleMessage(Message msg) {
@@ -107,8 +102,6 @@ public class MainTimeActivity1 extends BaseFragment implements CircularSeekBar.O
 
         ;
     };
-    private View rootView;
-    private boolean isStop = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -125,10 +118,8 @@ public class MainTimeActivity1 extends BaseFragment implements CircularSeekBar.O
 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
-        if (this.isVisible()) {
             if (isVisibleToUser) {
                 isStartQuick = false;
-                isStop = false;
                 if (!"".equals(Constants.userId)&&Constants.child!=null) {
                     setData2View();
                 } else {
@@ -140,8 +131,9 @@ public class MainTimeActivity1 extends BaseFragment implements CircularSeekBar.O
                     clearTime();
                 }
                 ActivityUtil.sendEvent4UM(getActivity(), "functionSwitch", "unlock", 19);
+            }else {
+                isStartQuick = false;
             }
-        }
         super.setUserVisibleHint(isVisibleToUser);
     }
 
@@ -453,7 +445,6 @@ public class MainTimeActivity1 extends BaseFragment implements CircularSeekBar.O
         if (!CommonUtil.isForeground(getActivity())) {
             Constants.isAPPActive = false;
         }
-        isStop = true;
     }
 
     @Override
