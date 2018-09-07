@@ -39,7 +39,7 @@
                 android:enabled="false"
                 android:gravity="bottom"
                 android:singleLine="true"
-                android:textColor="@color/item_edittext"
+                android:textColor="#ff383838"
                 android:textSize="16sp" />
 
             <TextView
@@ -51,7 +51,7 @@
                 android:enabled="false"
                 android:gravity="center_vertical"
                 android:singleLine="true"
-                android:textColor="#a1a1a1"
+                android:textColor="#ff999999"
                 android:textSize="12sp" />
         </LinearLayout>
 

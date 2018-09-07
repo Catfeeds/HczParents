@@ -4,20 +4,21 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
-    <ImageView
+    <com.goodsurfing.view.IndicateDotView
         android:id="@+id/chart_item_iv"
         android:layout_width="@dimen/activity_margin_10dp"
         android:layout_height="@dimen/activity_margin_10dp"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="7dp"
         android:layout_marginRight="4dp"
-        android:background="#ffa7bbef" />
+         />
 
     <TextView
         android:id="@+id/chart_item_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="社交学习类"
+        android:textColor="#ff4a4a4a"
         android:textSize="14sp" />
 
     <TextView
@@ -26,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="right"
+        android:textColor="#ff999999"
         android:textSize="14sp"
         android:text="10分钟" />
 

@@ -2,6 +2,7 @@ package com.goodsurfing.main;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -24,6 +25,7 @@ import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.github.mikephil.charting.utils.Legend;
+import com.github.mikephil.charting.utils.Utils;
 import com.goodsurfing.addchild.AddChildActivity;
 import com.goodsurfing.adpter.MainInfoAdapter;
 import com.goodsurfing.app.R;
@@ -39,11 +41,14 @@ import com.goodsurfing.server.net.HczGetChildsNet;
 import com.goodsurfing.server.net.HczGetStatisticsNet;
 import com.goodsurfing.utils.ActivityUtil;
 import com.goodsurfing.utils.CommonUtil;
+import com.goodsurfing.view.IndicateDotView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import static com.github.mikephil.charting.charts.Chart.PAINT_CENTER_TEXT;
 
 public class HczInfoFragment extends BaseFragment implements OnClickListener {
     private RelativeLayout tipsLayout;
@@ -134,7 +139,7 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
     private void setTitleTime() {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         String date = formatter.format(new Date());
-        getBundleUserTrajectory(date);
+        getBundleUserTrajectory("2018-09-06");
 
     }
 
@@ -219,10 +224,14 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
                 case What.HTTP_REQUEST_CURD_SUCCESS:
                     pieEntry = (PieEntry) msg.obj;
                     appUseBeans.clear();
-                    appUseBeans.addAll(pieEntry.getApplist());
-                    adapter.setChartView(chartView);
-                    chart.bindView(pieEntry.getCatelist());
-                    setNewLocation();
+                    if (pieEntry.getCatelist().size() != 0) {
+                        appUseBeans.addAll(pieEntry.getApplist());
+                        adapter.setChartView(chartView);
+                        chart.bindView(pieEntry.getCatelist());
+                        setNewLocation();
+                    } else {
+                        adapter.setChartView(null);
+                    }
                     adapter.notifyDataSetChanged();
                     break;
                 case What.HTTP_REQUEST_CURD_FAILURE:
@@ -341,19 +350,25 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
     class ChartView {
         private PieChart mPieChart;
         List<View> legendViews = new ArrayList<>();
+        ArrayList<Integer> colors = new ArrayList<Integer>();
         ChartView(View view) {
             mPieChart = (PieChart) view.findViewById(R.id.chart_view);
             mPieChart.setUsePercentValues(true);
             //设置中间文件
             mPieChart.setDrawHoleEnabled(true);
             mPieChart.setHoleColor(Color.WHITE);
-
-            mPieChart.setHoleRadius(58f);
-            mPieChart.setTransparentCircleRadius(61f);
-
+            mPieChart.setHoleRadius(80f);
+            mPieChart.setTransparentCircleRadius(83f);
             mPieChart.setDrawCenterText(true);
-
+            mPieChart.setDrawXValues(false);
+            mPieChart.setDrawLegend(false);
+            mPieChart.setDescription("好上网");
             mPieChart.setRotationAngle(0);
+            Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+            paint.setTextAlign(Paint.Align.CENTER);
+            paint.setColor(Color.parseColor("#5a667d"));
+            mPieChart.setPaint(paint,PAINT_CENTER_TEXT);
+            mPieChart.setCenterTextSize(18f);
             //设置数据
             mPieChart.animateXY(1000, 1000);
             legendViews.add(view.findViewById(R.id.chart_ll1));
@@ -362,6 +377,12 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
             legendViews.add(view.findViewById(R.id.chart_ll4));
             legendViews.add(view.findViewById(R.id.chart_ll5));
             legendViews.add(view.findViewById(R.id.chart_ll6));
+            colors.add(Color.parseColor("#fff8a66a"));
+            colors.add(Color.parseColor("#ffa7bbef"));
+            colors.add(Color.parseColor("#ff92dbce"));
+            colors.add(Color.parseColor("#ffed9595"));
+            colors.add(Color.parseColor("#ff85dea8"));
+            colors.add(Color.parseColor("#fff8c85b"));
         }
 
         //设置数据
@@ -370,41 +391,36 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
             int totalTime = 0;
             ArrayList<Entry> yValues = new ArrayList<Entry>();
             ArrayList<String> xValues = new ArrayList<String>();  //xVals用来表示每个饼块上的内容
-            ArrayList<Integer> colors = new ArrayList<Integer>();
             for (int i = 0; i < list.size(); i++) {
                 xValues.add(list.get(i).getCateName());
                 yValues.add(new Entry(list.get(i).getRatio(), i));
                 int k = i + 1;
-                colors.add(Color.rgb(57 * k % 255, 135 * k % 255, 200 * k % 255));
                 totalTime += Integer.valueOf(list.get(i).getUtime());
-                setLegendView(i,list.get(i).getUtime(),colors.get(i),xValues.get(i));
+                setLegendView(i, list.get(i).getUtime(), colors.get(i), xValues.get(i));
             }
             mPieChart.setCenterText("总计" + totalTime / 3600 + "小时");
             PieDataSet pieDataSet = new PieDataSet(yValues, null);
             pieDataSet.setSliceSpace(2f);
             pieDataSet.setColors(colors);
             DisplayMetrics metrics = getResources().getDisplayMetrics();
-            float px = 5 * (metrics.densityDpi / 160f);
+            float px = 3 * (metrics.densityDpi / 180f);
             pieDataSet.setSelectionShift(px); // 选中态多出的长度
             PieData pieData = new PieData(xValues, pieDataSet);
             mPieChart.setData(pieData);
-            mPieChart.setDrawXValues(false);
-            mPieChart.setDrawLegend(false);
-            mPieChart.setCenterTextSize(22f);
-            mPieChart.setDescription("好上网");
+            mPieChart.setDrawYValues(false);
             mPieChart.invalidate();
 
         }
 
-        private void setLegendView(int i,String ut,int cl,String type) {
+        private void setLegendView(int i, String ut, int cl, String type) {
             View v = legendViews.get(i);
             v.setVisibility(View.VISIBLE);
-            ImageView iv = v.findViewById(R.id.chart_item_iv);
+            IndicateDotView iv = v.findViewById(R.id.chart_item_iv);
             TextView nv = v.findViewById(R.id.chart_item_name);
             TextView tv = v.findViewById(R.id.chart_item_time);
-            iv.setBackgroundColor(cl);
-            nv.setText(type+"类");
-            tv.setText( (Integer.valueOf(ut) / 60) + "分钟");
+            iv.setBackGroud(cl);
+            nv.setText(type + "类");
+            tv.setText((Integer.valueOf(ut) / 60) + "分钟");
         }
 
     }
