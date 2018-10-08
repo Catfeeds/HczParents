@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:paddingRight="@dimen/item_right_pading_delete" >
+
+    <RelativeLayout
+        android:id="@+id/ll_info"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/item_right_delete"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/item_web_filter_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/uncheck_btn" />
+
+        <TextView
+            android:id="@+id/item_web_filter_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dip"
+            android:singleLine="true"
+            android:text="http://news.ifeng.com"
+            android:textColor="@color/item_edittext"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#e7e7e6" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llayout_right"
+        android:layout_width="@dimen/item_right_delete"
+        android:layout_height="@dimen/item_right_delete"
+        android:clickable="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="@dimen/item_right_delete"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#ff3b30"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:text="删除" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#c8c8c8" />
+    </LinearLayout>
+
+</LinearLayout>

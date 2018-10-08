@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true"><shape>
+            <solid android:color="#ff80b825" />
+            <corners android:bottomLeftRadius="5.0dip" android:bottomRightRadius="5.0dip" android:topLeftRadius="5.0dip" android:topRightRadius="5.0dip" />
+        </shape></item>
+    <item android:state_focused="true"><shape>
+            <solod android:color="#ff80b825" />
+            <corners android:bottomLeftRadius="5.0dip" android:bottomRightRadius="5.0dip" android:topLeftRadius="5.0dip" android:topRightRadius="5.0dip" />
+        </shape></item>
+    <item><shape>
+            <solid android:color="#ff73c940" />
+            <corners android:bottomLeftRadius="5.0dip" android:bottomRightRadius="5.0dip" android:topLeftRadius="5.0dip" android:topRightRadius="5.0dip" />
+        </shape></item>
+    <item android:state_enabled="false">
+        <shape>
+            <solod android:color="#ffD1D1D1" />
+            <corners android:bottomLeftRadius="5.0dip" android:bottomRightRadius="5.0dip" android:topLeftRadius="5.0dip" android:topRightRadius="5.0dip" />
+        </shape>
+    </item>
+    <item android:state_enabled="true">
+        <shape>
+            <solod android:color="#ff80b825" />
+            <corners android:bottomLeftRadius="5.0dip" android:bottomRightRadius="5.0dip" android:topLeftRadius="5.0dip" android:topRightRadius="5.0dip" />
+        </shape>
+    </item>
+
+</selector>

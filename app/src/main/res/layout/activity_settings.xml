@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/activity_bg_gray"
+    android:orientation="vertical" >
+
+    <include layout="@layout/activity_head" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_marginTop="10dip"
+            android:background="#c6c6c6" />
+
+        <RelativeLayout
+            android:id="@+id/activity_settings_charge_rl"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/item_charge_bg"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dip"
+                android:gravity="center_vertical"
+                android:text="续费"
+                android:textColor="#303030"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/activity_settings_base_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_right" >
+            </ImageView>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#c6c6c6" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_marginTop="10dip"
+            android:background="#c6c6c6" />
+
+        <RelativeLayout
+            android:id="@+id/activity_settings_findpassword_rl"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/item_charge_bg"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dip"
+                android:gravity="center_vertical"
+                android:text="修改密码"
+                android:textColor="#303030"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_right" >
+            </ImageView>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#c6c6c6" />
+
+        <RelativeLayout
+            android:id="@+id/activity_settings_hand_rl"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/item_charge_bg"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dip"
+                android:gravity="center_vertical"
+                android:text="更改手势锁"
+                android:textColor="#303030"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/activity_settings_base_iv1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_right" >
+            </ImageView>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#c6c6c6" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_marginTop="10dip"
+            android:background="#c6c6c6" />
+
+        <RelativeLayout
+            android:id="@+id/activity_settings_help_rl"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/item_charge_bg"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dip"
+                android:gravity="center_vertical"
+                android:text="帮助中心"
+                android:textColor="#303030"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/activity_settings_base_iv2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_right" >
+            </ImageView>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#c6c6c6" />
+
+        <RelativeLayout
+            android:id="@+id/activity_settings_about_rl"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/item_charge_bg"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dip"
+                android:gravity="center_vertical"
+                android:text="关于我们"
+                android:textColor="#303030"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/activity_settings_base_iv3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_right" >
+            </ImageView>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#c6c6c6" />
+
+        <RelativeLayout
+            android:id="@+id/activity_settings_share_rl"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/item_charge_bg"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dip"
+                android:gravity="center_vertical"
+                android:text="分享"
+                android:textColor="#303030"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/activity_settings_base_iv4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_right" >
+            </ImageView>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#c6c6c6" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_vertical" >
+
+        <RelativeLayout
+            android:id="@+id/activity_setting_loginout_rl"
+            android:layout_width="match_parent"
+            android:layout_height="40dip"
+            android:layout_marginLeft="@dimen/activity_margin_left_20dp"
+            android:layout_marginRight="@dimen/activity_margin_right_20dp"
+            android:background="@drawable/view_bottom_button_bg" >
+
+            <TextView
+                android:id="@+id/activity_setting_tv_loginout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="退出登录"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

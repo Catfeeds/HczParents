@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#f8f8f8"
+    android:orientation="vertical" >
+
+    <include layout="@layout/activity_head" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="2"
+            android:background="#f8f8f8"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/activity_charge_list_tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_pay_ok"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="支付成功"
+                android:textColor="#303030"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#c6c6c6" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.75"
+            android:background="@android:color/white"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/activity_pay_oks_base_tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dip"
+                android:gravity="center_vertical"
+                android:text="两年支付会员"
+                android:textColor="#303030"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/activity_pay_oks_time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/activity_pay_oks_base_tv2"
+                android:layout_marginLeft="7dip"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:text="2016年3月8-2018年3月8"
+                android:textColor="#303030"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#d6d6d6" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.75"
+            android:background="@android:color/white"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/activity_pay_oks_base_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dip"
+                android:gravity="center_vertical"
+                android:text="金额"
+                android:textColor="#303030"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/activity_pay_oks_money_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="7dip"
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical"
+                android:text="299元"
+                android:textColor="#303030"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#c6c6c6" />
+
+        <RelativeLayout
+            android:id="@+id/activity_pay_ok_loginout_rl"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3" >
+
+            <TextView
+                android:id="@+id/activity_pay_ok_tv_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/activity_margin_left_20dp"
+                android:layout_marginRight="@dimen/activity_margin_right_20dp"
+                android:background="@drawable/view_bottom_button_bg"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="立即体验"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

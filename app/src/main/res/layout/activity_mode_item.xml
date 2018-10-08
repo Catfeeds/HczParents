@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/activity_bg_gray"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/activity_mode_tab_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white">
+
+        <ImageView
+            android:id="@+id/activity_mode_tab1_iv"
+            android:layout_width="60dp"
+            android:layout_height="58dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="25dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/mode_change1_1" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dip"
+            android:layout_toRightOf="@id/activity_mode_tab1_iv"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/activity_mode_tab1_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="网络畅游模式"
+                android:textColor="#505050"
+                android:textSize="15sp"></TextView>
+
+            <TextView
+                android:id="@+id/activity_mode_tab1_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="无限制，可任意使用APP"
+                android:textColor="#959595"
+                android:textSize="11sp"></TextView>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/activity_mode_tab1_cb"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/mode_change_unselect"
+            android:checked="true"
+            android:focusable="true" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:background="#e7e7e6" />
+
+</LinearLayout>

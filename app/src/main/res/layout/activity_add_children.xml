@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_bg_gray"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/title_layout"
+        layout="@layout/activity_head" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/activity_add_ll_head_50dp"
+        android:layout_marginTop="@dimen/activity_margin_top_20dp"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/activity_add_children_tv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="手机号"
+            android:textColor="#505050"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/activity_add_children_et_phone"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="12dip"
+            android:layout_weight="1.5"
+            android:background="@null"
+            android:gravity="left|center_vertical"
+            android:hint="输入孩子手机号"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:paddingLeft="15dp"
+            android:singleLine="true"
+            android:textColor="#505050"
+            android:textColorHint="#bbbbbb"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/activity_add_children_delete_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="12dp"
+            android:padding="5dp"
+            android:src="@drawable/add_children_delete_phone"
+            android:textSize="14sp"
+            android:visibility="gone" />
+    </LinearLayout>
+    <!-- 密码输入 -->
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="1dp"
+        android:background="@color/white" />
+    <!-- 验证码 -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/activity_add_ll_head_50dp"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/activity_add_children_tv_code"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="验证码"
+            android:textColor="#505050"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/activity_add_children_et_code"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="12dip"
+            android:layout_weight="1.5"
+            android:background="@null"
+            android:gravity="left|center_vertical"
+            android:hint="输入验证码"
+            android:inputType="number"
+            android:maxLength="6"
+            android:paddingLeft="15dp"
+            android:singleLine="true"
+            android:textColor="#505050"
+            android:textColorHint="#bbbbbb"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/activity_add_children_getcode"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="7dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="7dip"
+            android:layout_weight="2"
+            android:background="@drawable/add_chridren_green"
+            android:gravity="center"
+            android:inputType="number"
+            android:padding="0dp"
+            android:singleLine="true"
+            android:text="获取验证码"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/activity_add_children_sign_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_margin_15dp"
+        android:layout_marginRight="@dimen/activity_margin_15dp"
+        android:layout_marginTop="@dimen/activity_margin_top_40dp"
+        android:background="@drawable/view_btn_gray__bg"
+        android:gravity="center"
+        android:padding="7dp"
+        android:text="提交验证"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</LinearLayout>

@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8f8f8" >
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_head_title"
+        android:layout_alignParentTop="true"
+        android:background="@color/white"
+        >
+
+        <ImageView
+            android:id="@+id/iv_title_left"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:paddingLeft="@dimen/activity_pading_left_15dp"
+            android:paddingRight="@dimen/activity_pading_right_15dp"
+            android:src="@drawable/ic_head_left" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:ellipsize="middle"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@string/setup_gesture_code"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/gesture_tip_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_layout"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <com.goodsurfing.fundlock.widget.LockIndicator
+            android:id="@+id/lock_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_gesture_edit_margin_top_60dp" />
+
+        <TextView
+            android:id="@+id/text_tip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:gravity="center_horizontal"
+            android:text="@string/set_gesture_pattern"
+            android:textColor="#b6b6b6" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/gesture_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gesture_tip_layout"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/activity_gesture_edit_margin_left_40dp"
+        android:layout_marginRight="@dimen/activity_gesture_edit_margin_right_40dp"
+        android:layout_marginTop="20dip" >
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/text_reset"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gesture_container"
+        android:layout_marginTop="@dimen/activity_gesture_edit_margin_top_20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/set_gesture_pattern_reason"
+        android:visibility="invisible"
+        android:textColor="#816E6A" />
+
+</RelativeLayout>

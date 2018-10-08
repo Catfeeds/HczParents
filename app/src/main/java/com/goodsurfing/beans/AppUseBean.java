@@ -12,16 +12,16 @@ public class AppUseBean implements Serializable{
      * Img : http://pp.myapp.com/ma_icon/0/icon_213141_1521020457/96
      */
 
-    private String utime;
+    private int utime;
     private String Appname;
     private String CateName;
     private String Img;
 
-    public String getUtime() {
+    public int getUtime() {
         return utime;
     }
 
-    public void setUtime(String utime) {
+    public void setUtime(int utime) {
         this.utime = utime;
     }
 

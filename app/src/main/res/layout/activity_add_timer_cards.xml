@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/activity_bg_gray"
+    android:orientation="vertical" >
+
+    <include android:id="@+id/title_layout"
+        layout="@layout/activity_head" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <!-- 网址 -->
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/activity_add_time_head_50dp"
+            android:layout_gravity="center_vertical"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:visibility="gone" >
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/activity_add_time_view_margin_top_50dp"
+                android:background="#e7e7e6" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/activity_add_time_view_margin_left_15dp"
+                android:gravity="center_vertical"
+                android:text="@string/activity_add_timer_cards_tv"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/activity_add_webs_et_web"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_add_time_edit_head_50dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/activity_add_time_edit_margin_right_10dp"
+                android:background="@null"
+                android:gravity="center_vertical|right"
+                android:hint="@string/activity_add_timer_cards_tv_hint"
+                android:inputType="textWebEditText"
+                android:singleLine="true"
+                android:textColor="#bfbfbf"
+                android:textColorHint="@color/item_edittext"
+                android:textSize="15sp"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="@dimen/activity_add_time_view_margin_top_10dp"
+            android:background="#e7e7e6" />
+
+        <!-- 名称 -->
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/activity_add_time_edit_head_50dp"
+            android:layout_gravity="center_vertical"
+            android:background="@android:color/white"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/activity_add_time_view_margin_left_15dp"
+                android:gravity="center_vertical"
+                android:text="@string/activity_add_timer_cards_pass_tv"
+                android:textColor="@color/item_edittext"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/activity_add_webs_et_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_add_time_edit_head_50dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/activity_add_time_edit_margin_right_10dp"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="输入长度不大于6位的密码"
+                android:inputType="textPassword"
+                android:maxLength="6"
+                android:paddingLeft="@dimen/activity_add_time_padding_left_140dp"
+                android:singleLine="true"
+                android:textColor="@color/item_edittext"
+                android:textColorHint="@color/item_edittext_hint"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="#e7e7e6" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="@dimen/activity_add_time_view_margin_top_10dp"
+            android:background="#e7e7e6" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/activity_add_time_head_50dp"
+            android:layout_gravity="center_vertical"
+            android:background="@android:color/white"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/activity_add_time_view_margin_left_15dp"
+                android:gravity="center_vertical"
+                android:text="@string/activity_add_timer_cards_time_tv"
+                android:textColor="@color/item_edittext"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/activity_add_webs_et_timer_num"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_add_time_edit_head_50dp"
+                android:layout_marginRight="@dimen/activity_add_time_edit_margin_right_10dp"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/activity_add_timer_cards_time_tv_hint"
+                android:inputType="number"
+                android:maxLength="2"
+                android:paddingLeft="@dimen/activity_add_time_padding_left_140dp"
+                android:singleLine="true"
+                android:textColor="@color/item_edittext"
+                android:textColorHint="@color/item_edittext_hint"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="#e7e7e6" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/activity_add_time_head_50dp"
+            android:layout_gravity="center_vertical"
+            android:background="@android:color/white"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/activity_add_webs_tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/activity_add_time_view_margin_left_15dp"
+                android:gravity="center_vertical"
+                android:text="有效期限:"
+                android:textColor="@color/item_edittext"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/activity_add_webs_tv2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/activity_add_time_padding_left_140dp"
+                android:textColor="@color/item_edittext"
+                android:hint="请选择有效期限"
+                android:textColorHint="@color/item_edittext_hint"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="#e7e7e6" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_vertical" >
+
+        <RelativeLayout
+            android:id="@+id/activity_add_webs_add_rl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_add_time_button_head_40dp"
+            android:layout_marginLeft="@dimen/activity_add_time_margin_left_20dp"
+            android:layout_marginRight="@dimen/activity_add_time_margin_right_20dp"
+            android:background="@drawable/view_bottom_button_bg" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="确认添加"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

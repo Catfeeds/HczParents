@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/fragment_main_up1_title"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/title_tab_logo" />
+
+        <TextView
+            android:id="@+id/main_help_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:clickable="true"
+            android:text="帮助"
+            android:textColor="#5a667d"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/fragment_main_up1_line"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/fragment_main_up1_title"
+        android:background="#d6d6d6" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/fragment_main_up1_recyc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/fragment_main_up1_line"
+        android:background="@color/white"
+        android:paddingTop="@dimen/activity_margin_top_30dp"/>
+
+
+    <RelativeLayout
+        android:id="@+id/fragment_main_up1_tips"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/fragment_main_up1_line"
+        android:background="#f5f5f7"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/activity_add_time_margin_left_20dp"
+            android:src="@drawable/fragment_main_up1_tips_location" />
+
+        <TextView
+            android:id="@+id/fragment_main_up1_tips_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#6ac990"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_add_time_margin_left_20dp"
+            android:src="@drawable/fragment_main_up1_tips_right" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/add_child_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/activity_margin_10dp"
+        android:paddingTop="@dimen/activity_margin_10dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/add_child_head"
+            android:layout_width="@dimen/activity_add_ll_head_50dp"
+            android:layout_height="@dimen/activity_add_ll_head_50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/activity_margin_20dp"
+            android:src="@drawable/children_head_1" />
+
+        <TextView
+            android:id="@+id/add_child_tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_margin_10dp"
+            android:layout_marginTop="@dimen/activity_margin_5dp"
+            android:layout_toRightOf="@id/add_child_head"
+            android:text="请前往绑定孩子手机"
+            android:textColor="#888888"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/add_child_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/add_child_tv1"
+            android:layout_marginLeft="@dimen/activity_margin_10dp"
+            android:layout_marginTop="@dimen/activity_margin_5dp"
+            android:layout_toRightOf="@id/add_child_head"
+            android:text="家长绑定孩子端后可对孩子手机进行管控"
+            android:textColor="#AAAAAA"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_margin_20dp"
+            android:src="@drawable/map_children_info_right_jiantou" />
+    </RelativeLayout>
+</RelativeLayout>

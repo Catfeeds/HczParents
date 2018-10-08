@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:areasWheel="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp">
+
+    <com.goodsurfing.view.customview.city.AreasWheel
+        android:id="@+id/aw_location_wheel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        areasWheel:select="true" />
+
+</RelativeLayout>

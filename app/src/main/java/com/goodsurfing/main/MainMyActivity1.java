@@ -116,7 +116,7 @@ public class MainMyActivity1 extends BaseFragment implements OnClickListener {
         lineView = view.findViewById(R.id.activity_my_set_shoushi_pass_line);
         bindTextView = (TextView) view.findViewById(R.id.activity_my_bind_tx);
         loginView = view.findViewById(R.id.login_view);
-        myView =view.findViewById(R.id.my_view);
+        myView =view.findViewById(R.id.hcz_my_view);
         view.findViewById(R.id.activity_qq_help).setOnClickListener(this);
     }
 
@@ -338,8 +338,6 @@ public class MainMyActivity1 extends BaseFragment implements OnClickListener {
 
     // 退出登录清理数据
     public void onLoinOutClick() {
-        if (CommonUtil.isFastDoubleClick())
-            return;
         if (!"".equals(Constants.userId)) {
             loginPwdEditText.setText("");
             ActivityUtil.sendEvent4UM(getActivity(), "outLogin", "outLogin", 24);
@@ -424,9 +422,6 @@ public class MainMyActivity1 extends BaseFragment implements OnClickListener {
             ActivityUtil.showPopWindow4Tips(getActivity(), loginNumEditText, false, "当前网络不可用，请稍后再试...");
             return;
         }
-        // 防止重复点击
-        if (CommonUtil.isFastDoubleClick())
-            return;
         String account = "";
         String password = "";
         String code = "";
@@ -598,6 +593,7 @@ public class MainMyActivity1 extends BaseFragment implements OnClickListener {
             codeView.setEnabled(true);
             return;
         }
+        codeView.setEnabled(false);
         HczGetCodeNet getCodeNet = new HczGetCodeNet(getActivity(), new Handler() {
             @Override
             public void handleMessage(Message msg) {
@@ -787,4 +783,7 @@ public class MainMyActivity1 extends BaseFragment implements OnClickListener {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+
+
+
 }

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_bg_gray"
+    >
+
+
+    <include
+        android:id="@+id/activity_head"
+        layout="@layout/activity_head" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_charge_list_rl_head_60dp"
+        android:layout_below="@id/activity_head"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/activity_about_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="60dip"
+            android:text="在孩子端输入绑定码进行关联"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/bind_code_tv"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/activity_margin_20dp"
+            android:layout_marginLeft="@dimen/activity_add_ll_head_40dp"
+            android:layout_marginRight="@dimen/activity_add_ll_head_40dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/activity_margin_5dp"
+            android:paddingBottom="@dimen/activity_margin_5dp"
+            android:textColor="@color/green_wechat"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:background="@drawable/view_item_bg"
+            />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/add_child_code_btn"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="@dimen/activity_add_ll_head_50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/activity_charge_list_rl_head_60dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="扫描二维码进行关联"
+        android:textColor="@color/green_wechat"
+        android:textSize="22sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="74dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="如果孩子手机没安装孩子端，请"
+            android:textColor="#b8b8b8"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/down_load_app_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="all"
+            android:text="点击下载"
+            android:textColor="#f39848"
+            android:textSize="14sp" />
+    </LinearLayout>
+</RelativeLayout>

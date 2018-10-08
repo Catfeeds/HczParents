@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fafafa"
+    android:orientation="vertical" >
+    <include android:id="@+id/title_layout"
+        layout="@layout/activity_head" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/activity_register_account_rl"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/item_charge_bg"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="21dp"
+                        android:gravity="center_vertical"
+                        android:text="*宽带账号:"
+                        android:textColor="#505050"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/activity_register_account_et"
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="15dip"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="请输入宽带账号"
+                        android:inputType="text"
+                        android:paddingLeft="120dp"
+                        android:singleLine="true"
+                        android:textColor="#303030"
+                        android:textColorHint="@color/item_edittext_hint"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#e7e7e6" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="23dp"
+                    android:background="#e7e7e6" />
+
+                <RelativeLayout
+                    android:id="@+id/activity_register_id_rl"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/item_charge_bg"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="21dp"
+                        android:gravity="center_vertical"
+                        android:text="*身份证号:"
+                        android:textColor="#505050"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/activity_register_id_et"
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="15dip"
+                        android:background="@null"
+                        android:digits="0123456789xyzXYZ"
+                        android:gravity="center_vertical"
+                        android:hint="请输入身份证号"
+                        android:inputType="number"
+                        android:maxLength="18"
+                        android:paddingLeft="120dp"
+                        android:singleLine="true"
+                        android:textColor="#303030"
+                        android:textColorHint="@color/item_edittext_hint"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#e7e7e6" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/item_charge_bg"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="21dp"
+                        android:gravity="center_vertical"
+                        android:text="姓名:"
+                        android:textColor="#505050"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/activity_register_name_et"
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="15dip"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint=""
+                        android:inputType="text"
+                        android:paddingLeft="120dp"
+                        android:singleLine="true"
+                        android:textColor="#303030"
+                        android:textColorHint="@color/item_edittext_hint"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#e7e7e6" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="21dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:textColor="#959595"
+                    android:text="标*为必填项" />
+
+                <RelativeLayout
+                    android:id="@+id/activity_register_commit_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:layout_marginLeft="@dimen/activity_margin_left_20dp"
+                    android:layout_marginRight="@dimen/activity_margin_right_20dp"
+                    android:layout_marginTop="@dimen/activity_margin_top_20dp"
+                    android:background="@drawable/view_regist_button_bg" >
+
+                    <TextView
+                        android:id="@+id/activity_setting_tv_loginout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:text="确 定"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="15dip"
+                    android:background="@color/activity_bg_gray" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

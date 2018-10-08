@@ -2,6 +2,7 @@ package com.goodsurfing.constants;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +15,9 @@ import com.alipay.a.a.a;
 import com.goodsurfing.app.HaoUpApplication;
 import com.goodsurfing.app.R;
 import com.goodsurfing.beans.ChildBean;
+import com.goodsurfing.beans.City;
 import com.goodsurfing.beans.Friend;
+import com.goodsurfing.beans.IPList;
 import com.goodsurfing.beans.TimeCardBean;
 import com.goodsurfing.beans.User;
 import com.goodsurfing.beans.WebFilterBean;
@@ -46,7 +49,7 @@ public class Constants {
 	public static final String UNALLOWEDWED_TIME = "UNALLOWEDWED_TIME";
 	public static final String UNCHECKED_TIME = "UNCHECKED_TIME";
 	public static final String CAR_TIME = "CAR_TIME";
-	public static final String APP_USER_TYPE = "好成长";
+	public static final String APP_USER_TYPE = "好上网手机";
 	public static final String HCZ_LOGIN_URL = "/api/appLogin/login" ;
 	public static final String HCZ_GETBINDCODE_URL = "/api/verify/bindChild" ;
 	public static final String HCZ_GETCHILD_URL = "/api/client/clients" ;
@@ -72,6 +75,9 @@ public class Constants {
 	public static final String HCZ_OTHERBIND_URL = "/api/ThirdLogin/bind" ;
     public static final String HCZ_LOCKSCREEN_KEY = "lockScreen";
     public static final String HCZ_TIMECONTROL_KEY = "timeControl";
+    public static final String HCZ_SETAPPTIME_URL = "/Api/Client/SetApptime";
+    public static final String HCZ_ISPLIST_URL = "https://www.haoup.net/Interfaces/Isp/IspList";
+    public static final String HCZ_AREALIST_URL = "https://www.haoup.net/Interfaces/Isp/AreaList";
     public static boolean isNetWork = true;
 	public static boolean canMoveAgin = false;
 	public static File IMG_DIR = null;
@@ -79,6 +85,8 @@ public class Constants {
 	// 是否有开通功能 标志位
 	public static boolean isRegistShow = false;
 	public static List<String> serverList = new ArrayList<String>();
+	public static List<String> cityStrList = new ArrayList<String>();
+	public static  HashMap<String, List<City>> serverCityMap = new HashMap<>();
 	// 开发调试模式设置
 	// 必须和AndroidManifest.xml中android:debuggable值相同
 	public static final boolean isDebugMode = false; // 调rue试模式
@@ -160,8 +168,10 @@ public class Constants {
     public static boolean isbindChild = false;
 	public static List<ChildBean> childs;
 	public static ChildBean child;
+	public static List<IPList> serviceList;
+	public static List<City> cityList;
 
-    public static void clear(Context app) {
+	public static void clear(Context app) {
 		typeMap.clear();
 		allWebList.clear();
 		unAllWebList.clear();

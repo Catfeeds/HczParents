@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">好上网</string>
+
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
+    <string-array name="erromsg">
+        <item>请求参数错误</item>
+        <item>请重新登录</item>
+        <item>已经存在相同内容</item>
+        <item>不存在</item>
+        <item>帐号或密码错误</item>
+        <item>该区域不存在</item>
+        <item>其他错误</item>
+        <item>超过限额</item>
+        <item>支付接口不做展示</item>
+        <item>运营商未开通</item>
+        <item>其他错误</item>
+        <item>手机号码已经被使用</item>
+    </string-array>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="action_websearch">Web search</string>
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+    <string name="ptr_pull_to_refresh">上拉刷新</string>
+    <string name="ptr_release_to_refresh">释放更新</string>
+    <string name="ptr_refreshing">刷新中…</string>
+    <string name="ptr_last_updated">Updated: %1$s</string>
+    <string name="cancel">取消</string>
+    <string name="try_again">重试</string>
+    <string name="goon">继续</string>
+    <string name="confirm">确认</string>
+    <string name="str_turn_back">取消</string>
+    <string name="str_forward">前进</string>
+    <string name="lockpattern_recording_incorrect_too_short">"至少连接4个点，请重试"</string>
+    <string name="lockpattern_error">"手势密码不对"</string>
+
+    <!-- Accessibility description sent when user starts drawing a lock pattern. [CHAR LIMIT=NONE] -->
+    <string name="lockscreen_access_pattern_start">Pattern started</string>
+    <!-- Accessibility description sent when the pattern times out and is cleared. [CHAR LIMIT=NONE] -->
+    <string name="lockscreen_access_pattern_cleared">Pattern cleared</string>
+    <!-- Accessibility description sent when user adds a cell to the pattern. [CHAR LIMIT=NONE] -->
+    <string name="lockscreen_access_pattern_cell_added">Cell added</string>
+    <!-- Accessibility description sent when user completes drawing a pattern. [CHAR LIMIT=NONE] -->
+    <string name="lockscreen_access_pattern_detected">Pattern completed</string>
+    <!-- Gesture code starting -->
+    <string name="setup_gesture_code">设置手势密码</string>
+    <string name="setup_gesture_pattern">绘制解锁图案</string>
+    <string name="setup_gesture_pattern_again">再次绘制解锁图案</string>
+    <string name="forget_gesture_code">忘记手势密码?</string>
+    <string name="use_other_account_login">用其他账号登录</string>
+    <string name="set_gesture_pattern">绘制解锁图案</string>
+    <string name="set_gesture_pattern_reason">设置手势密码，防止他人未经授权查看</string>
+    <string name="reset_gesture_code">重新设置手势密码</string>
+    <!-- End -->
+    <string name="about_text">我们是一群孩子的家长，我们聚在一起想通过创新的技术解决一个日益严重的社会问题：如何保护青少年不受不良网络内容的侵害，如何管控青少年上网，使其可用、可控、避免网瘾，是我们追求的目标！</string>
+    <string name="activity_add_timer_cards_tv">计时卡 名称</string>
+    <string name="activity_add_timer_cards_tv_hint">请输入计时卡名称</string>
+    <string name="activity_add_timer_cards_pass_tv">奖励卡密码:</string>
+    <string name="activity_add_timer_cards_time_tv">时长设置(小时):</string>
+    <string name="activity_add_timer_cards_time_tv_hint">请输入小于24小时</string>
+    <string name="user_xieyi">\n
+尊敬的用户：\n
+请仔细阅读下面的《好上网用户许可协议》，您必须在使用和安装之前接受本协议。请仔细阅读以下协议内容。\n
+\n
+1. 特别提示好上网业务的所有权和运作权归湖南十安科技有限公司（下简称十安公司）所有。所提供的服务必须按照其发布的公司章程，业务条款和操作规则严格执行用户通过完成用户登录程序并点击一下“登录”的按钮，勾选同意本协议的勾选框，这表示用户与十安公司达成协议并接受所有的业务条款。\n
+\n
+2. 业务内容 \n
+2.1 好上网业务的具体内容由十安公司根据实际情况提供，十安保留随时变更、中断或终止部分或全部好上网业务的权利。\n
+2.2 好上网业务服务内容包括过滤不良内容网页，设置上网在线时长、时间，模式切换，区分终端管控上网，温馨提示等。\n
+2.3 除了我们系统的定期保护和关怀外，用户也可以自主登录http://www.haoup.net 访问好上网服务网站进行操作设置。\n
+2.4 请用户理解，十安公司仅提供相关的好上网相关的绿色上网业务，除此之外与相关好上网业务有关的设备（如电脑、调制解调器及其他与接入互联网有关的装置）及所需的费用（如为接入互联网而支付的电话费及上网费）均应由用户自行负担。\n
+\n
+3. 使用规则\n
+3.1 该业务包括免费版本的基础服务和收费的高级服务，其中用户可以在网站或者通过客户端自主申请此项业务，用户可以在十安公司合作电信运营商开通相关服务，相关的费用将在客户每月的宽带上网费用或订购手机中收取。具体收费方式，运营商将可能以促销的方式赠送给最终用户。用户必须提供准确的个人资料，如个人资料有任何变动，必须及时更新。\n
+3.2 用户注册登录成功后，用户应当对以其进行的所有活动和事件负法律责任。\n
+3.3 用户必须同意接受十安通过电子邮件或其他方式向用户发送的业务促销或其他相关商业信息。\n
+3.4 用户点击登录好上网相关系统，包括APP软件和用户中心，表示接受本协议并申请使用该服务。\n
+3.5 用户如需查询或取消业务，请拨打十安公司好上网全国免费热线4006-138-137进行咨询，或者当地十安公司合作电信运营服务商咨询。\n
+\n
+4. 内容所有权\n
+4.1 十安公司提供的好上网业务内容，包括但不限于著作、图片、档案、资讯、资料、网站架构、网站画面的安排、网页设计、软件编译、相关源代码和软件 (包括小应用程序和脚本)，均由本公司、本公司关联公司或合作公司依法拥有其知识产权，包括但不限于商标权、专利权、著作权、商业秘密等。非经本公司、本公司关联公司或合作公司书面同意，任何人不得擅自使用、修改、复制、公开传播、改变、散布、发行或公开发表本应用程序或内容。所有这些内容受版权、商标和其它财产所有权法律的保护。\n
+4.2 用户只有在获得十安或其他相关权利人的授权之后才能使用这些内容，而不能擅自复制、再造这些内容、或创造与内容有关的派生产品。\n
+\n
+5. 免责条款\n
+5.1 十安公司不对本业务特殊应用目的的商业性和适应性承担保证责任。\n
+5.2 十安公司不保证本业务能够不间断的操作。十安公司不保证本业务在任何情况下在任何计算机和互联网接入设备装置上均有效。\n
+5.3 十安公司不就因使用或不能使用本业务而发生的损失，包括但不限于营业利润损失、业务中断、业务信息、文档、数据丢失或其他经济损失承担赔偿责任，即使已通知十安公司有可能发生该等损失的，亦是如此。\n
+\n
+6. 隐私保护\n
+6.1 保护用户隐私是十安公司的一项基本政策，十安公司保证不对外公开或向第三方提供用户注册资料及用户在使用好上网业务时存储在十安的非公开内容，但下列情况除外： (a) 事先获得用户的明确授权；(b) 根据有关的法律法规要求； \n
+6.2 十安公司可能会与第三方合作向用户提供相关的好上网业务，在此情况下，如该第三方同意承担与十安同等的保护用户隐私的责任，则十安公司可将用户的注册资料等提供给该第三方。\n
+\n
+7. 业务变更、中断或终止\n
+7.1 如因系统维护或升级的需要而需暂停好上网业务，十安公司将尽可能事先进行通告。\n
+7.2 如发生下列任何一种情形，十安公司有权随时中断或终止向用户提供本协议项下的湖南联通绿色上网业务而无需通知用户： (a) 用户提供的个人资料不真实； (b) 用户违反本协议中规定的使用规则。\n
+\n
+8. 法律管辖\n
+8.1 本协议的订立、执行和解释及争议的解决均应适用中国法律。\n
+\n
+9. 其他规定\n
+9.1 本协议构成双方对本协议之约定事项及其他有关事宜的完整协议，除本协议规定的之外，未赋予本协议各方其他权利。\n
+9.2 如本协议中的任何条款无论因何种原因完全或部分无效或不具有执行力，本协议的其余条款仍应有效并且有约束力。\n
+9.3本公司根据法律法规及其他情况变化在必要时修改本《协议》服务条款或规则，经修订的服务条款或规则一旦发生变动，即代替原来的协议条款，恕不再另行通知，请您及时关注和了解该变动。如您不同意相关变更，请您停止使用好上网，一旦您继续使用好上网，则表示您已接受并自愿遵守该等修改。\n
+9.4青少年用户必须遵守全国青少年网络文明公约：要善于网上学习，不浏览不良信息；要诚实友好交流，不侮辱欺诈他人；要增强自护意识，不随意约会网友；要维护网络安全，不破坏网络秩序；要有益身心健康，不沉溺虚拟时空。\n
+9.5在适用法律允许的最大范围内，本公司保留对本协议、操作规则或特别条款的最终解释权。\n
+9.6 本协议中的标题仅为方便而设，在解释本协议时应被忽略。\n</string>
+
+</resources>

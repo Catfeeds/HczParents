@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/guide_three" >
+
+   <!-- 把下面的view注释掉，则发现Button的layout_marginBottom无效 -->
+    <View
+        android:id="@+id/margin_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/bg_gray" />
+
+
+</RelativeLayout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_bg_gray"
+    android:orientation="vertical" >
+
+    <include layout="@layout/activity_head" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:layout_marginTop="30dip"
+                android:src="@drawable/ic_register_next" />
+
+            <RelativeLayout
+                android:id="@+id/activity_login_item_rl_login"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="@dimen/activity_margin_left_20dp"
+                android:layout_marginRight="@dimen/activity_margin_right_20dp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/view_bottom_button_bg" >
+
+                <TextView
+                    android:id="@+id/activity_login_item_tv_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="继续付费开通服务"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginLeft="@dimen/activity_margin_left_20dp"
+                android:layout_marginRight="@dimen/activity_margin_right_20dp"
+                android:layout_marginTop="@dimen/activity_margin_top_40dp"
+                android:background="@drawable/login_lin" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dip"
+                android:text="或者"
+                android:textColor="#959595"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="3dip"
+                android:text="开始使用"
+                android:textColor="#959595"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dip"
+                android:text="请先"
+                android:textColor="#959595"
+                android:textSize="11sp" />
+
+            <!-- 注册 -->
+
+            <RelativeLayout
+                android:id="@+id/activity_login_item_rl_register"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="@dimen/activity_margin_left_20dp"
+                android:layout_marginRight="@dimen/activity_margin_right_20dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/view_bottom_button_bg_yellow" >
+
+                <TextView
+                    android:id="@+id/activity_login_item_tv_register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="设置安全手势锁"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

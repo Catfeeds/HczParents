@@ -11,15 +11,15 @@ public class ChartBean implements Serializable{
      * ratio : 1
      */
 
-    private String utime;
+    private int utime;
     private String CateName;
     private int ratio;
 
-    public String getUtime() {
+    public int getUtime() {
         return utime;
     }
 
-    public void setUtime(String utime) {
+    public void setUtime(int utime) {
         this.utime = utime;
     }
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/guide_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.goodsurfing.view.customview.CustomViewPager
+        android:id="@+id/guide_viewpager_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true" />
+
+    <LinearLayout
+        android:id="@+id/guide_point_layout"
+        android:layout_width="match_parent"
+        android:layout_height="10dip"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_title_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:paddingLeft="@dimen/activity_pading_left_15dp"
+        android:paddingRight="@dimen/activity_pading_right_15dp"
+        android:src="@drawable/ic_head_left"
+        android:visibility="invisible" />
+
+</RelativeLayout>

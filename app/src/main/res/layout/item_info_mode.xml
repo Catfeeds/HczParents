@@ -10,7 +10,7 @@
         android:id="@+id/item_mode_info_"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="26dp"
+        android:paddingBottom="15dp"
         android:paddingLeft="@dimen/activity_margin_20dp"
         android:paddingRight="10dp"
         android:paddingTop="6dp">
@@ -20,6 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="当前模式:"
+            android:layout_marginTop="@dimen/activity_margin_15dp"
             android:textColor="#b3333333"
             android:textSize="14sp" />
 
@@ -27,6 +28,7 @@
             android:id="@+id/tv_mode_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_margin_15dp"
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@id/mode_title"
             android:textColor="#ff8b67"

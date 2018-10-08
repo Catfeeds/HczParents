@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="62dp"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/activity_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dip"
+            android:gravity="center_vertical"
+            android:text="1个月费会员"
+            android:textColor="#323232"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/activity_settings_base_iv4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/ic_right" >
+        </ImageView>
+
+        <TextView
+            android:id="@+id/activity_price_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@id/activity_settings_base_iv4"
+            android:gravity="center_vertical"
+            android:layout_marginRight="15dp"
+            android:text="19元"
+            android:textColor="#f72d2d"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#e7e7e6" />
+
+</LinearLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/activity_change_mode_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="15dip"
+        android:paddingTop="15dip"
+        android:text=""
+        android:textColor="@color/gray_new"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="150dip"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:padding="20dp" >
+
+        <RelativeLayout
+            android:id="@+id/activity_bargain_pay_by_alipay_rl"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/dialog_bg"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/activity_change_mode_comfirm_text"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="退出登录"
+                android:textColor="@color/red"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/activity_change_mode_cancle_rl"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/dialog_bg"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/activity_change_mode_cancle_text"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="取消 "
+                android:textColor="@color/blue"
+                android:textSize="15sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

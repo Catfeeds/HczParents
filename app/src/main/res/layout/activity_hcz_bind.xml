@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_bg_gray"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/activity_head"
+        layout="@layout/activity_head" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/hcz_bind_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/activity_add_web_view_margin_top_50dp"
+            android:textColor="#70c859"
+            android:textSize="22sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dip"
+            android:text="为保障你的正常使用，请绑定手机号"
+            android:textColor="#525252"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/hcz_code_login_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dip"
+            android:layout_marginLeft="@dimen/activity_margin_left_20dp"
+            android:layout_marginRight="@dimen/activity_margin_right_20dp"
+            android:layout_marginTop="@dimen/activity_add_ll_head_50dp"
+            android:background="@drawable/view_item_bg">
+
+            <EditText
+                android:id="@+id/activity_login_code_num"
+                android:layout_width="fill_parent"
+                android:layout_height="40dip"
+                android:background="@color/transparent"
+                android:drawableLeft="@drawable/hcz_bind_phone_icon"
+                android:drawablePadding="10dip"
+                android:gravity="center_vertical"
+                android:hint="请输入手机号"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textColor="@color/item_edittext"
+                android:textColorHint="@color/item_edittext_hint"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/activity_login_code_delete_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:padding="5dp"
+                android:src="@drawable/add_children_delete_phone"
+                android:visibility="gone" />
+        </RelativeLayout>
+        <!-- 密码输入 -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/activity_add_ll_head_40dp"
+            android:layout_marginTop="@dimen/activity_margin_20dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/activity_login_code_password"
+                android:layout_width="0dp"
+                android:layout_height="40dip"
+                android:layout_marginLeft="@dimen/activity_margin_left_20dp"
+                android:layout_marginRight="@dimen/activity_margin_right_20dp"
+                android:layout_weight="1"
+                android:background="@drawable/view_item_bg"
+                android:drawableLeft="@drawable/hcz_bind_code_icon"
+                android:drawablePadding="10dip"
+                android:gravity="center_vertical"
+                android:hint="请输入动态码"
+                android:inputType="textPassword"
+                android:maxLength="20"
+                android:singleLine="true"
+                android:textColor="@color/item_edittext"
+                android:textColorHint="@color/item_edittext_hint"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/activity_code_login_getcode"
+                android:layout_width="wrap_content"
+                android:layout_height="40dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="@dimen/activity_margin_right_20dp"
+                android:background="@drawable/view_bottom_button_bg"
+                android:gravity="center"
+                android:paddingLeft="@dimen/activity_margin_10dp"
+                android:paddingRight="@dimen/activity_margin_10dp"
+                android:singleLine="true"
+                android:text="获取动态码"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/activity_hcz_bind_send_btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:layout_marginLeft="@dimen/activity_margin_left_20dp"
+        android:layout_marginRight="@dimen/activity_margin_right_20dp"
+        android:layout_marginTop="@dimen/activity_margin_top_20dp"
+        android:background="@drawable/view_bottom_button_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="提交"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_margin_left_20dp"
+        android:layout_marginRight="@dimen/activity_margin_right_20dp"
+        android:layout_marginTop="@dimen/activity_margin_20dp"
+        android:text="根据国家《网络安全法》相关规定,使用互联网服务需进行帐号实名认证。"
+        android:textColor="#606060"
+        android:textSize="12sp" />
+
+
+</LinearLayout>

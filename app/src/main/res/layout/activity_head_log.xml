@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/activity_tips_height"
+     >
+
+    <TextView
+        android:id="@+id/tv_top_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:ellipsize="middle"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="网络限制已解除，可以访问所有网络！"
+        android:textColor="#78716e"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/iv_top_left"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/activity_margin_20dp"
+        android:layout_toLeftOf="@+id/tv_top_msg"
+        android:src="@drawable/toast_ok" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_alignParentBottom="true"
+        android:background="#e7e7e6" />
+
+</RelativeLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.journeyapps.barcodescanner.DecoratedBarcodeView
+        android:id="@+id/dbv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        app:zxing_framing_rect_height="300dp"
+        app:zxing_framing_rect_width="300dp"
+        app:zxing_preview_scaling_strategy="fitXY"
+        app:zxing_use_texture_view="true"></com.journeyapps.barcodescanner.DecoratedBarcodeView>
+
+    <TextView
+        android:id="@+id/bind_code_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/activity_gesture_edit_margin_top_100dp"
+        android:text="我的绑定码"
+        android:textColor="@color/green_wechat"
+        android:textSize="16sp" />
+
+    <include
+        android:id="@+id/activity_head"
+        layout="@layout/activity_head" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/activity_margin_20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="若未安装“好上网孩子端”，请先"
+            android:textColor="@color/gray_house_deselect_font"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/down_load_app_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_margin_10dp"
+            android:text="下载安装"
+            android:textColor="@color/gray_house_deselect_font"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</RelativeLayout>

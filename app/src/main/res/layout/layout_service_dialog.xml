@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:areasWheel="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp" >
+
+    <com.goodsurfing.view.customview.service.ServiceAreasWheel
+        android:id="@+id/aw_service_wheel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        areasWheel:select="true" />
+
+</RelativeLayout>

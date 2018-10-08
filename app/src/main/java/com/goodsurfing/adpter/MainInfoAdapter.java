@@ -95,6 +95,7 @@ public class MainInfoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         if (position == 2 && chartView != null) {
             return;
         }
+        if(appUseBeans.size()>0)
         itemHolder.bindHolder(appUseBeans.get(position - 3));
     }
 
@@ -141,10 +142,13 @@ public class MainInfoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         public void bindHolder(AppUseBean appUseBean) {
             nameTv.setText(appUseBean.getAppname());
-            timeTv.setText((Integer.valueOf(appUseBean.getUtime()) / 60) + "分钟");
+            timeTv.setText(ActivityUtil.getAPP4Time(appUseBean.getUtime()));
             typeTv.setText(appUseBean.getCateName());
-            if (!TextUtils.isEmpty(appUseBean.getImg()))
+            if (!TextUtils.isEmpty(appUseBean.getImg())) {
                 ImageLoader.getInstance().displayImage(appUseBean.getImg(), iconIv);
+            }else {
+                iconIv.setImageResource(R.drawable.add_app_deful_icon);
+            }
         }
     }
 }

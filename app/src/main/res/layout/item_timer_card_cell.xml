@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="151dip"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:paddingRight="@dimen/item_right_pading_delete" >
+
+    <LinearLayout
+        android:id="@+id/ll_info"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/item_timer_card_web_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="20dip"
+            android:padding="10dip"
+            android:src="@drawable/ic_undelete"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="131dip"
+            android:layout_margin="10dp"
+            android:background="@drawable/timer_item_bg"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="100dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="10dip"
+                android:background="@android:color/white"
+                android:orientation="horizontal" >
+
+                <RelativeLayout
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2" >
+
+                    <TextView
+                        android:id="@+id/item_timer_card_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:singleLine="true"
+                        android:typeface="sans"
+                        android:text="3"
+                        android:textColor="#73c940"
+                        android:textSize="52sp" />
+                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
+                        android:layout_toRightOf="@id/item_timer_card_time"
+                        android:layout_alignBottom="@id/item_timer_card_time"
+                        android:singleLine="true"
+                        android:text="小时"
+                        android:textColor="#505050"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <com.goodsurfing.view.customview.VerticalDashView
+                    android:layout_width="4dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp" />
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dip"
+                    android:layout_weight="4"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/item_timer_card_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="18dip"
+                        android:layout_marginTop="2dp"
+                        android:singleLine="true"
+                        android:text="上网卡"
+                        android:textColor="#505050"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="invisible" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dip"
+                            android:singleLine="true"
+                            android:text="创建时间："
+                            android:textColor="#959595"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/item_timer_card_creat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dip"
+                            android:singleLine="true"
+                            android:text="2小时22分40秒"
+                            android:textColor="#46c200"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="18dip"
+                            android:layout_marginTop="5dip"
+                            android:singleLine="true"
+                            android:text="剩余时长："
+                            android:textColor="#959595"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/item_timer_card_remain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dip"
+                            android:layout_marginTop="5dip"
+                            android:singleLine="true"
+                            android:text="2小时22分40秒"
+                            android:textColor="#73c940"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/item_timer_card_expires"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="18dip"
+                        android:layout_marginTop="11dip"
+                        android:lines="1"
+                        android:text="有效期：2016-12-12"
+                        android:textColor="#959595"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/item_timer_card_pb"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="5dip"
+                android:layout_marginLeft="26dip"
+                android:layout_marginRight="26dip"
+                android:layout_marginTop="5dip"
+                android:progress="20"
+                android:progressDrawable="@drawable/progress_stype" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llayout_right"
+        android:layout_width="@dimen/item_right_delete"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="@dimen/item_right_delete"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#ff3b30"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#c8c8c8" />
+    </LinearLayout>
+
+</LinearLayout>

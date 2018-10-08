@@ -13,6 +13,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.NetworkInfo.State;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
@@ -30,10 +32,13 @@ import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.component.constants.What;
 import com.goodsurfing.adpter.MainViewPagerAdapter;
 import com.goodsurfing.app.R;
+import com.goodsurfing.beans.IPList;
 import com.goodsurfing.constants.Constants;
 import com.goodsurfing.server.GetServerListServer;
+import com.goodsurfing.server.net.HczGetServerNet;
 import com.goodsurfing.server.utils.BaseDataService.DataServiceResponder;
 import com.goodsurfing.server.utils.BaseDataService.DataServiceResult;
 import com.goodsurfing.service.UpdateManager;
@@ -42,6 +47,8 @@ import com.goodsurfing.utils.CommonUtil;
 import com.goodsurfing.utils.SharUtil;
 import com.goodsurfing.view.MainPageView;
 import com.umeng.analytics.MobclickAgent;
+
+import java.util.List;
 
 public class MainActivity extends FragmentActivity {
     private static final int READ_CONTACTS_REQUEST = 1;
@@ -56,7 +63,7 @@ public class MainActivity extends FragmentActivity {
     // Tab选项卡的文字
     private String mTextviewArray[] = {"好上网", "网络解锁", "我的"};    // 定义数组来存放Fragment界面
 
-    private ImageView iconView;
+    public static ImageView iconView;
     public MainPageView mainPageView;
 
     @Override
@@ -82,21 +89,22 @@ public class MainActivity extends FragmentActivity {
     /**
      * 获取服务商列表
      */
+    // 获取服务商列表
     private void getServerList() {
-        if (Constants.serverList.size() == 0) {
-            String url = null;
-            url = Constants.SERVER_URL_GLOBAL + "?" + "requesttype=1002";
-
-            new GetServerListServer(new DataServiceResponder() {
-
-                @Override
-                public void onResult(DataServiceResult result) {
+        if (Constants.serviceList == null) {
+            HczGetServerNet getServerNet = new HczGetServerNet(this, new Handler() {
+                public void handleMessage(Message msg) {
+                    super.handleMessage(msg);
+                    switch (msg.what) {
+                        case What.HTTP_REQUEST_CURD_SUCCESS:
+                            Constants.serviceList = (List<IPList>) msg.obj;
+                            break;
+                        case What.HTTP_REQUEST_CURD_FAILURE:
+                            break;
+                    }
                 }
-
-                @Override
-                public void onFailure() {
-                }
-            }, url, this).execute();
+            });
+            getServerNet.sendRequest();
         }
     }
 
@@ -273,6 +281,11 @@ public class MainActivity extends FragmentActivity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         mainPageView.setCurrentItem(0);
+        if (Constants.userId.equals("")) {
+            iconView.setVisibility(View.VISIBLE);
+        } else {
+            iconView.setVisibility(View.GONE);
+        }
     }
 
     @Override

@@ -33,11 +33,13 @@ import com.goodsurfing.base.BaseFragment;
 import com.goodsurfing.beans.AppUseBean;
 import com.goodsurfing.beans.ChartBean;
 import com.goodsurfing.beans.DynamicBean;
+import com.goodsurfing.beans.LocationBean;
 import com.goodsurfing.beans.PieEntry;
 import com.goodsurfing.constants.Constants;
 import com.goodsurfing.map.HczMapActivity;
 import com.goodsurfing.map.HczTrajectoryMapActivity;
 import com.goodsurfing.server.net.HczGetChildsNet;
+import com.goodsurfing.server.net.HczGetLocationNet;
 import com.goodsurfing.server.net.HczGetStatisticsNet;
 import com.goodsurfing.utils.ActivityUtil;
 import com.goodsurfing.utils.CommonUtil;
@@ -58,7 +60,6 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
     private MainInfoAdapter adapter;
     private TextView helpTextView;
     private TextView tipsLocationTv;
-    private DynamicBean fastNewDynamicBean;
     private View headView;
     private View modeView;
     private View chartView;
@@ -67,6 +68,8 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
     private ChartView chart;
     private PieEntry pieEntry;
     private List<AppUseBean> appUseBeans = new ArrayList<>();
+    private DynamicBean locationBean = new DynamicBean();
+    ;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -111,36 +114,83 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
     @Override
     public void onResume() {
         super.onResume();
+        onResumeChild();
+    }
+
+    private void onResumeChild() {
         if (Constants.userId.equals("")) {
+            appUseBeans.clear();
+            adapter.setModeView(null);
+            adapter.setChartView(null);
             addChildLl.setVisibility(View.GONE);
             tipsLayout.setVisibility(View.GONE);
-        } else {
             adapter.notifyDataSetChanged();
+            HczMainActivity.iconView.setVisibility(View.VISIBLE);
+        } else {
             getBindChild();
+            HczMainActivity.iconView.setVisibility(View.GONE);
+            if (Constants.isbindChild) {
+                addChildLl.setVisibility(View.GONE);
+                mode.bindView();
+                adapter.setModeView(modeView);
+                adapter.notifyDataSetChanged();
+                setTitleTime();
+            }else {
+                adapter.setModeView(null);
+                adapter.setChartView(null);
+                appUseBeans.clear();
+                adapter.notifyDataSetChanged();
+                addChildLl.setVisibility(View.VISIBLE);
+                tipsLayout.setVisibility(View.GONE);
+            }
         }
     }
 
+
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
-        if (this.isVisible()) {
-            if (isVisibleToUser) {
-                if (Constants.userId.equals("")) {
-                    addChildLl.setVisibility(View.GONE);
-                    tipsLayout.setVisibility(View.GONE);
-                } else {
-                    adapter.notifyDataSetChanged();
-                    getBindChild();
-                }
-            }
+        if (this.isVisible()&&isVisibleToUser) {
+            onResumeChild();
         }
         super.setUserVisibleHint(isVisibleToUser);
     }
 
     private void setTitleTime() {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        String date = formatter.format(new Date());
-        getBundleUserTrajectory("2018-09-06");
+        String date = formatter.format(new Date(new Date().getTime()));
+//        String date = formatter.format(  new Date(new Date().getTime()-24*60*60*1000));
+        getBundleUserTrajectory(date);
 
+
+    }
+
+    /**
+     * 刷新 实时位置
+     */
+    private void reflashLocation() {
+        HczGetLocationNet getLocationNet = new HczGetLocationNet(getActivity(), new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                switch (msg.what) {
+                    case What.HTTP_REQUEST_CURD_SUCCESS:
+                        LocationBean bean = (LocationBean) msg.obj;
+                        if(null==bean)break;
+                        locationBean.setAddress(bean.getAddress());
+                        locationBean.setDate(bean.getCreatedAt());
+                        locationBean.setLat(bean.getLat() + "");
+                        locationBean.setLng(bean.getLng() + "");
+                        tipsLayout.setVisibility(View.VISIBLE);
+                        tipsLocationTv.setText(locationBean.getAddress());
+                        break;
+                    case What.HTTP_REQUEST_CURD_FAILURE:
+                        tipsLayout.setVisibility(View.GONE);
+                        break;
+                }
+            }
+        });
+        getLocationNet.putParams();
+        getLocationNet.sendRequest();
     }
 
     @Override
@@ -149,7 +199,7 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
             return;
         switch (v.getId()) {
             case R.id.main_help_tv:
-                Intent help = new Intent(getActivity(), WebActivity.class);
+                Intent help = new Intent(getActivity(), GuideView.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("TYPE_GUIDE", "1");
                 help.putExtras(bundle);
@@ -192,7 +242,7 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
                 //实时定位
                 ActivityUtil.sendEvent4UM(getActivity(), "functionSwitch", "HczMapActivity", 19);
                 Intent loaction = new Intent(getActivity(), HczMapActivity.class);
-                loaction.putExtra("dynamic", fastNewDynamicBean);
+                loaction.putExtra("dynamic", locationBean);
                 startActivity(loaction);
                 break;
             case R.id.add_child_ll:
@@ -210,6 +260,7 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
             addChildLl.setVisibility(View.VISIBLE);
             return;
         }
+        reflashLocation();
         HczGetStatisticsNet getStatisticsNet = new HczGetStatisticsNet(getActivity(), handler);
         getStatisticsNet.putParams(date);
         getStatisticsNet.sendRequest();
@@ -224,14 +275,16 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
                 case What.HTTP_REQUEST_CURD_SUCCESS:
                     pieEntry = (PieEntry) msg.obj;
                     appUseBeans.clear();
-                    if (pieEntry.getCatelist().size() != 0) {
-                        appUseBeans.addAll(pieEntry.getApplist());
-                        adapter.setChartView(chartView);
-                        chart.bindView(pieEntry.getCatelist());
-                        setNewLocation();
-                    } else {
-                        adapter.setChartView(null);
-                    }
+                    appUseBeans.addAll(pieEntry.getApplist());
+                    adapter.setChartView(chartView);
+                    chart.bindView(pieEntry.getCatelist());
+//                    if (pieEntry.getCatelist().size() != 0) {
+//                        appUseBeans.addAll(pieEntry.getApplist());
+//                        adapter.setChartView(chartView);
+//                        chart.bindView(pieEntry.getCatelist());
+//                    } else {
+//                        adapter.setChartView(null);
+//                    }
                     adapter.notifyDataSetChanged();
                     break;
                 case What.HTTP_REQUEST_CURD_FAILURE:
@@ -244,14 +297,6 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
     };
 
     private void getBindChild() {
-        if (Constants.userId.equals("")) {
-            appUseBeans.clear();
-            adapter.setChartView(null);
-            adapter.setChartView(null);
-            adapter.notifyDataSetChanged();
-            tipsLayout.setVisibility(View.GONE);
-            return;
-        }
         HczGetChildsNet getBindChildNet = new HczGetChildsNet(getActivity(), new Handler() {
 
             @Override
@@ -287,14 +332,6 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
         getBindChildNet.sendRequest();
     }
 
-    private void setNewLocation() {
-        if (appUseBeans.size() > 0) {
-//                    tipsLayout.setVisibility(View.VISIBLE);
-//                    tipsLocationTv.setText(fastNewDynamicBean.getMsg());
-            tipsLayout.setVisibility(View.GONE);
-        }
-    }
-
     class HeadView {
         private LinearLayout modeLayout;
         private LinearLayout timeLayout;
@@ -321,13 +358,11 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
 
     class ModeView {
         private TextView mode_text, mode_tips, mode_button;
-
         ModeView(View itemView) {
             mode_text = itemView.findViewById(R.id.tv_mode_text);
             mode_tips = itemView.findViewById(R.id.tv_mode_tips);
             mode_button = itemView.findViewById(R.id.tv_mode_button);
         }
-
         void bindView() {
             String tips = "";
             String mode = "";
@@ -351,8 +386,15 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
         private PieChart mPieChart;
         List<View> legendViews = new ArrayList<>();
         ArrayList<Integer> colors = new ArrayList<Integer>();
+        private View contentView;
+        private ImageView appContentView;
+        private ImageView mPieChartContentView;
+
         ChartView(View view) {
             mPieChart = (PieChart) view.findViewById(R.id.chart_view);
+            contentView = view.findViewById(R.id.dt_content_layout);
+            appContentView = view.findViewById(R.id.app_use_nodata);
+            mPieChartContentView = view.findViewById(R.id.dt_use_nodata);
             mPieChart.setUsePercentValues(true);
             //设置中间文件
             mPieChart.setDrawHoleEnabled(true);
@@ -362,31 +404,42 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
             mPieChart.setDrawCenterText(true);
             mPieChart.setDrawXValues(false);
             mPieChart.setDrawLegend(false);
-            mPieChart.setDescription("好上网");
+            mPieChart.setDescription("");
             mPieChart.setRotationAngle(0);
             Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
             paint.setTextAlign(Paint.Align.CENTER);
             paint.setColor(Color.parseColor("#5a667d"));
-            mPieChart.setPaint(paint,PAINT_CENTER_TEXT);
+            mPieChart.setPaint(paint, PAINT_CENTER_TEXT);
             mPieChart.setCenterTextSize(18f);
             //设置数据
-            mPieChart.animateXY(1000, 1000);
+            mPieChart.animateXY(2000, 2000);
             legendViews.add(view.findViewById(R.id.chart_ll1));
             legendViews.add(view.findViewById(R.id.chart_ll2));
             legendViews.add(view.findViewById(R.id.chart_ll3));
             legendViews.add(view.findViewById(R.id.chart_ll4));
             legendViews.add(view.findViewById(R.id.chart_ll5));
             legendViews.add(view.findViewById(R.id.chart_ll6));
-            colors.add(Color.parseColor("#fff8a66a"));
-            colors.add(Color.parseColor("#ffa7bbef"));
-            colors.add(Color.parseColor("#ff92dbce"));
-            colors.add(Color.parseColor("#ffed9595"));
-            colors.add(Color.parseColor("#ff85dea8"));
-            colors.add(Color.parseColor("#fff8c85b"));
+            colors.add(Color.parseColor("#7AC4DC"));
+            colors.add(Color.parseColor("#85C854"));
+            colors.add(Color.parseColor("#FFA45B"));
+            colors.add(Color.parseColor("#ED7D63"));
+            colors.add(Color.parseColor("#D1A77A"));
+            colors.add(Color.parseColor("#8563B0"));
         }
 
         //设置数据
         public void bindView(List<ChartBean> list) {
+            if(list==null||list.size()==0){
+                appContentView.setVisibility(View.VISIBLE);
+                mPieChartContentView.setVisibility(View.VISIBLE);
+                contentView.setVisibility(View.GONE);
+                mPieChartContentView.setImageResource(R.drawable.hcz_noata_bg);
+                appContentView.setImageResource(R.drawable.hcz_noata_bg);
+                return;
+            }
+            mPieChartContentView.setVisibility(View.GONE);
+            contentView.setVisibility(View.VISIBLE);
+            appContentView.setVisibility(View.GONE);
             //模拟数据
             int totalTime = 0;
             ArrayList<Entry> yValues = new ArrayList<Entry>();
@@ -398,7 +451,8 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
                 totalTime += Integer.valueOf(list.get(i).getUtime());
                 setLegendView(i, list.get(i).getUtime(), colors.get(i), xValues.get(i));
             }
-            mPieChart.setCenterText("总计" + totalTime / 3600 + "小时");
+
+            mPieChart.setCenterText(getTotalTime(totalTime));
             PieDataSet pieDataSet = new PieDataSet(yValues, null);
             pieDataSet.setSliceSpace(2f);
             pieDataSet.setColors(colors);
@@ -412,7 +466,16 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
 
         }
 
-        private void setLegendView(int i, String ut, int cl, String type) {
+        private String getTotalTime(int totalTime) {
+            int h = totalTime / 3600;
+            if (h == 0) {
+                return "总计" + totalTime / 60 + "分钟";
+            } else {
+                return "总计" + h + "小时";
+            }
+        }
+
+        private void setLegendView(int i, int ut, int cl, String type) {
             View v = legendViews.get(i);
             v.setVisibility(View.VISIBLE);
             IndicateDotView iv = v.findViewById(R.id.chart_item_iv);
@@ -420,7 +483,7 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
             TextView tv = v.findViewById(R.id.chart_item_time);
             iv.setBackGroud(cl);
             nv.setText(type + "类");
-            tv.setText((Integer.valueOf(ut) / 60) + "分钟");
+            tv.setText(ActivityUtil.getAPP4Time(ut));
         }
 
     }

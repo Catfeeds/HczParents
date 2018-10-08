@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#f8f8f8"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/title_layout"
+        layout="@layout/activity_head" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="10dip"
+                android:background="#e7e7e6" />
+
+            <RelativeLayout
+                android:id="@+id/activity_settings_name_rl"
+                android:layout_width="fill_parent"
+                android:layout_height="60dip"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/item_charge_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="21dp"
+                    android:gravity="center_vertical"
+                    android:text="昵称:"
+                    android:textColor="@color/item_edittext"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/activity_settings_base_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/activity_margin_15dp"
+                    android:src="@drawable/ic_right" >
+                </ImageView>
+
+                <EditText
+                    android:id="@+id/activity_settings_name_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@id/activity_settings_base_iv"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="请输入昵称"
+                    android:paddingLeft="120dp"
+                    android:textColor="@color/item_edittext"
+                    android:textColorHint="@color/item_edittext_hint"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:background="#e7e7e6" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="10dp"
+                android:background="#e7e7e6" />
+
+            <RelativeLayout
+                android:id="@+id/activity_settings_phone_rl"
+                android:layout_width="fill_parent"
+                android:layout_height="60dip"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/item_charge_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="21dp"
+                    android:gravity="center_vertical"
+                    android:text="电话:"
+                    android:textColor="@color/item_edittext"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/activity_settings_base_iv11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/activity_margin_15dp"
+                    android:src="@drawable/ic_right" >
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/activity_settings_phone_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@id/activity_settings_base_iv11"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="请输入手机号"
+                    android:inputType="phone"
+                    android:paddingLeft="120dp"
+                    android:textColor="@color/item_edittext"
+                    android:textColorHint="@color/item_edittext_hint"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:background="#e7e7e6" />
+
+            <RelativeLayout
+                android:id="@+id/activity_settings_adress_rl"
+                android:layout_width="fill_parent"
+                android:layout_height="60dip"
+                android:visibility="gone"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/item_charge_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="21dp"
+                    android:gravity="center_vertical"
+                    android:text="地址:"
+                    android:textColor="@color/item_edittext"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/activity_settings_adress_et"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dip"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="请输入地址"
+                    android:inputType="text"
+                    android:paddingLeft="120dp"
+                    android:singleLine="true"
+                    android:textColor="@color/item_edittext"
+                    android:textColorHint="@color/item_edittext_hint"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/activity_margin_15dp"
+                    android:src="@drawable/ic_right" >
+                </ImageView>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:background="#e7e7e6" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="21dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_vertical"
+                android:text="账户信息"
+                android:textColor="#959595"
+                android:textSize="11sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:background="#e7e7e6" />
+
+            <RelativeLayout
+                android:id="@+id/activity_settings_about_id_rl"
+                android:layout_width="fill_parent"
+                android:layout_height="60dip"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/item_charge_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="21dp"
+                    android:gravity="center_vertical"
+                    android:text="用户ID:"
+                    android:textColor="@color/item_edittext"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/activity_settings_about_id"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dip"
+                    android:background="@null"
+                    android:enabled="false"
+                    android:gravity="center_vertical"
+                    android:hint=""
+                    android:inputType="text"
+                    android:paddingLeft="120dp"
+                    android:singleLine="true"
+                    android:textColor="#939393"
+                    android:textColorHint="@color/item_edittext"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:background="#e7e7e6" />
+
+            <RelativeLayout
+                android:id="@+id/activity_settings_about_rl"
+                android:layout_width="fill_parent"
+                android:layout_height="60dip"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/item_charge_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="21dp"
+                    android:gravity="center_vertical"
+                    android:text="管控帐号:"
+                    android:textColor="@color/item_edittext"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/activity_settings_about_et"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dip"
+                    android:background="@null"
+                    android:enabled="false"
+                    android:gravity="center_vertical"
+                    android:hint=""
+                    android:inputType="text"
+                    android:paddingLeft="120dp"
+                    android:singleLine="true"
+                    android:textColor="#939393"
+                    android:textColorHint="@color/item_edittext"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:background="#e7e7e6" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="60dip"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/item_charge_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="21dp"
+                    android:gravity="center_vertical"
+                    android:text="当前模式:"
+                    android:textColor="@color/item_edittext"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/activity_settings_mode_et"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dip"
+                    android:background="@null"
+                    android:enabled="false"
+                    android:gravity="center_vertical"
+                    android:hint=""
+                    android:inputType="text"
+                    android:paddingLeft="120dp"
+                    android:singleLine="true"
+                    android:textColor="#939393"
+                    android:textColorHint="@color/item_edittext"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:background="#e7e7e6" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="60dip"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/item_charge_bg"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="21dp"
+                    android:gravity="center_vertical"
+                    android:text="过期时间:"
+                    android:textColor="@color/item_edittext"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/activity_settings_time_et"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dip"
+                    android:background="@null"
+                    android:enabled="false"
+                    android:gravity="center_vertical"
+                    android:hint=""
+                    android:inputType="text"
+                    android:paddingLeft="120dp"
+                    android:singleLine="true"
+                    android:textColor="#939393"
+                    android:textColorHint="@color/item_edittext"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:background="#e7e7e6" />
+
+            <RelativeLayout
+                android:id="@+id/qrc_code_rl"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

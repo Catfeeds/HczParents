@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <com.goodsurfing.view.pullrefresh.ui.PullToRefreshListView
+        android:id="@+id/activity_allow_webs_lv"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="@dimen/activity_allow_web_head_50dp"
+        android:scrollbars="none" />
+
+    <LinearLayout
+        android:id="@+id/activity_allow_webs_select_ll"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/activity_allow_web_head_50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#e7e7e6" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/activity_allow_webs_select_all"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="全选"
+                android:textColor="@color/item_edittext"
+                android:textSize="13sp" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="#e7e7e6" />
+
+            <TextView
+                android:id="@+id/activity_allow_webs_delete"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="删除"
+                android:textColor="@color/item_edittext"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/activity_allow_webs_add_ll"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/activity_allow_web_head_50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#c8c8c8" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/activity_allow_webs_numbs"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="11dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/activity_allow_web_padding_left_10dp"
+                android:paddingRight="@dimen/activity_allow_web_padding_right_10dp"
+                android:text="0个网址"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/activity_allow_webs_add_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="21dp"
+                android:gravity="center_vertical"
+                android:text="添加应用或网址"
+                android:textColor="#73c940"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="2dp"
+                android:layout_toLeftOf="@id/activity_allow_webs_add_tv"
+                android:gravity="center_vertical"
+                android:src="@drawable/ic_black_add" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/activity_allow_nodata"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/activity_allow_nodata_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="102dp"
+            android:src="@drawable/net_felter_nodata3" />
+    </RelativeLayout>
+
+</RelativeLayout>

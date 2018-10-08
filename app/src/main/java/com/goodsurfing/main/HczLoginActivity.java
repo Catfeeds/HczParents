@@ -84,25 +84,25 @@ public class HczLoginActivity extends BaseActivity {
     }
 
     public static void gotoLogin(Context context) {
-        if (Constants.isShowLogin) {
+        Constants.clear(context);
             ActivityUtil.showPopWindow4Tips(context, new View(context), false, "请登录后再操作");
             return;
-        }
-        Intent intent = new Intent(context, HczLoginActivity.class);
-        intent.putExtra("code", 0);
-        (context).startActivity(intent);
-        ((Activity) context).overridePendingTransition(R.anim.base_slide_right_in, R.anim.base_slide_remain);
+//        }
+//        Intent intent = new Intent(context, HczLoginActivity.class);
+//        intent.putExtra("code", 0);
+//        (context).startActivity(intent);
+//        ((Activity) context).overridePendingTransition(R.anim.base_slide_right_in, R.anim.base_slide_remain);
     }
 
     public static void gotoLogin(Context context, int code) {
-        if (Constants.isShowLogin) {
+        Constants.clear(context);
             ActivityUtil.showPopWindow4Tips(context, new View(context), false, "请登录后再操作");
             return;
-        }
-        Intent intent = new Intent(context, HczLoginActivity.class);
-        intent.putExtra("code", code);
-        (context).startActivity(intent);
-        ((Activity) context).overridePendingTransition(R.anim.base_slide_right_in, R.anim.base_slide_remain);
+//        }
+//        Intent intent = new Intent(context, HczLoginActivity.class);
+//        intent.putExtra("code", code);
+//        (context).startActivity(intent);
+//        ((Activity) context).overridePendingTransition(R.anim.base_slide_right_in, R.anim.base_slide_remain);
     }
 
     private void init() {
@@ -300,6 +300,7 @@ public class HczLoginActivity extends BaseActivity {
             codeView.setEnabled(true);
             return;
         }
+        codeView.setEnabled(false);
         HczGetCodeNet getCodeNet = new HczGetCodeNet(this, new Handler() {
             @Override
             public void handleMessage(Message msg) {

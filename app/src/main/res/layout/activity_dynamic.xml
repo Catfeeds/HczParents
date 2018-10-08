@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/dynamic_title"
+        layout="@layout/activity_head" />
+
+    <View
+        android:id="@+id/activity_dynamic_line"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/dynamic_title"
+        android:background="#d6d6d6" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/activity_dynamic_recyc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/activity_dynamic_line"
+        android:background="@color/white" />
+    <RelativeLayout
+        android:id="@+id/activity_dynamic_nodata"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/activity_allow_nodata_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/net_felter_nodata3" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/activity_dynamic_calendar_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/activity_dynamic_line"
+        android:background="#50d6d6d6"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/activity_dynamic_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:mcv_selectionColor="#73d793"
+            app:mcv_showOtherDates="all"
+            app:mcv_tileSize="30sp"
+            app:mcv_tileWidth="@dimen/activity_add_ll_head_40dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#d6d6d6" />
+
+        <Button
+            android:id="@+id/activity_dynamic_gettime"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_margin_top_40dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="确定" />
+    </LinearLayout>
+
+</RelativeLayout>

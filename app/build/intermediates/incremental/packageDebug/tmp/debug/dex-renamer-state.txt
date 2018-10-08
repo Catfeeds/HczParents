@@ -1,4 +1,4 @@
-#Fri Sep 07 18:31:07 CST 2018
+#Sun Sep 30 18:08:34 CST 2018
 base.0=G\:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
 path.1=classes.dex
 renamed.1=classes2.dex

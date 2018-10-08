@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/activity_bg_gray"
+    android:orientation="vertical" >
+
+       <include android:id="@+id/title_layout"
+        layout="@layout/activity_head" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dip"
+            android:layout_marginTop="10dp"
+            android:background="#e7e7e6" />
+
+        <!-- 网址 -->
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/activity_add_web_head_50dp"
+            android:layout_gravity="center_vertical"
+            android:background="@android:color/white"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/activity_add_webs_tv_web_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/activity_add_web_view_margin_left_15dp"
+                android:gravity="center_vertical"
+                android:text="网址"
+                android:textColor="@color/item_edittext"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/activity_add_webs_tv_web_defult"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/activity_margin_5dp"
+                android:layout_toRightOf="@id/activity_add_webs_tv_web_hint"
+                android:gravity="center_vertical"
+                android:text="http(s)://"
+                android:textColor="@color/item_edittext"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/activity_add_webs_et_web"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_add_web_edit_head_50dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/activity_add_web_edit_margin_right_10dp"
+                android:background="@null"
+                android:digits="qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM1234567890.:/"
+                android:gravity="center_vertical"
+                android:hint="请输入网址"
+                android:paddingLeft="@dimen/activity_add_web_padding_left_120dp"
+                android:singleLine="true"
+                android:textColor="@color/item_edittext"
+                android:textColorHint="@color/item_edittext_hint"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dip"
+            android:background="#e7e7e6" />
+
+        <!-- 名称 -->
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/activity_add_web_head_50dp"
+            android:layout_gravity="center_vertical"
+            android:background="@android:color/white"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/activity_add_web_view_margin_left_15dp"
+                android:gravity="center_vertical"
+                android:text="名称"
+                android:textColor="@color/item_edittext"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/activity_add_webs_et_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_add_web_edit_head_50dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/activity_add_web_edit_margin_right_10dp"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="请输入名称"
+                android:inputType="text"
+                android:paddingLeft="@dimen/activity_add_web_padding_left_120dp"
+                android:singleLine="true"
+                android:textColor="@color/item_edittext"
+                android:textColorHint="@color/item_edittext_hint"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dip"
+            android:background="#e7e7e6" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dip"
+            android:layout_marginTop="10dp"
+            android:background="#e7e7e6" />
+
+        <!-- 名称 -->
+
+        <RelativeLayout
+            android:id="@+id/activity_add_webs_rl"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/activity_add_web_head_50dp"
+            android:layout_gravity="center_vertical"
+            android:background="@android:color/white"
+            android:clickable="true"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/activity_add_webs_tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/activity_add_web_view_margin_left_15dp"
+                android:gravity="center_vertical"
+                android:text="网址类别"
+                android:textColor="@color/item_edittext"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/activity_add_webs_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/activity_add_web_view_margin_left_15dp"
+                android:src="@drawable/ic_pull_down" />
+
+            <TextView
+                android:id="@+id/activity_add_webs_tv"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_add_web_edit_head_50dp"
+                android:layout_marginLeft="@dimen/activity_add_web_padding_left_120dp"
+                android:layout_toLeftOf="@id/activity_add_webs_iv"
+                android:gravity="center_vertical"
+                android:hint="选择网址类别"
+                android:textColor="@color/item_edittext"
+                android:textColorHint="@color/item_edittext_hint"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dip"
+            android:background="#e7e7e6" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_vertical" >
+
+        <RelativeLayout
+            android:id="@+id/activity_add_webs_add_rl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_add_web_button_head_40dp"
+            android:layout_marginLeft="@dimen/activity_margin_left_20dp"
+            android:layout_marginRight="@dimen/activity_margin_right_20dp"
+            android:background="@drawable/view_bottom_button_bg" >
+
+            <TextView
+                android:id="@+id/activity_add_webs_tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="确认添加到白名单"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

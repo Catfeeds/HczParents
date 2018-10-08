@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+  >
+
+    <include
+        android:id="@+id/title_layout"
+        layout="@layout/activity_head" />
+    <RelativeLayout
+        android:layout_below="@id/title_layout"
+        android:id="@+id/hcz_trajectory_time_line"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="@dimen/activity_head_title">
+        <ImageView
+            android:id="@+id/iv_trajectory_left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:paddingLeft="@dimen/activity_margin_20dp"
+            android:paddingRight="@dimen/activity_margin_20dp"
+            android:layout_marginLeft="@dimen/activity_add_ll_head_45dp"
+            android:src="@drawable/ic_head_left" />
+
+        <ImageView
+            android:id="@+id/iv_trajectory_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_add_ll_head_45dp"
+            android:paddingLeft="@dimen/activity_margin_20dp"
+            android:paddingRight="@dimen/activity_margin_20dp"
+            android:src="@drawable/map_children_info_right_jiantou"
+             />
+
+        <TextView
+            android:id="@+id/tv_trajectory_title"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/activity_margin_5dp"
+            android:ellipsize="middle"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="#242424"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <com.goodsurfing.view.TrajectoryRecyclerView
+        android:id="@+id/hcz_trajectory_recycler"
+        android:layout_below="@id/hcz_trajectory_time_line"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent"/>
+    <LinearLayout
+        android:id="@+id/activity_trajectory_calendar_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title_layout"
+        android:background="#50d6d6d6"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/activity_trajectory_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:mcv_selectionColor="#73d793"
+            app:mcv_showOtherDates="all"
+            app:mcv_tileSize="30sp"
+            app:mcv_tileWidth="@dimen/activity_add_ll_head_40dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#d6d6d6" />
+
+        <Button
+            android:id="@+id/activity_trajectory_gettime"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_margin_top_40dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="确定" />
+    </LinearLayout>
+</RelativeLayout>

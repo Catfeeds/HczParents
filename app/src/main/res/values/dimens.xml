@@ -123,4 +123,6 @@
     <dimen name="activity_price_ll_height">62dp</dimen>
     <dimen name="dimen_155dp">155dp</dimen>
     <dimen name="width_80dp">80dp</dimen>
+    <dimen name="indicator_txt_margin_top">4dp</dimen>
+    <dimen name="space_12">12.0sp</dimen>
 </resources>

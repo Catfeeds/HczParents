@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/title_layout"
+        layout="@layout/activity_head" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/normal_map_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="普通地图" />
+
+        <Button
+            android:id="@+id/satellite_map_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="卫星地图" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/activity_mode_tab_1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp" >
+
+        <ImageView
+            android:id="@+id/activity_mode_tab1_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_map_youn" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dip"
+            android:layout_toRightOf="@id/activity_mode_tab1_iv"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:text="添加孩子手机"
+                android:textColor="#505050"
+                android:textSize="15sp" >
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="随时随地知道孩子位置"
+                android:textColor="#959595"
+                android:textSize="11sp" >
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:singleLine="true"
+                android:text="随时随地保护孩子不受不良内容侵害"
+                android:textColor="#959595"
+                android:textSize="11sp" >
+            </TextView>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/activity_map_add_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="18dp"
+            android:background="@drawable/ic_add_map_youn"
+            android:checked="true"
+            android:focusable="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/bmapview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true" />
+
+        <!-- 实时交通图 -->
+
+        <Button
+            android:id="@+id/traffic_map_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:text="打开实时路况"
+            android:visibility="gone" />
+
+        <!-- 热力图 -->
+
+        <Button
+            android:id="@+id/heat_map_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:text="打开热力图"
+            android:visibility="gone" />
+
+        <!-- 覆盖物 -->
+
+        <Button
+            android:id="@+id/overlay_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/heat_map_btn"
+            android:layout_margin="5dp"
+            android:text="显示Marker覆盖物"
+            android:visibility="gone" />
+
+        <!-- 定位按钮 -->
+
+        <Button
+            android:id="@+id/locate_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="5dp"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/children_info_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" >
+
+            <RelativeLayout
+                android:id="@+id/children_num_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/white"
+                android:padding="10dp" >
+
+                <TextView
+                    android:id="@+id/children_num_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:textColor="#212121"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/children_num_juli_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/children_num_name_tv"
+                    android:textColor="#6f6f6f"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/children_num_address_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/children_num_name_tv"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#6f6f6f"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/children_num_hint_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/children_num_address_tv"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="2dp"
+                    android:text="最后更新"
+                    android:textColor="#6f6f6f"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/children_num_time_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/children_num_address_tv"
+                    android:layout_marginTop="2dp"
+                    android:layout_toRightOf="@id/children_num_hint_tv"
+                    android:textColor="#6f6f6f"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/children_num_info_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:drawablePadding="7dp"
+                    android:drawableRight="@drawable/map_children_info_right_jiantou"
+                    android:text="详情"
+                    android:textColor="#73c940" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/ZoomControlView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/children_num_rl"
+                android:layout_marginBottom="10.0dip" >
+
+                <LinearLayout
+                    android:id="@+id/childen_head_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="horizontal" >
+
+                    <com.goodsurfing.view.RoundImageView
+                        android:id="@+id/activity_children_head_1"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/setting_children_head_defult_btn"
+                        android:scaleType="center" />
+
+                    <com.goodsurfing.view.RoundImageView
+                        android:id="@+id/activity_children_head_2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/setting_children_head_defult_btn"
+                        android:scaleType="center" />
+
+                    <com.goodsurfing.view.RoundImageView
+                        android:id="@+id/activity_children_head_3"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/setting_children_head_defult_btn"
+                        android:scaleType="center" />
+
+                    <com.goodsurfing.view.RoundImageView
+                        android:id="@+id/activity_children_head_4"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/setting_children_head_defult_btn"
+                        android:scaleType="center" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/zoomout"
+                    android:layout_width="40dip"
+                    android:layout_height="40dip"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5.0dip"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/zoom_in_btn" />
+
+                <Button
+                    android:id="@+id/zoomin"
+                    android:layout_width="40dip"
+                    android:layout_height="40dip"
+                    android:layout_above="@id/zoomout"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5.0dip"
+                    android:background="@drawable/zoom_out_btn" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

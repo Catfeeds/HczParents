@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_house_deselect_bg"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_head_title"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="我的"
+        android:textColor="#242424"
+        android:textSize="20sp" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#e7e7e6" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/activity_my_ation"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/activity_fragment_my_rl_head_50dp"
+                android:layout_marginTop="@dimen/activity_margin_10dp"
+                android:background="@drawable/white" >
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#e7e7e6" />
+
+                <ImageView
+                    android:id="@+id/activity_my_ation_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="18dp"
+                    android:src="@drawable/ic_my_about" />
+
+                <TextView
+                     android:id="@+id/activity_my_ation_tx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dip"
+                    android:layout_toRightOf="@id/activity_my_ation_iv"
+                    android:text="账户信息"
+                    android:textColor="#505050"
+                    android:textSize="15sp" >
+                </TextView>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="18dp"
+                    android:src="@drawable/ic_right" />
+            </RelativeLayout>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:background="#e7e7e6" />
+
+            <RelativeLayout
+                android:id="@+id/activity_my_add_child"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/activity_fragment_my_rl_head_50dp"
+                android:background="@drawable/white" >
+
+                <ImageView
+                    android:id="@+id/activity_my_add_child_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="18dp"
+                    android:src="@drawable/ic_my_addchild" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dip"
+                    android:layout_toRightOf="@id/activity_my_add_child_iv"
+                    android:text="孩子设备"
+                    android:textColor="#505050"
+                    android:textSize="15sp"></TextView>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="18dp"
+                    android:src="@drawable/ic_right" />
+            </RelativeLayout>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:background="#e7e7e6" />
+
+            <RelativeLayout
+                android:id="@+id/activity_my_set_pass"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/activity_fragment_my_rl_head_50dp"
+                android:background="@drawable/white" >
+
+                <ImageView
+                    android:id="@+id/activity_my_set_pass_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="18dp"
+                    android:src="@drawable/ic_my_setpass" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dip"
+                    android:layout_toRightOf="@id/activity_my_set_pass_iv"
+                    android:text="修改密码"
+                    android:textColor="#505050"
+                    android:textSize="15sp" >
+                </TextView>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="18dp"
+                    android:src="@drawable/ic_right" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:background="#e7e7e6" />
+
+            <RelativeLayout
+                android:id="@+id/activity_my_shoushi_pass"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/activity_fragment_my_rl_head_50dp"
+                android:background="@drawable/white" >
+
+                <ImageView
+                    android:id="@+id/activity_my_shoushi_pass_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="18dp"
+                    android:src="@drawable/ic_my_shuoshi" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dip"
+                    android:layout_toRightOf="@id/activity_my_shoushi_pass_iv"
+                    android:text="手势密码"
+                    android:textColor="#505050"
+                    android:textSize="15sp" >
+                </TextView>
+
+                <CheckBox
+                    android:id="@+id/activity_my_ss_cb"
+                    style="@style/MyCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="18dp" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/activity_my_set_shoushi_pass_line"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:background="#e7e7e6"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/activity_my_set_shoushi_pass"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/activity_fragment_my_rl_head_50dp"
+                android:background="@drawable/white"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:id="@+id/activity_my_set_shoushi_pass_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="18dp"
+                    android:src="@drawable/ic_my_set_shuoshi" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dip"
+                    android:layout_toRightOf="@id/activity_my_set_shoushi_pass_iv"
+                    android:text="修改手势密码"
+                    android:textColor="#505050"
+                    android:textSize="15sp" >
+                </TextView>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="18dp"
+                    android:src="@drawable/ic_right" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:background="#e7e7e6" />
+     <RelativeLayout
+                android:id="@+id/activity_my_help"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/activity_fragment_my_rl_head_50dp"
+                android:layout_marginTop="@dimen/activity_margin_10dp"
+                android:background="@drawable/white" >
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#e7e7e6" />
+
+                <ImageView
+                    android:id="@+id/activity_my_help_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="18dp"
+                    android:src="@drawable/ic_my_help" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dip"
+                    android:layout_toRightOf="@id/activity_my_help_iv"
+                    android:text="帮助中心"
+                    android:textColor="#505050"
+                    android:textSize="15sp" >
+                </TextView>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="18dp"
+                    android:src="@drawable/ic_right" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/activity_qq_help"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/activity_fragment_my_rl_head_50dp"
+                android:background="@drawable/white" >
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#e7e7e6" />
+
+                <ImageView
+                    android:id="@+id/activity_my_qq_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="18dp"
+                    android:src="@drawable/qq_kefu" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dip"
+                    android:layout_toRightOf="@id/activity_my_qq_iv"
+                    android:text="QQ客服"
+                    android:textColor="#505050"
+                    android:textSize="15sp" >
+                </TextView>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="18dp"
+                    android:src="@drawable/ic_right" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:background="#e7e7e6" />
+
+            <RelativeLayout
+                android:id="@+id/activity_my_about"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/activity_fragment_my_rl_head_50dp"
+                android:background="@drawable/white" >
+
+                <ImageView
+                    android:id="@+id/activity_my_about_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="18dp"
+                    android:src="@drawable/ic_my_aboutup" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dip"
+                    android:layout_toRightOf="@id/activity_my_about_iv"
+                    android:text="关于好上网"
+                    android:textColor="#505050"
+                    android:textSize="15sp" >
+                </TextView>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="18dp"
+                    android:src="@drawable/ic_right" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:background="#e7e7e6" />
+
+            <RelativeLayout
+                android:id="@+id/activity_my_fx"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/activity_fragment_my_rl_head_50dp"
+                android:background="@drawable/white"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:id="@+id/activity_my_fx_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="18dp"
+                    android:src="@drawable/ic_my_fx" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dip"
+                    android:layout_toRightOf="@id/activity_my_fx_iv"
+                    android:text="分享"
+                    android:textColor="#505050"
+                    android:textSize="15sp" >
+                </TextView>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="18dp"
+                    android:src="@drawable/ic_right" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:background="#e7e7e6" />
+
+            <RelativeLayout
+                android:id="@+id/activity_my_xufei"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/activity_fragment_my_rl_head_50dp"
+                android:layout_marginTop="@dimen/activity_margin_20dp"
+                android:background="@drawable/white" >
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#e7e7e6" />
+
+                <ImageView
+                    android:id="@+id/activity_my_xufei_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="18dp"
+                    android:src="@drawable/ic_my_money" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dip"
+                    android:layout_toRightOf="@id/activity_my_xufei_iv"
+                    android:text="续费"
+                    android:textColor="#505050"
+                    android:textSize="15sp" >
+                </TextView>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="18dp"
+                    android:src="@drawable/ic_right" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#e7e7e6" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/activity_my_fl"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="@dimen/activity_fragment_my_margin_top_10dp"
+                android:background="@drawable/view_bottom_button_bg_yellow"
+                android:text="退出登录"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

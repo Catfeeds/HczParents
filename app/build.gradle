@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+
+    defaultConfig {
+        applicationId "com.goodsurfing.app"
+        minSdkVersion 21
+        targetSdkVersion 27
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    useLibrary 'org.apache.http.legacy'
+}
+dependencies {
+    implementation 'com.google.code.gson:gson:2.2.4'
+    implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.prolificinteractive:material-calendarview:1.4.0'
+    implementation 'com.google.zxing:core:3.2.1'
+    //zxing核心依赖
+    implementation 'com.journeyapps:zxing-android-embedded:3.3.0'
+    implementation files('libs/alipaySdk-20160111.jar')
+    implementation files('libs/BaiduLBS_Android.jar')
+    implementation files('libs/fastjson-1.1.40.jar')
+    implementation files('libs/json_simple-1.1.jar')
+    implementation files('libs/libammsdk.jar')
+    implementation files('libs/nineoldandroids-2.4.0.jar')
+    implementation files('libs/okhttp-3.9.1.jar')
+    implementation files('libs/okio-1.14.0.jar')
+    implementation files('libs/umeng-analytics-v6.1.2.jar')
+    implementation files('libs/xUtils-2.6.14.jar')
+    implementation files('libs/open_sdk_r6008_lite.jar')
+    implementation 'org.quanqi:mpandroidchart:1.7.5'
+}
+
