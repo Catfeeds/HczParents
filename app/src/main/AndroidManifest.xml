@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.goodsurfing.app"
-    android:versionCode="60"
-    android:versionName="6.0">
+    android:versionCode="61"
+    android:versionName="6.1">
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -65,7 +65,13 @@
             android:name="com.goodsurfing.main.MoreActivity"
             android:theme="@style/HaoUp.Transparent.Theme"></activity>
         <activity
-            android:name="com.goodsurfing.main.DynamicActivity"
+            android:name="com.goodsurfing.hcz.HczChargeListActivity"
+            android:theme="@style/HaoUp.Transparent.Theme"></activity>
+        <activity
+            android:name="com.goodsurfing.hcz.HczChargeChoicesActivity"
+            android:theme="@style/HaoUp.Transparent.Theme"></activity>
+        <activity
+            android:name="com.goodsurfing.hcz.DynamicActivity"
             android:theme="@style/HaoUp.Transparent.Theme"></activity>
         <activity
             android:name="com.goodsurfing.main.BindPhoneActivity"
@@ -103,7 +109,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/HaoUp.Transparent.Theme"></activity>
         <activity
-            android:name="com.goodsurfing.main.HczMainActivity"
+            android:name="com.goodsurfing.hcz.HczMainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/HaoUp.Transparent.Theme"></activity>
@@ -112,7 +118,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/HaoUp.Transparent.Theme"></activity>
         <activity
-            android:name="com.goodsurfing.main.TimeControllerActivity1"
+            android:name="com.goodsurfing.hcz.TimeControllerActivity1"
             android:screenOrientation="portrait"
             android:theme="@style/HaoUp.Transparent.Theme"></activity>
         <activity
@@ -170,19 +176,19 @@
             android:screenOrientation="portrait"
             android:theme="@style/HaoUp.Transparent.Theme"></activity>
         <activity
-            android:name="com.goodsurfing.main.HczPersonInfoActivity"
+            android:name="com.goodsurfing.hcz.HczPersonInfoActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HaoUp.Transparent.Theme"></activity>
         <activity
-            android:name="com.goodsurfing.main.HczLoginActivity"
+            android:name="com.goodsurfing.hcz.HczLoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HaoUp.Transparent.Theme"></activity>
         <activity
-            android:name="com.goodsurfing.main.HczFindPwdActivity"
+            android:name="com.goodsurfing.hcz.HczFindPwdActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HaoUp.Transparent.Theme"></activity>
         <activity
-            android:name="com.goodsurfing.main.HczSetPwdActivity"
+            android:name="com.goodsurfing.hcz.HczSetPwdActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HaoUp.Transparent.Theme"></activity>
         <activity
@@ -247,7 +253,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/HaoUp.Transparent.Theme"></activity>
         <activity
-            android:name="com.goodsurfing.main.ApplicationControlsActivity"
+            android:name="com.goodsurfing.hcz.ApplicationControlsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HaoUp.Transparent.Theme"></activity>
         <activity
@@ -255,11 +261,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/HaoUp.Transparent.Theme"></activity>
         <activity
-            android:name="com.goodsurfing.main.ModeChangeActivity1"
+            android:name="com.goodsurfing.hcz.ModeChangeActivity1"
             android:screenOrientation="portrait"
             android:theme="@style/HaoUp.Transparent.Theme"></activity>
         <activity
-            android:name="com.goodsurfing.main.HczBindActivity"
+            android:name="com.goodsurfing.hcz.HczBindActivity"
             android:screenOrientation="portrait"
             android:theme="@style/HaoUp.Transparent.Theme"></activity>
         <activity

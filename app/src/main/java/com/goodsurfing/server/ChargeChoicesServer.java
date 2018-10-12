@@ -39,7 +39,7 @@ public class ChargeChoicesServer extends BaseDataService {
 								.getString("id"));
 						bean.setName(pages.getJSONObject(i)
 								.getString("Name"));
-						bean.setPrice(pages.getJSONObject(i)
+						bean.setMoney(pages.getJSONObject(i)
 								.getString("Price"));
 						bean.setType(pages.getJSONObject(i)
 								.getString("Time"));

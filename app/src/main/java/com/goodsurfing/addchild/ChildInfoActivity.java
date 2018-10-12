@@ -83,7 +83,7 @@ public class ChildInfoActivity extends BasePhotoActivity {
         headIv.setmBorderThickness(15);
         userIndex = getIntent().getExtras().getInt("childId");
         friend = Constants.childs.get(userIndex);
-        id = oldId = friend.getClientDeviceId();
+        id = oldId = friend.getImg();
         phoneTv.setText(friend.getMobile());
         nameEt.setText(friend.getName());
         yunyTv.setText(friend.getDevice());

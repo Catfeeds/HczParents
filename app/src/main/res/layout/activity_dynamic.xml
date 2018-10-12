@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:src="@drawable/net_felter_nodata3" />
+            android:src="@drawable/dynamic_nodata" />
     </RelativeLayout>
 
     <LinearLayout

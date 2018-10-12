@@ -19,11 +19,11 @@ public class DynamicBean implements Serializable{
      * Time : 2018-06-12 07:02:46
      */
 
-    private String Lat;
-    private String Lng;
-    private String Address;
-    private String Date;
-    private String Msg;
+    private String Lat="28.228711";
+    private String Lng="112.954176";
+    private String Address="";
+    private String Date="";
+    private String Msg="";
     private int Type;
 
     public DynamicBean() {

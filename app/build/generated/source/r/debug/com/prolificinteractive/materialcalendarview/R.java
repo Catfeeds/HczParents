@@ -30,26 +30,26 @@ public final class R {
         public static final int mcv_text_date_light = 0x7f050037;
     }
     public static final class drawable {
-        public static final int mcv_action_next = 0x7f0700fd;
-        public static final int mcv_action_previous = 0x7f0700fe;
+        public static final int mcv_action_next = 0x7f0700fe;
+        public static final int mcv_action_previous = 0x7f0700ff;
     }
     public static final class id {
-        public static final int all = 0x7f080106;
-        public static final int decorated_disabled = 0x7f080150;
-        public static final int defaults = 0x7f080151;
-        public static final int friday = 0x7f080171;
-        public static final int mcv_pager = 0x7f080204;
-        public static final int monday = 0x7f080209;
-        public static final int month = 0x7f08020a;
-        public static final int none = 0x7f08020c;
-        public static final int other_months = 0x7f080214;
-        public static final int out_of_range = 0x7f080215;
-        public static final int saturday = 0x7f080238;
-        public static final int sunday = 0x7f08023e;
-        public static final int thursday = 0x7f080257;
-        public static final int tuesday = 0x7f080269;
-        public static final int wednesday = 0x7f080284;
-        public static final int week = 0x7f080285;
+        public static final int all = 0x7f080108;
+        public static final int decorated_disabled = 0x7f080152;
+        public static final int defaults = 0x7f080153;
+        public static final int friday = 0x7f080173;
+        public static final int mcv_pager = 0x7f080206;
+        public static final int monday = 0x7f08020b;
+        public static final int month = 0x7f08020c;
+        public static final int none = 0x7f08020e;
+        public static final int other_months = 0x7f080216;
+        public static final int out_of_range = 0x7f080217;
+        public static final int saturday = 0x7f08023a;
+        public static final int sunday = 0x7f080240;
+        public static final int thursday = 0x7f080259;
+        public static final int tuesday = 0x7f08026b;
+        public static final int wednesday = 0x7f080286;
+        public static final int week = 0x7f080287;
     }
     public static final class string {
         public static final int calendar = 0x7f0d0009;

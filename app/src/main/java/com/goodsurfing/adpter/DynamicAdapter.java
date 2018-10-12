@@ -11,13 +11,11 @@ import android.widget.TextView;
 
 import com.goodsurfing.app.R;
 import com.goodsurfing.beans.DynamicBean;
-import com.goodsurfing.constants.Constants;
-import com.goodsurfing.main.ApplicationControlsActivity;
+import com.goodsurfing.hcz.ApplicationControlsActivity;
 import com.goodsurfing.map.HczMapActivity;
 import com.goodsurfing.utils.ActivityUtil;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class DynamicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

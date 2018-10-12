@@ -26,6 +26,9 @@ import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
 
+/**
+ * 好上网 套餐列表
+ */
 public class ChargeChoicesActivity extends BaseActivity {
 
 	private final static String TAG = "ChargeChoicesActivity";
@@ -86,7 +89,7 @@ public class ChargeChoicesActivity extends BaseActivity {
 				Bundle bundle = new Bundle();
 				bundle.putString("packgeId", listAdapter.get(position).getId());
 				bundle.putString("CHARGE_TYPE", listAdapter.get(position).getName());
-				bundle.putString("CHARGE_SUM", listAdapter.get(position).getPrice() + "元");
+				bundle.putString("CHARGE_SUM", listAdapter.get(position).getMoney() + "元");
 				intent.putExtras(bundle);
 				startActivity(intent);
 			}

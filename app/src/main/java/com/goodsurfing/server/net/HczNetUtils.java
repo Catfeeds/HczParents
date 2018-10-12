@@ -91,7 +91,7 @@ public abstract class HczNetUtils {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
-                onHczFailure(volleyError.toString());
+                onHczFailure("服务器忙，请稍候再试");
             }
         }) {
             @Override

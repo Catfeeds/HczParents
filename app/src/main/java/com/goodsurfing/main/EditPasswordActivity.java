@@ -15,6 +15,7 @@ import com.android.component.constants.What;
 import com.goodsurfing.app.R;
 import com.goodsurfing.base.BaseActivity;
 import com.goodsurfing.constants.Constants;
+import com.goodsurfing.hcz.HczLoginActivity;
 import com.goodsurfing.server.PutDataServer;
 import com.goodsurfing.server.net.HczAlterPwdNet;
 import com.goodsurfing.server.utils.BaseDataService.DataServiceResponder;

@@ -251,7 +251,7 @@ public class RegisterActivity extends BaseActivity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				bodyName = listAdapter.get(position).getName();
-				fee = listAdapter.get(position).getPrice();
+				fee = listAdapter.get(position).getMoney();
 				packgeId = listAdapter.get(position).getId();
 				for (ChargeIDBean bean : listAdapter) {
 					bean.setChecked(false);
@@ -458,7 +458,7 @@ public class RegisterActivity extends BaseActivity {
 					chargeLayout.setLayoutParams(params);
 					listAdapter.get(0).setChecked(true);
 					bodyName = listAdapter.get(0).getName();
-					fee = listAdapter.get(0).getPrice();
+					fee = listAdapter.get(0).getMoney();
 					packgeId = listAdapter.get(0).getId();
 					Adapter.notifyDataSetChanged();
 				} else {

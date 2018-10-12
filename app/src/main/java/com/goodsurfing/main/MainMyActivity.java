@@ -1,7 +1,6 @@
 package com.goodsurfing.main;
 
 import java.security.MessageDigest;
-import java.util.HashMap;
 import java.util.List;
 
 import android.annotation.SuppressLint;
@@ -48,10 +47,13 @@ import com.goodsurfing.beans.User;
 import com.goodsurfing.constants.Constants;
 import com.goodsurfing.fundlock.GestureEditActivity;
 import com.goodsurfing.fundlock.GestureVerifyActivity;
-import com.goodsurfing.server.CheckServerServer;
-import com.goodsurfing.server.GetServerListServer;
+import com.goodsurfing.hcz.HczBindActivity;
+import com.goodsurfing.hcz.HczChargeChoicesActivity;
+import com.goodsurfing.hcz.HczFindPwdActivity;
+import com.goodsurfing.hcz.HczLoginActivity;
+import com.goodsurfing.hcz.HczPersonInfoActivity;
+import com.goodsurfing.hcz.HczSetPwdActivity;
 import com.goodsurfing.server.LoginServer;
-import com.goodsurfing.server.net.HczCheckCityNet;
 import com.goodsurfing.server.net.HczGetCodeNet;
 import com.goodsurfing.server.net.HczGetServerNet;
 import com.goodsurfing.server.net.HczLoginNet;
@@ -64,8 +66,6 @@ import com.goodsurfing.utils.RegisterCodeTimer;
 import com.goodsurfing.utils.SharUtil;
 import com.goodsurfing.view.customview.ServiceOrTypeDialog;
 import com.goodsurfing.view.customview.ZjWheelView.OnWheelViewListener;
-import com.goodsurfing.view.customview.city.LocationDialogBuilder;
-import com.goodsurfing.view.customview.city.LocationDialogBuilder.OnSaveLocationLister;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
@@ -81,8 +81,10 @@ import org.json.JSONObject;
 public class MainMyActivity extends BaseFragment implements OnClickListener {
     private RelativeLayout xgssLayout;// 修改手势密码
     private RelativeLayout xfLayout;// 续费
-    private RelativeLayout hczxfLayout;// 续费
+    private RelativeLayout hczxfLayout;// 手势
+    private RelativeLayout hczxgssLayout;// 手势
     private CheckBox ssCheckBox;// 手势密码开启ChceBox
+    private CheckBox hczssCheckBox;// 手势密码开启ChceBox
     private Button loginButton;
     private View lineView;
     private View rootView;
@@ -119,6 +121,8 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
         hswMyView.findViewById(R.id.activity_my_ation).setOnClickListener(this);
         hswMyView.findViewById(R.id.activity_my_set_pass).setOnClickListener(this);
         xgssLayout = hswMyView.findViewById(R.id.activity_my_set_shoushi_pass);
+        hczssCheckBox = hczMyView.findViewById(R.id.activity_my_ss_cb);
+        hczxgssLayout = hczMyView.findViewById(R.id.activity_my_set_shoushi_pass);
         hswMyView.findViewById(R.id.activity_my_help).setOnClickListener(this);
         hswMyView.findViewById(R.id.activity_my_fx).setOnClickListener(this);
         xfLayout = hswMyView.findViewById(R.id.activity_my_xufei);
@@ -129,8 +133,6 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
         hswMyView.findViewById(R.id.activity_qq_help).setOnClickListener(this);
         lineView = hswMyView.findViewById(R.id.activity_my_set_shoushi_pass_line);
         bindTextView = (TextView) hswMyView.findViewById(R.id.activity_my_bind_tx);
-
-
         hczMyView.findViewById(R.id.activity_my_ation).setOnClickListener(this);
         hczMyView.findViewById(R.id.activity_my_set_pass).setOnClickListener(this);
         hczMyView.findViewById(R.id.activity_my_set_shoushi_pass).setOnClickListener(this);
@@ -223,6 +225,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
             }
         });
         getSavedDatas();
+        checkCity();
         cityTextView.setText(cityName);
         serviceTextView.setText(serviceName);
         if (mobile != null && !"".equals(mobile)) {
@@ -258,19 +261,22 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
             loginButton.setBackgroundResource(R.drawable.view_bottom_button_bg_yellow);
             loginButton.setText("退出登录");
             ssCheckBox.setChecked(getActivity().getSharedPreferences(Constants.SP_NAME, 0).getBoolean(Constants.CECKBOX_KEY + Constants.userId, false));
+            hczssCheckBox.setChecked(getActivity().getSharedPreferences(Constants.SP_NAME, 0).getBoolean(Constants.CECKBOX_KEY + Constants.userId, false));
             if (ssCheckBox.isChecked()) {
                 xgssLayout.setVisibility(View.VISIBLE);
+                hczxgssLayout.setVisibility(View.VISIBLE);
                 lineView.setVisibility(View.VISIBLE);
             } else {
+                hczxgssLayout.setVisibility(View.GONE);
                 xgssLayout.setVisibility(View.GONE);
                 lineView.setVisibility(View.GONE);
             }
             if (!Constants.isRegistShow) {
                 xfLayout.setVisibility(View.GONE);
-                hczxfLayout.setVisibility(View.GONE);
+//                hczxfLayout.setVisibility(View.GONE);
             }else {
                 xfLayout.setVisibility(View.VISIBLE);
-                hczxfLayout.setVisibility(View.VISIBLE);
+//                hczxfLayout.setVisibility(View.VISIBLE);
             }
         }
     }
@@ -321,8 +327,13 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
                     LoginActivity.gotoLogin(getActivity());
                     return;
                 }
+                Intent xufei;
+                if (SharUtil.getService(getActivity()).equals(Constants.APP_USER_TYPE)) {
+                    xufei = new Intent(getActivity(), HczChargeChoicesActivity.class);
+                } else {
+                    xufei = new Intent(getActivity(), ChargeChoicesActivity.class);
+                }
                 ActivityUtil.sendEvent4UM(getActivity(), "functionSwitch", "ChargeChoices", 22);
-                Intent xufei = new Intent(getActivity(), ChargeChoicesActivity.class);
                 startActivity(xufei);
                 break;
             case R.id.activity_my_set_shoushi_pass:
@@ -357,7 +368,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
                 dialog();
                 break;
             case R.id.activity_my_ss_cb:
-                onCheckSs(ssCheckBox.isChecked());
+                onCheckSs(((CheckBox)v).isChecked());
                 break;
             case R.id.activity_login_item_rl_login:
                 if (login_ok) {
@@ -456,6 +467,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
         Editor editor = getActivity().getSharedPreferences(Constants.SP_NAME, 0).edit();
         if (arg1) {
             xgssLayout.setVisibility(View.VISIBLE);
+            hczxgssLayout.setVisibility(View.VISIBLE);
             lineView.setVisibility(View.VISIBLE);
             @SuppressWarnings("static-access")
             SharedPreferences prefer = getActivity().getSharedPreferences(Constants.LOCK, getActivity().MODE_PRIVATE);
@@ -468,6 +480,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
             }
             ssCheckBox.setChecked(arg1);
         } else {
+            hczxgssLayout.setVisibility(View.GONE);
             ssCheckBox.setChecked(arg1);
             xgssLayout.setVisibility(View.GONE);
             lineView.setVisibility(View.GONE);
@@ -483,6 +496,9 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
             hczloginPwdEditText.setText("");
             loginPwdEditText.setText("");
             SharUtil.saveService(getActivity(), "");
+            hczServiceTextView.setText("");
+            serviceTextView.setText("");
+            hczCodeServiceTextView.setText("");
             ActivityUtil.goMainActivity(getActivity());
         }
     }
@@ -541,7 +557,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
             @Override
             public void onSelected(int selectedIndex, String item) {
                 serviceName = item;
-                checkCity(Constants.serviceList.get(selectedIndex - 1));
+                checkCity();
                 serviceView.setText(serviceName);
                 SharUtil.saveService(context, serviceName);
                 SharUtil.saveCity(context, cityName);
@@ -556,7 +572,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
         dialog.show();
     }
 
-    private void checkCity(IPList server) {
+    private void checkCity() {
         if (Constants.APP_USER_TYPE.equals(serviceName)) {
             hczLayout.setVisibility(View.VISIBLE);
             hswLayout.setVisibility(View.GONE);
@@ -593,7 +609,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
         }
         final String account = loginNumEditText.getText().toString();
         if ("".equals(account)) {
-            ActivityUtil.showPopWindow4Tips(getActivity(), cityTextView, false, "请输入宽带账号或绑定手机号");
+            ActivityUtil.showPopWindow4Tips(getActivity(), cityTextView, false, "请输入宽带账号或手机号");
             return;
         }
         final String service = serviceTextView.getText().toString();
@@ -604,10 +620,6 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
         final String city = cityTextView.getText().toString();
         if (null == city ||city.equals("")) {
             ActivityUtil.showPopWindow4Tips(getActivity(), cityTextView, false, "请选择地区");
-            return;
-        }
-        if ("".equals(account)) {
-            ActivityUtil.showPopWindow4Tips(getActivity(), cityTextView, false, "请输入宽带账号或绑定手机号");
             return;
         }
         String password = loginPwdEditText.getText().toString();
@@ -636,7 +648,6 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
             return;
         }
         String url = Constants.SERVER_URL + "?" + "user=" + account + "&passwd=" + mdPassword + "&usertype=" + position + "&mobile=" + modle + "&deviceID=" + ActivityUtil.getDeviceToken(getActivity());
-
         new LoginServer(new DataServiceResponder() {
 
             @Override
@@ -676,7 +687,6 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
                 strBuf.append(Integer.toHexString(0xff & encryption[i]));
             }
         }
-
         return strBuf.toString();
     }
 
@@ -755,7 +765,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
     private TextView hczServiceTextView;
     @ViewInject(R.id.hcz_code_login_tv)
     private TextView hczCodeServiceTextView;
-    private int loginTypeNum = 1;
+    private int loginTypeNum = 2;
     private int time = 60;
     private Tencent mTencent;
 
@@ -772,9 +782,11 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
             ActivityUtil.showPopWindow4Tips(getActivity(), hczloginNumEditText, false, "当前网络不可用，请稍后再试...");
             return;
         }
+        SharUtil.saveService(context, Constants.APP_USER_TYPE);
         String account = "";
         String password = "";
         String code = "";
+
         if (loginTypeNum == 1) {
             account = hczloginNumEditText.getText().toString();
             password = hczloginPwdEditText.getText().toString();
@@ -852,8 +864,6 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
         hczServiceTextView.setText(serviceName);
         hczCodeCityTextView.setText(cityName);
         hczCodeServiceTextView.setText(serviceName);
-        loginBtn.setEnabled(true);
-        loginBtn.setBackgroundResource(R.drawable.view_bottom_button_bg);
         if (type == 1) {
             codeLoginLl.setVisibility(View.GONE);
             pwdLoginLl.setVisibility(View.VISIBLE);
@@ -909,13 +919,13 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
 
                 @Override
                 public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
-                    if (arg0.length() == 6) {
-                        loginBtn.setEnabled(true);
-                        loginBtn.setBackgroundResource(R.drawable.view_bottom_button_bg);
-                    } else {
-                        loginBtn.setEnabled(false);
-                        loginBtn.setBackgroundResource(R.drawable.view_btn_gray__bg);
-                    }
+//                    if (arg0.length() == 6) {
+//                        loginBtn.setEnabled(true);
+//                        loginBtn.setBackgroundResource(R.drawable.view_bottom_button_bg);
+//                    } else {
+//                        loginBtn.setEnabled(false);
+//                        loginBtn.setBackgroundResource(R.drawable.view_btn_gray__bg);
+//                    }
                 }
 
                 @Override
@@ -1052,6 +1062,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
 
     @OnClick(R.id.weixin_login_btn)
     public void onWeixinLogin(View v) {
+        ActivityUtil.showPopWindow4Tips(getActivity(), hczCityTextView, false, false, "正在登录...", -1);
         new ActivityUtil().weixinLogin(getActivity(), new Handler() {
             @Override
             public void handleMessage(Message msg) {
@@ -1073,6 +1084,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
      */
     @OnClick(R.id.qq_login_btn)
     public void onQQLogin(View v) {
+        ActivityUtil.showPopWindow4Tips(getActivity(), hczCityTextView, false, false, "正在登录...", -1);
         mTencent = Tencent.createInstance(Constants.QQ_API_KEY, context);
         mTencent.login(this, "all", iUiListener);
     }
@@ -1082,6 +1094,8 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
      * @param type
      */
     private void otherLogin(String userId, String type) {
+        ActivityUtil.showPopWindow4Tips(getActivity(), hczCityTextView, false, false, "正在登录...", -1);
+        SharUtil.saveService(getActivity(),Constants.APP_USER_TYPE);
         HczWXLoginNet otherLoginNet = new HczWXLoginNet(getActivity(), new Handler() {
             @Override
             public void handleMessage(Message msg) {
@@ -1109,14 +1123,15 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
         @Override
         public void onComplete(Object response) {
             if (null == response) {
+                ActivityUtil.showPopWindow4Tips(getActivity(), codeLoginNumEditText, false, "登录失败");
                 return;
             }
+            ActivityUtil.showPopWindow4Tips(getActivity(), hczCityTextView, false, false, "正在登录...", -1);
             JSONObject jsonResponse = (JSONObject) response;
             if (null != jsonResponse && jsonResponse.length() == 0) {
                 return;
             }
             try {
-                Log.i(TAG, "onComplete: " + jsonResponse.toString());
                 Constants.UserId = jsonResponse.getString("openid");
                 String access_token = jsonResponse.getString("access_token");
                 String expires = jsonResponse.getString("expires_in");

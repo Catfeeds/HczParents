@@ -117,10 +117,8 @@ public class HczMapActivity extends Activity implements OnClickListener {
     @ViewInject(R.id.children_battery_iv)
     private ImageView batteryIView;
     @ViewInject(R.id.children_nettype_tv)
-    public  TextView netTypeTView;
-
-
-    private DynamicBean dynamicBean;
+    public TextView netTypeTView;
+    private DynamicBean dynamicBean = new DynamicBean();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,20 +128,49 @@ public class HczMapActivity extends Activity implements OnClickListener {
         init();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mMapView.onResume();
+        if (!"".equals(Constants.userId) && Constants.child != null) {
+            setDynamicDate();
+        } else {
+            childrenNumRLayout.setVisibility(View.GONE);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mMapView.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        // 退出时销毁定位
+        locClient.stop();
+        bdMap.setMyLocationEnabled(false);
+        mMapView.onDestroy();
+        mMapView = null;
+        // 回收bitmip资源
+        bitmap.recycle();
+        super.onDestroy();
+    }
+
     /**
      * 初始化方法
      */
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     private void init() {
         mMapView = (MapView) findViewById(R.id.bmapview);
+        try {
+            dynamicBean = (DynamicBean) getIntent().getSerializableExtra("dynamic");
+        } catch (Exception e) {
+
+        }
         bdMap = mMapView.getMap();
-        title.setText("孩子位置");
+        title.setText("当前位置");
         right.setVisibility(View.GONE);
-        dynamicBean = (DynamicBean) getIntent().getExtras().get("dynamic");
-        MapStatus.Builder builder = new MapStatus.Builder();
-        builder.target(dynamicBean.getLatLng()).zoom(15.0f);
-        MapStatusUpdate msu = MapStatusUpdateFactory.newMapStatus(builder.build());
-        bdMap.animateMapStatus(msu);
         locateBtn = (Button) findViewById(R.id.locate_btn);
         reflashBtn = (Button) findViewById(R.id.reflash_btn);
         reflashBtn.setOnClickListener(this);
@@ -244,12 +271,7 @@ public class HczMapActivity extends Activity implements OnClickListener {
         switch (v.getId()) {
             case R.id.locate_btn:
             case R.id.children_num_rl:
-                if (bdMap.getMapStatus().zoom > 15 || bdMap.getMapStatus().zoom < 13) {
-                    MapStatusUpdate msu1 = MapStatusUpdateFactory.zoomTo(15.0f);
-                    bdMap.setMapStatus(msu1);
-                }
-                MapStatusUpdate msu = MapStatusUpdateFactory.newLatLng(dynamicBean.getLatLng());
-                bdMap.animateMapStatus(msu);
+                setDynamicDate();
                 break;
             case R.id.reflash_btn:
                 reflashLocation();
@@ -261,7 +283,11 @@ public class HczMapActivity extends Activity implements OnClickListener {
      * 刷新 实时位置
      */
     private void reflashLocation() {
-        ActivityUtil.showPopWindow4Tips(HczMapActivity.this, title_layout, false,false, "正在刷新孩子位置...",-1);
+        if (Constants.child == null) {
+            ActivityUtil.showPopWindow4Tips(this, title_layout, false, "请绑定孩子手机后操作");
+            return;
+        }
+        ActivityUtil.showPopWindow4Tips(HczMapActivity.this, title_layout, false, false, "正在刷新孩子位置...", -1);
         HczGetLocationNet getLocationNet = new HczGetLocationNet(this, handler);
         getLocationNet.putParams();
         getLocationNet.sendRequest();
@@ -286,34 +312,31 @@ public class HczMapActivity extends Activity implements OnClickListener {
      * 配置孩子信息
      */
     private void setDynamicDate() {
-        addMarkerOverlay();
-        batteryTView.setText(Constants.child.getBattery() + "%");
-        childrenNameTv.setText(Constants.child.getName());
-        childrenAddressTv.setText(dynamicBean.getAddress());
-        childrenTimeTv.setText(dynamicBean.getDate());
-        childrenNumHeadIv.setImageResource(Constants.showIds[Constants.child.getImg()]);
-        if(Constants.child.getBattery()>80){
-            batteryIView.setImageResource(R.drawable.ic_battery_hight);
-        }else if(Constants.child.getBattery()<20){
-            batteryIView.setImageResource(R.drawable.ic_battery_low);
-        }else {
-            batteryIView.setImageResource(R.drawable.ic_battery_mid);
-        }
-        if(Constants.child.getNetType()!=null&&!Constants.child.getNetType().equals("")){
-            netTypeTView.setText("( "+Constants.child.getNetType()+" )");
-        }else {
-            netTypeTView.setText("( 在线 )");
-        }
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        mMapView.onResume();
-        if (!"".equals(Constants.userId) && Constants.child != null) {
-            setDynamicDate();
+        if (dynamicBean != null && mMapView != null) {
+            MapStatus.Builder builder = new MapStatus.Builder();
+            builder.target(dynamicBean.getLatLng()).zoom(15.0f);
+            MapStatusUpdate msu = MapStatusUpdateFactory.newMapStatus(builder.build());
+            bdMap.animateMapStatus(msu);
+            addMarkerOverlay();
+            batteryTView.setText(Constants.child.getBattery() + "%");
+            childrenNameTv.setText(Constants.child.getName());
+            childrenAddressTv.setText(dynamicBean.getAddress());
+            childrenTimeTv.setText(dynamicBean.getDate());
+            childrenNumHeadIv.setImageResource(Constants.showIds[Constants.child.getImg()]);
+            if (Constants.child.getBattery() > 80) {
+                batteryIView.setImageResource(R.drawable.ic_battery_hight);
+            } else if (Constants.child.getBattery() < 20) {
+                batteryIView.setImageResource(R.drawable.ic_battery_low);
+            } else {
+                batteryIView.setImageResource(R.drawable.ic_battery_mid);
+            }
+            if (Constants.child.getNetType() != null && !Constants.child.getNetType().equals("")) {
+                netTypeTView.setText("( " + Constants.child.getNetType() + " )");
+            } else {
+                netTypeTView.setText("( 在线 )");
+            }
         } else {
-            childrenNumRLayout.setVisibility(View.GONE);
+            ActivityUtil.showPopWindow4Tips(HczMapActivity.this, title_layout, false, "暂无孩子位置信息");
         }
     }
 
@@ -361,23 +384,6 @@ public class HczMapActivity extends Activity implements OnClickListener {
             return "[相距" + String.format("%.2f", d) + "千米]";
         }
         return "[相距" + distance + "米]";
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        mMapView.onPause();
-    }
-
-    @Override
-    protected void onDestroy() {
-        // 退出时销毁定位
-        bdMap.setMyLocationEnabled(false);
-        mMapView.onDestroy();
-        mMapView = null;
-        // 回收bitmip资源
-        bitmap.recycle();
-        super.onDestroy();
     }
 
     @OnClick(R.id.iv_title_left)

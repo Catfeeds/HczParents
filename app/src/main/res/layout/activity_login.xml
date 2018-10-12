@@ -139,7 +139,7 @@
                     android:drawableLeft="@drawable/ic_user1"
                     android:drawablePadding="10dip"
                     android:gravity="center_vertical"
-                    android:hint="请输入用户名"
+                    android:hint="请输入宽带帐号或手机号"
                     android:inputType="text"
                     android:singleLine="true"
                     android:textColor="@color/item_edittext"

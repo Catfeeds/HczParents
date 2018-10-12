@@ -3,17 +3,14 @@ package com.goodsurfing.adpter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.goodsurfing.app.R;
 import com.goodsurfing.beans.DynamicBean;
-import com.goodsurfing.constants.Constants;
-import com.goodsurfing.main.ApplicationControlsActivity;
+import com.goodsurfing.hcz.ApplicationControlsActivity;
 import com.goodsurfing.map.HczMapActivity;
 import com.goodsurfing.utils.ActivityUtil;
 

@@ -4,7 +4,7 @@ public class ChargeIDBean {
 
 	private String id;
 	private String name;
-	private String price;
+	private String Money;
 	private String type;
 	private boolean checked;
 
@@ -16,14 +16,14 @@ public class ChargeIDBean {
 		super();
 		this.id = id;
 		this.name = name;
-		this.price = price;
+		this.Money = price;
 	}
 
 	public ChargeIDBean(String id, String name, String price, String type) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.price = price;
+		this.Money = price;
 		this.type = type;
 	}
 
@@ -43,12 +43,12 @@ public class ChargeIDBean {
 		this.name = name;
 	}
 
-	public String getPrice() {
-		return price;
+	public String getMoney() {
+		return Money;
 	}
 
-	public void setPrice(String price) {
-		this.price = price;
+	public void setMoney(String price) {
+		this.Money = price;
 	}
 
 	public String getType() {

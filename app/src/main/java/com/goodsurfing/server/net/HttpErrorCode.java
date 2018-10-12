@@ -30,6 +30,8 @@ public class HttpErrorCode {
         errMap.put("1020", "时间间隔不能超过30天");
         errMap.put("1021", "该手机号已存在");
         errMap.put("1022", "号码已经绑定");
+        errMap.put("1023", "订单不存在");
+        errMap.put("1024", "会员已到期,请前往我的续费");
         errMap.put("10000", "服务器忙,请稍后再试");
     }
 

@@ -42,9 +42,9 @@
         android:id="@+id/fragment_main_up1_recyc"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/fragment_main_up1_line"
+        android:layout_below="@+id/fragment_main_up1_tips"
         android:background="@color/white"
-        android:paddingTop="@dimen/activity_margin_top_30dp"/>
+        />
 
 
     <RelativeLayout

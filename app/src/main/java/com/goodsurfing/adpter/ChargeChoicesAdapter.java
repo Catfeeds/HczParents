@@ -60,7 +60,7 @@ public class ChargeChoicesAdapter extends ArrayAdapter<ChargeIDBean> {
 		}
 		ChargeIDBean bean = getItem(position);
 		holder.title.setText(bean.getName()+":");
-		holder.webs.setText(bean.getPrice() + "元");
+		holder.webs.setText(bean.getMoney() + "元");
 		holder.type.setText(bean.getType()+"个月");
 		holder.checkBox.setChecked(bean.isChecked());
 		return convertView;
