@@ -643,11 +643,7 @@ public class MainMyActivity1 extends BaseFragment implements OnClickListener {
         startActivity(intent);
     }
 
-    @OnClick(R.id.goto_hsw_login)
-    public void onClickGotoHswLogin(View view) {
-        Constants.isShowLogin = false;
-        LoginActivity.gotoLogin(getActivity());
-    }
+
 
     @OnClick(R.id.activity_code_login_getcode)
     public void onClickGetCode(View view) {

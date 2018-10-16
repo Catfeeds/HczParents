@@ -21,6 +21,13 @@ public class IPList {
 	private String id;
 	private String name;
 	private List<City> isplist;
+	/**
+	 * show_btn : 0
+	 * open_url :
+	 */
+
+	private String show_btn;
+	private String open_url;
 
 	public String getId() {
 		return id;
@@ -44,5 +51,21 @@ public class IPList {
 
 	public void setIsplist(List<City> isplist) {
 		this.isplist = isplist;
+	}
+
+	public String getShow_btn() {
+		return show_btn;
+	}
+
+	public void setShow_btn(String show_btn) {
+		this.show_btn = show_btn;
+	}
+
+	public String getOpen_url() {
+		return open_url;
+	}
+
+	public void setOpen_url(String open_url) {
+		this.open_url = open_url;
 	}
 }

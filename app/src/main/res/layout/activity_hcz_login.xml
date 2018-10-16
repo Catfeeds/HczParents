@@ -5,26 +5,6 @@
     android:background="@color/activity_bg_gray"
     android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/activity_add_ll_head_50dp"
-        android:background="@color/activity_bg_gray"
-        android:visibility="gone">
-
-        <TextView
-            android:id="@+id/goto_hsw_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/activity_margin_20dp"
-            android:padding="@dimen/activity_margin_5dp"
-            android:text="绿色上网登录入口"
-            android:textColor="#979797"
-            android:textSize="14sp"
-            android:visibility="gone" />
-
-    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"

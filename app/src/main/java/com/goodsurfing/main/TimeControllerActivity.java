@@ -70,6 +70,7 @@ public class TimeControllerActivity extends BaseActivity {
 		TableLayout table = (TableLayout) findViewById(R.id.tablelayout);
 		clearLayout = (LinearLayout) findViewById(R.id.table_clear_ll);
 		timer = new TimerController(this, table, clearLayout, linearLayout, comfirm);
+		timer.setColor("#B2E310");
 		timer.initTabBackGround();
 		timer.refreshTable(timerStr);
 

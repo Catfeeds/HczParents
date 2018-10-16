@@ -351,12 +351,6 @@ public class HczLoginActivity extends BaseActivity {
         startActivity(intent);
     }
 
-    @OnClick(R.id.goto_hsw_login)
-    public void onClickGotoHswLogin(View view) {
-        Constants.isShowLogin = false;
-      LoginActivity.gotoLogin(this);
-    }
-
     @OnClick(R.id.activity_code_login_getcode)
     public void onClickGetCode(View view) {
         doGetCode();

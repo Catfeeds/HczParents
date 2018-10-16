@@ -64,8 +64,7 @@ public class WebActivity extends BaseActivity {
 
 	private void init() {
 		right.setVisibility(View.INVISIBLE);
-
-//		mUrl = getIntent().getExtras().getString("url");
+		mUrl = getIntent().getExtras().getString("url");
 		WebSettings webSettings = webView.getSettings();
 		webView.requestFocusFromTouch();
 		webSettings.setUseWideViewPort(false); // 将图片调整到适合webview的大小
@@ -96,7 +95,7 @@ public class WebActivity extends BaseActivity {
 						.substring(0, 10) + "..." : title);
 			}
 		});
-		webView.loadUrl("http://mall.73110010.com/t/charge?uid=A" + mUrl);
+		webView.loadUrl( mUrl);
 	}
 
 	@Override

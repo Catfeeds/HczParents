@@ -81,9 +81,6 @@ public class FindPasswordActivity extends BaseActivity {
     // 验证码内容
     private String verificationCode;
 
-    private static boolean isGettingCodeFinish = true;
-    private static boolean isSiginCodeFinish = false;
-
     @ViewInject(R.id.activity_find_item_adress_tv)
     private TextView cityTextView;
 
@@ -106,7 +103,6 @@ public class FindPasswordActivity extends BaseActivity {
                     getCodeTv.setEnabled(true);
                     getCodeTv.setText("重新获取");
                     getCodeTv.setBackgroundResource(R.drawable.view_bottom_button_bg);
-                    isGettingCodeFinish = false;
                     break;
                 // 获取验证码
                 case CODE_GET:
@@ -120,6 +116,7 @@ public class FindPasswordActivity extends BaseActivity {
 
         ;
     };
+    private boolean isGettingCode;
 
     // private Dialog dialog ;
 
@@ -149,7 +146,6 @@ public class FindPasswordActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        isSiginCodeFinish = false;
     }
 
     @OnClick(R.id.activity_find_item_service)
@@ -185,7 +181,7 @@ public class FindPasswordActivity extends BaseActivity {
                 Constants.cityStrList.add(city.getProvinceName());
             }
         }
-        if(Constants.cityStrList.size()>0){
+        if (Constants.cityStrList.size() > 0) {
             cityTextView.setText(Constants.cityStrList.get(0));
             Constants.SERVER_URL = "http://" + Constants.cityList.get(0).getServerip() + ":" + Constants.cityList.get(0).getServerport();
         }
@@ -262,7 +258,6 @@ public class FindPasswordActivity extends BaseActivity {
 
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
-            // md.update(password.getBytes());
             mdPassword = getString(md.digest(password.getBytes()));
 
         } catch (NoSuchAlgorithmException e1) {
@@ -304,11 +299,7 @@ public class FindPasswordActivity extends BaseActivity {
 
     @OnClick(R.id.activity_find_password_item_rl_login)
     public void loginClick(View view) {
-        if (isGettingCodeFinish) {
-            doGetCode();
-        } else {
-            ActivityUtil.showPopWindow4Tips(this, title_layout, false, "请先获取验证码");
-        }
+        doSignCode();
     }
 
     @OnClick(R.id.iv_title_left)
@@ -318,75 +309,42 @@ public class FindPasswordActivity extends BaseActivity {
 
     @OnClick(R.id.activity_register_item_tv_code)
     public void onGetCodeClick(View v) {
-        if (isGettingCodeFinish) {
+        if (!isGettingCode)
             doSignPhone();
-        } else {
-            ActivityUtil.showPopWindow4Tips(this, title_layout, false, "请勿频繁操作");
-        }
     }
 
-    /**
-     * 获取手机验证码
-     */
-    private void doGetCode() {
+    private void doSignCode() {
         if (!Constants.isNetWork) {
             ActivityUtil.showPopWindow4Tips(this, title_layout, false, "当前网络不可用，请稍后再试...");
-            isGettingCodeFinish = true;
             return;
         }
         String phoneNum = NumEditText.getText().toString();
         if ("".equals(phoneNum) || !phoneNum.matches("^[1-9]\\d{10}$")) {
             ActivityUtil.showPopWindow4Tips(this, title_layout, false, "您输入的电话号码格式不正确或为空");
-            isGettingCodeFinish = true;
             return;
         } else {
             LogUtil.log(TAG, phoneNum);
         }
         String url = null;
-        if (!isGettingCodeFinish) {
-            String times = System.currentTimeMillis() + "";
-            long token = Integer.parseInt(times.substring(times.length() - 5, times.length())) * Integer.parseInt(phoneNum.substring(phoneNum.length() - 4, phoneNum.length()));
-            String keyString = "shian" + token + "haoup";
-            String key = MD5.getMessageDigest(keyString.getBytes());
-            url = Constants.EDIT_PHONE_CODE_URL + "?c=index&a=index&tel=" + phoneNum + "&token=" + times + "&key=" + key;
+        String code = codeEditText.getText().toString();
+        if ("".equals(code) || !code.matches("^[0-9]{6}$")) {
+            ActivityUtil.showPopWindow4Tips(this, title_layout, false, "您输入的验证码格式不正确或为空");
+            return;
         } else {
-            String code = codeEditText.getText().toString();
-            if ("".equals(code) || !code.matches("^[0-9]{6}$")) {
-                ActivityUtil.showPopWindow4Tips(this, title_layout, false, "您输入的验证码格式不正确或为空");
-                return;
-            } else {
-                LogUtil.log(TAG, code);
-            }
-            url = Constants.EDIT_PHONE_CODE_URL + "?c=index&a=getCode&tel=" + phoneNum + "&code=" + code;
+            LogUtil.log(TAG, code);
         }
-        isSiginCodeFinish = false;
+        url = Constants.EDIT_PHONE_CODE_URL + "?c=index&a=getCode&tel=" + phoneNum + "&code=" + code;
         new DoGetCodeServer(new DataServiceResponder() {
 
             @Override
             public void onResult(DataServiceResult result) {
-                isGettingCodeFinish = true;
                 try {
                     JSONObject jsonObject = new JSONObject((String) result.result);
-                    String errCode = null;
-                    if (!isGettingCodeFinish) {
-                        errCode = jsonObject.getString("statusCode");
-                        if ("000000".equals(errCode)) {
-                            ActivityUtil.showPopWindow4Tips(FindPasswordActivity.this, title_layout, true, "验证码发送成功");
-                            getCodeTv.setEnabled(false);
-                            getCodeTv.setBackgroundResource(R.drawable.add_children_gray);
-
-                            startService(timerService);
-                        } else {
-                            String message = jsonObject.getString("message");
-                            ActivityUtil.showPopWindow4Tips(FindPasswordActivity.this, title_layout, false, message);
-                        }
+                    String errCode = jsonObject.getString("status");
+                    if ("1".equals(errCode)) {
+                        getFindPasswordFeedBack();
                     } else {
-                        errCode = jsonObject.getString("status");
-                        if ("1".equals(errCode)) {
-                            getFindPasswordFeedBack();
-                        } else {
-                            ActivityUtil.showPopWindow4Tips(FindPasswordActivity.this, title_layout, false, "验证码错误");
-                        }
+                        ActivityUtil.showPopWindow4Tips(FindPasswordActivity.this, title_layout, false, "验证码错误");
                     }
                 } catch (Exception e) {
                     LogUtil.logError(e);
@@ -395,7 +353,57 @@ public class FindPasswordActivity extends BaseActivity {
 
             @Override
             public void onFailure() {
-                isGettingCodeFinish = true;
+                ActivityUtil.showPopWindow4Tips(FindPasswordActivity.this, title_layout, false, "服务器忙，请稍后再试");
+            }
+        }, url, context).execute();
+    }
+
+    /**
+     * 获取手机验证码
+     */
+    private void doGetCode() {
+        if (!Constants.isNetWork) {
+            ActivityUtil.showPopWindow4Tips(this, title_layout, false, "当前网络不可用，请稍后再试...");
+            return;
+        }
+        String phoneNum = NumEditText.getText().toString();
+        if ("".equals(phoneNum) || !phoneNum.matches("^[1-9]\\d{10}$")) {
+            ActivityUtil.showPopWindow4Tips(this, title_layout, false, "您输入的电话号码格式不正确或为空");
+            return;
+        } else {
+            LogUtil.log(TAG, phoneNum);
+        }
+        String url = null;
+        String times = System.currentTimeMillis() + "";
+        long token = Integer.parseInt(times.substring(times.length() - 5, times.length())) * Integer.parseInt(phoneNum.substring(phoneNum.length() - 4, phoneNum.length()));
+        String keyString = "shian" + token + "haoup";
+        String key = MD5.getMessageDigest(keyString.getBytes());
+        url = Constants.EDIT_PHONE_CODE_URL + "?c=index&a=index&tel=" + phoneNum + "&token=" + times + "&key=" + key;
+        new DoGetCodeServer(new DataServiceResponder() {
+
+            @Override
+            public void onResult(DataServiceResult result) {
+                try {
+                    JSONObject jsonObject = new JSONObject((String) result.result);
+                    String errCode = null;
+                    errCode = jsonObject.getString("statusCode");
+                    if ("000000".equals(errCode)) {
+                        ActivityUtil.showPopWindow4Tips(FindPasswordActivity.this, title_layout, true, "验证码发送成功");
+                        getCodeTv.setEnabled(false);
+                        getCodeTv.setBackgroundResource(R.drawable.add_children_gray);
+                        startService(timerService);
+                    } else {
+                        String message = jsonObject.getString("message");
+                        ActivityUtil.showPopWindow4Tips(FindPasswordActivity.this, title_layout, false, message);
+                    }
+                } catch (Exception e) {
+                    LogUtil.logError(e);
+                }
+            }
+
+            @Override
+            public void onFailure() {
+                ActivityUtil.showPopWindow4Tips(FindPasswordActivity.this, title_layout, false, "服务器忙，请稍后再试");
             }
         }, url, context).execute();
     }
@@ -422,12 +430,11 @@ public class FindPasswordActivity extends BaseActivity {
 
         if ("".equals(phoneNum) || !phoneNum.matches("^[1-9]\\d{10}$")) {
             ActivityUtil.showPopWindow4Tips(this, title_layout, false, "号码格式不正确或为空");
-            isGettingCodeFinish = true;
             return;
         } else {
             LogUtil.log(TAG, phoneNum);
         }
-        isGettingCodeFinish = false;
+        isGettingCode = true;
         String url = Constants.SERVER_URL + "?" + "mobile=" + phoneNum + "&requesttype=13";
         ActivityUtil.showPopWindow4Tips(this, title_layout, false, false, "获取验证码...", -1);
         getCodeTv.setBackgroundResource(R.drawable.add_children_gray);
@@ -436,10 +443,10 @@ public class FindPasswordActivity extends BaseActivity {
 
             @Override
             public void onResult(DataServiceResult result) {
+                isGettingCode = false;
                 if (result != null && result.code.equals("0")) {
                     doGetCode();
                 } else {
-                    isGettingCodeFinish = true;
                     getCodeTv.setBackgroundResource(R.drawable.view_bottom_button_bg);
                     getCodeTv.setText("重新获取");
                     ActivityUtil.showPopWindow4Tips(FindPasswordActivity.this, title_layout, false, "您的手机号还没注册");
@@ -448,7 +455,7 @@ public class FindPasswordActivity extends BaseActivity {
 
             @Override
             public void onFailure() {
-                isGettingCodeFinish = true;
+                isGettingCode = false;
                 ActivityUtil.showPopWindow4Tips(FindPasswordActivity.this, title_layout, false, "服务器忙，请稍后再试");
             }
         }, url, context).execute();

@@ -94,6 +94,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
     private View loginView;
     private View hczMyView;
     private View hswMyView;
+    private String registerUrl;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -180,6 +181,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
         registerLineView = view.findViewById(R.id.activity_login_item_line);
         checkBox = (CheckBox) view.findViewById(R.id.check_xieyi);
         xieyiTextView = (TextView) view.findViewById(R.id.xieyi_text);
+        view.findViewById(R.id.main_help_tv).setOnClickListener(this);
         xieyiTextView.setOnClickListener(this);
         view.findViewById(R.id.activity_login_item_rl_login).setOnClickListener(this);
         view.findViewById(R.id.activity_login_item_rl_register).setOnClickListener(this);
@@ -243,11 +245,6 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
             hswMyView.setVisibility(View.GONE);
             loginView.setVisibility(View.VISIBLE);
             getServerList();
-            if (!Constants.isRegistShow) {
-                registerLyout.setVisibility(View.GONE);
-                registerTipsTv.setVisibility(View.GONE);
-                registerLineView.setVisibility(View.GONE);
-            }
         } else {
             if (Constants.APP_USER_TYPE.equals(SharUtil.getService(getActivity()))) {
                 hczMyView.setVisibility(View.VISIBLE);
@@ -274,7 +271,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
             if (!Constants.isRegistShow) {
                 xfLayout.setVisibility(View.GONE);
 //                hczxfLayout.setVisibility(View.GONE);
-            }else {
+            } else {
                 xfLayout.setVisibility(View.VISIBLE);
 //                hczxfLayout.setVisibility(View.VISIBLE);
             }
@@ -368,7 +365,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
                 dialog();
                 break;
             case R.id.activity_my_ss_cb:
-                onCheckSs(((CheckBox)v).isChecked());
+                onCheckSs(((CheckBox) v).isChecked());
                 break;
             case R.id.activity_login_item_rl_login:
                 if (login_ok) {
@@ -378,7 +375,13 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
                 }
                 break;
             case R.id.activity_login_item_rl_register:
-                RegisterActivity.gotoRegister(getActivity());
+                if (TextUtils.isEmpty(registerUrl)) {
+                    RegisterActivity.gotoRegister(getActivity());
+                } else {
+                    Intent web = new Intent(getActivity(), WebActivity.class);
+                    web.putExtra("url", registerUrl);
+                    startActivity(web);
+                }
                 break;
             case R.id.activity_login_item_adress_iv:
                 doCity(cityTextView);
@@ -398,7 +401,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
                 ActivityUtil.showXyDialog(context);
                 break;
             case R.id.activity_qq_help:
-            case R.id.tv_title_right:
+            case R.id.main_help_tv:
                 ActivityUtil.callQQkefu(getActivity(), rootView);
                 break;
             case R.id.iv_title_left:
@@ -547,7 +550,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
             ActivityUtil.showPopWindow4Tips(getActivity(), hczloginNumEditText, false, "当前网络不可用，请稍后再试...");
             return;
         }
-        if(Constants.serverCityMap.size()<=0){
+        if (Constants.serverCityMap.size() <= 0) {
             ActivityUtil.showPopWindow4Tips(getActivity(), cityTextView, false, "正在获取业务列表...");
             return;
         }
@@ -557,6 +560,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
             @Override
             public void onSelected(int selectedIndex, String item) {
                 serviceName = item;
+                checkRigst(selectedIndex);
                 checkCity();
                 serviceView.setText(serviceName);
                 SharUtil.saveService(context, serviceName);
@@ -572,10 +576,25 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
         dialog.show();
     }
 
+    private void checkRigst(int selectedIndex) {
+        Constants.isRegistShow = Constants.serviceList.get(selectedIndex-1).getShow_btn().equals("1");
+        registerUrl = Constants.serviceList.get(selectedIndex-1).getOpen_url();
+        if (!Constants.isRegistShow) {
+            registerLyout.setVisibility(View.GONE);
+            registerTipsTv.setVisibility(View.GONE);
+            registerLineView.setVisibility(View.GONE);
+        } else {
+            registerLyout.setVisibility(View.VISIBLE);
+            registerTipsTv.setVisibility(View.VISIBLE);
+            registerLineView.setVisibility(View.VISIBLE);
+        }
+    }
+
     private void checkCity() {
         if (Constants.APP_USER_TYPE.equals(serviceName)) {
             hczLayout.setVisibility(View.VISIBLE);
             hswLayout.setVisibility(View.GONE);
+            Constants.isRegistShow=false;
         } else {
             hczLayout.setVisibility(View.GONE);
             hswLayout.setVisibility(View.VISIBLE);
@@ -587,7 +606,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
                 Constants.cityStrList.add(city.getProvinceName());
             }
         }
-        if(Constants.cityStrList.size()>0){
+        if (Constants.cityStrList.size() > 0) {
             cityName = Constants.cityStrList.get(0);
             Constants.SERVER_URL = "http://" + Constants.cityList.get(0).getServerip() + ":" + Constants.cityList.get(0).getServerport();
         }
@@ -613,12 +632,12 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
             return;
         }
         final String service = serviceTextView.getText().toString();
-        if (null == service ||service.equals("")) {
+        if (null == service || service.equals("")) {
             ActivityUtil.showPopWindow4Tips(getActivity(), cityTextView, false, "请选择业务");
             return;
         }
         final String city = cityTextView.getText().toString();
-        if (null == city ||city.equals("")) {
+        if (null == city || city.equals("")) {
             ActivityUtil.showPopWindow4Tips(getActivity(), cityTextView, false, "请选择地区");
             return;
         }
@@ -791,12 +810,12 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
             account = hczloginNumEditText.getText().toString();
             password = hczloginPwdEditText.getText().toString();
             final String service = hczServiceTextView.getText().toString();
-            if (null == service ||service.equals("")) {
+            if (null == service || service.equals("")) {
                 ActivityUtil.showPopWindow4Tips(getActivity(), cityTextView, false, "请选择业务");
                 return;
             }
             final String city = hczCityTextView.getText().toString();
-            if (null == city ||city.equals("")) {
+            if (null == city || city.equals("")) {
                 ActivityUtil.showPopWindow4Tips(getActivity(), cityTextView, false, "请选择地区");
                 return;
             }
@@ -811,16 +830,16 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
             account = codeLoginNumEditText.getText().toString();
             code = codeLoginPwdEditText.getText().toString();
             final String service = hczCodeServiceTextView.getText().toString();
-            if (null == service ||service.equals("")) {
+            if (null == service || service.equals("")) {
                 ActivityUtil.showPopWindow4Tips(getActivity(), cityTextView, false, "请选择业务");
                 return;
             }
             final String city = hczCodeCityTextView.getText().toString();
-            if (null == city ||city.equals("")) {
+            if (null == city || city.equals("")) {
                 ActivityUtil.showPopWindow4Tips(getActivity(), cityTextView, false, "请选择地区");
                 return;
             }
-            if (null==code||"".equals(code)) {
+            if (null == code || "".equals(code)) {
                 ActivityUtil.showPopWindow4Tips(getActivity(), hczloginNumEditText, false, "请输入正确的验证码");
                 return;
             }
@@ -1037,12 +1056,6 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
         startActivity(intent);
     }
 
-    @OnClick(R.id.goto_hsw_login)
-    public void onClickGotoHswLogin(View view) {
-        Constants.isShowLogin = false;
-        LoginActivity.gotoLogin(getActivity());
-    }
-
     @OnClick(R.id.activity_code_login_getcode)
     public void onClickGetCode(View view) {
         doGetCode();
@@ -1095,7 +1108,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
      */
     private void otherLogin(String userId, String type) {
         ActivityUtil.showPopWindow4Tips(getActivity(), hczCityTextView, false, false, "正在登录...", -1);
-        SharUtil.saveService(getActivity(),Constants.APP_USER_TYPE);
+        SharUtil.saveService(getActivity(), Constants.APP_USER_TYPE);
         HczWXLoginNet otherLoginNet = new HczWXLoginNet(getActivity(), new Handler() {
             @Override
             public void handleMessage(Message msg) {

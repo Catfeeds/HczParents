@@ -197,6 +197,7 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
             return;
         switch (v.getId()) {
             case R.id.main_help_tv:
+//                ActivityUtil.callQQkefu(getActivity(), rootView);
                 Intent help = new Intent(getActivity(), GuideView.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("TYPE_GUIDE", "1");

@@ -133,7 +133,7 @@ public class MainUpActivity extends BaseFragment implements OnClickListener {
 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
-        if(this.isVisible()) {
+        if (this.isVisible()) {
             if (isVisibleToUser) {
                 onViewResume();
             }
@@ -248,9 +248,8 @@ public class MainUpActivity extends BaseFragment implements OnClickListener {
 
                                 @Override
                                 public void onClick(View arg0) {
-                                    RegisterActivity.gotoRegister(getActivity());
-                                    // startActivity(new Intent(getActivity(),
-                                    // RegisterActivity.class));
+                                    ((MainActivity) getActivity()).mainPageView.setCurrentItem(2);
+//                                    RegisterActivity.gotoRegister(getActivity());
                                 }
                             });
                             toUpImageView.startAnimation(animation);
