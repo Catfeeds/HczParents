@@ -1,11 +1,14 @@
 package com.goodsurfing.main;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.KeyEvent;
+import android.view.View;
 import android.view.Window;
 
 import com.goodsurfing.app.R;
@@ -13,9 +16,11 @@ import com.goodsurfing.base.BaseActivity;
 import com.goodsurfing.base.GoodSurfingApplication;
 import com.goodsurfing.beans.User;
 import com.goodsurfing.constants.Constants;
+import com.goodsurfing.server.net.HczAppFuncNet;
 import com.goodsurfing.service.UpdateManager;
 import com.goodsurfing.utils.ActivityUtil;
 import com.goodsurfing.utils.CommonUtil;
+import com.goodsurfing.utils.SharUtil;
 
 public class WelcomeActivity extends BaseActivity {
 

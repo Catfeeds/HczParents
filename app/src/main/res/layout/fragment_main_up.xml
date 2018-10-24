@@ -7,7 +7,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/white" >
+        android:background="@color/activity_bg_gray" >
 
         <ImageView
             android:layout_width="wrap_content"
@@ -288,7 +288,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="上网卡奖励"
+                            android:text="上网奖励卡"
                             android:textColor="#5a667d" />
                     </LinearLayout>
 

@@ -93,10 +93,7 @@
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 
-    <style name="HaoUp.Transparent.Theme" parent="@android:style/Theme.Black.NoTitleBar.Fullscreen">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:colorBackgroundCacheHint">@null</item>
+    <style name="HaoUp.Transparent.Theme" parent="@android:style/Theme.Black.NoTitleBar">
     </style>
 
 

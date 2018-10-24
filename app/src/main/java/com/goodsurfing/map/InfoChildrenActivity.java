@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.goodsurfing.app.R;
+import com.goodsurfing.base.BaseActivity;
 import com.goodsurfing.base.BasePhotoActivity;
 import com.goodsurfing.beans.Friend;
 import com.goodsurfing.constants.Constants;
@@ -28,7 +29,7 @@ import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
 
 @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-public class InfoChildrenActivity extends BasePhotoActivity {
+public class InfoChildrenActivity extends BaseActivity {
 
 	protected static final int REFRESH = 100;
 

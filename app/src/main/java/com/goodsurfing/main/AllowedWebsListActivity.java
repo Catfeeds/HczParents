@@ -426,9 +426,7 @@ public class AllowedWebsListActivity extends BaseFragment implements SelectDeleg
 			return;
 		}
 		String url = null;
-
 		String id = listAdapter.get(position).getId();
-		// http://58.20.52.242:8888?statu=1&userid=19&domainid=139&committype=5&token=token145068263619&oper=2
 		url = Constants.SERVER_URL + "?" + "statu=" + status + "&userid=" + Constants.userId + "&domainid=" + id + "&committype=5&token=" + Constants.tokenID + "&oper=2";
 
 		new PutDataServer(new DataServiceResponder() {
@@ -478,7 +476,7 @@ public class AllowedWebsListActivity extends BaseFragment implements SelectDeleg
 
 	public void onAddClick() {
 		if ("".equals(Constants.userId)) {
-			LoginActivity.gotoLogin(getActivity());
+			ActivityUtil.showPopWindow4Tips(getContext(),addLinearLayout,false,true,"请登录后再操作",2000);
 			return;
 		}
 		Intent intent = new Intent(getActivity(), AddBlackWhiteListActivity.class);
@@ -517,7 +515,6 @@ public class AllowedWebsListActivity extends BaseFragment implements SelectDeleg
 							BlackAndWhiteListActivity.message.setText("99+");
 						else
 							BlackAndWhiteListActivity.message.setText(String.valueOf(Constants.unCheckWebList.size()));
-
 					}
 				} else {
 					ActivityUtil.showPopWindow4Tips(getActivity(), BlackAndWhiteListActivity.contentView, false, true, result.extra + "", 2000);

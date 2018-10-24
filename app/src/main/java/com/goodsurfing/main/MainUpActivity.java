@@ -145,11 +145,15 @@ public class MainUpActivity extends BaseFragment implements OnClickListener {
     public void onClick(View v) {
         if (CommonUtil.isFastDoubleClick())
             return;
+        if(v instanceof ViewGroup){
+            if (!getText4View((ViewGroup) v))return;
+        }
         switch (v.getId()) {
             case R.id.main_blackwirter_ll:
-                ActivityUtil.sendEvent4UM(getActivity(), "functionSwitch", "blackwirterlist", 11);
-                Intent black = new Intent(getActivity(), BlackAndWhiteListActivity.class);
-                startActivity(black);
+
+                    ActivityUtil.sendEvent4UM(getActivity(), "functionSwitch", "blackwirterlist", 11);
+                    Intent black = new Intent(getActivity(), BlackAndWhiteListActivity.class);
+                    startActivity(black);
                 break;
             case R.id.main_car_ll:
                 ActivityUtil.sendEvent4UM(getActivity(), "functionSwitch", "rewards", 12);
@@ -195,6 +199,17 @@ public class MainUpActivity extends BaseFragment implements OnClickListener {
                 Intent youn = new Intent(getActivity(), MapActivity.class);
                 startActivity(youn);
                 break;
+        }
+    }
+
+    private boolean getText4View(ViewGroup v) {
+        TextView textView = (TextView) v.getChildAt(1);
+        String txt=textView.getText().toString();
+        if(Constants.funcBeans.get(txt)!=null&&!Constants.funcBeans.get(txt)){
+            ActivityUtil.showPopWindow4Tips(getActivity(), rootView, false, "功能暂未开放，敬请期待！");
+            return false;
+        }else {
+            return true;
         }
     }
 

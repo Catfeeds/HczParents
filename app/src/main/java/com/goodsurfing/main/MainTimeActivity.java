@@ -262,7 +262,7 @@ public class MainTimeActivity extends BaseFragment implements CircularSeekBar.On
 			mTipsTv.setVisibility(View.VISIBLE);
 			timeLayout.setVisibility(View.VISIBLE);
 			switch (Constants.mode) {
-			case Constants.MODE_LEARNING:
+			case Constants.MODE_FREE:
 				Constants.modeStr = "当前模式: 网络畅游模式";
 				tipsString = "已为您开启所有网络访问权限";
 				currentStateImageView.setImageResource(R.drawable.ic_current_lock);
@@ -279,7 +279,7 @@ public class MainTimeActivity extends BaseFragment implements CircularSeekBar.On
 				Constants.modeStr = "当前模式: 教育资源模式";
 				tipsString = "可滑动圆点设置解锁时长";
 				break;
-			case Constants.MODE_FREE:
+			case Constants.MODE_LEARNING:
 				clearTime();
 				Constants.modeStr = "当前模式: 不良内容拦截模式";
 				tipsString = "可滑动圆点设置解锁时长";

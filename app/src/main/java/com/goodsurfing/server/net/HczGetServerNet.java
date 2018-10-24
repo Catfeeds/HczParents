@@ -17,7 +17,7 @@ import static com.goodsurfing.constants.Constants.serverList;
 
 public class HczGetServerNet extends HczNetUtils {
     public HczGetServerNet(Context context, Handler handler) {
-        super(context, Constants.HCZ_ISPLIST_URL, handler);
+        super(context,"", Constants.HCZ_ISPLIST_URL, handler);
     }
 
     public void putParams() {

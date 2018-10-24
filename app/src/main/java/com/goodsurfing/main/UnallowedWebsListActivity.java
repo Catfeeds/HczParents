@@ -494,6 +494,10 @@ public class UnallowedWebsListActivity extends BaseFragment implements SelectDel
 	}
 
 	public void onAddClick() {
+		if ("".equals(Constants.userId)) {
+			ActivityUtil.showPopWindow4Tips(getContext(),addLinearLayout,false,true,"请登录后再操作",2000);
+			return;
+		}
 		Intent intent = new Intent(getActivity(), AddWebsActivity.class);
 		Bundle bundle = new Bundle();
 		bundle.putString("TYPE", "2");

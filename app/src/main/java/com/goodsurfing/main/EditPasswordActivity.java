@@ -134,7 +134,7 @@ public class EditPasswordActivity extends BaseActivity {
                     switch (msg.what) {
                         case What.HTTP_REQUEST_CURD_SUCCESS:
                             ActivityUtil.showPopWindow4Tips(EditPasswordActivity.this, title_layout, true, "修改密码成功");
-                            HczLoginActivity.gotoLogin(EditPasswordActivity.this);
+                            outLogin();
                             break;
                         case What.HTTP_REQUEST_CURD_FAILURE:
                             ActivityUtil.showPopWindow4Tips(EditPasswordActivity.this, title_layout, false, msg.obj.toString());
@@ -158,7 +158,7 @@ public class EditPasswordActivity extends BaseActivity {
                 public void onResult(DataServiceResult result) {
                     if (result != null && result.code.equals("0")) {
                         ActivityUtil.showPopWindow4Tips(EditPasswordActivity.this, title_layout, true, "修改密码成功");
-                        LoginActivity.gotoLogin(EditPasswordActivity.this);
+                        outLogin();
                     } else {
                         ActivityUtil.showPopWindow4Tips(EditPasswordActivity.this, title_layout, false, result.extra + "");
                     }
@@ -169,6 +169,15 @@ public class EditPasswordActivity extends BaseActivity {
 
                 }
             }, url, context, false).execute();
+        }
+    }
+
+    private  void  outLogin(){
+        if (!"".equals(Constants.userId)) {
+            ActivityUtil.sendEvent4UM(this, "outLogin", "outLogin", 24);
+            Constants.clear(this);
+            SharUtil.saveService(this, "");
+            ActivityUtil.goMainActivity(this);
         }
     }
 

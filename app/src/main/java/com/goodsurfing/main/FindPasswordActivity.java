@@ -24,10 +24,14 @@ import com.goodsurfing.beans.City;
 import com.goodsurfing.beans.IPList;
 import com.goodsurfing.beans.User;
 import com.goodsurfing.constants.Constants;
+import com.goodsurfing.hcz.HczFindPwdActivity;
+import com.goodsurfing.hcz.HczLoginActivity;
 import com.goodsurfing.server.CheckServerServer;
 import com.goodsurfing.server.DoGetCodeServer;
 import com.goodsurfing.server.PutDataServer;
 import com.goodsurfing.server.net.HczCheckCityNet;
+import com.goodsurfing.server.net.HczFindPwdNet;
+import com.goodsurfing.server.net.HczGetCodeNet;
 import com.goodsurfing.server.utils.BaseDataService.DataServiceResponder;
 import com.goodsurfing.server.utils.BaseDataService.DataServiceResult;
 import com.goodsurfing.service.RegisterCodeTimerService;
@@ -76,7 +80,6 @@ public class FindPasswordActivity extends BaseActivity {
 
     @ViewInject(R.id.title_layout)
     private View title_layout;
-    private Intent timerService;
     private static final int CODE_GET = 1;
     // 验证码内容
     private String verificationCode;
@@ -90,26 +93,27 @@ public class FindPasswordActivity extends BaseActivity {
     private String mobile;
     private String cityName;
     private String serviceName;
-    Handler mHandler = new Handler() {
-        public void handleMessage(Message msg) {
+    private int time = 60;
+    private Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(android.os.Message msg) {
             switch (msg.what) {
                 // 正在倒计时
                 case RegisterCodeTimer.IN_RUNNING:
-                    getCodeTv.setText(msg.obj.toString());
+                    getCodeTv.setEnabled(false);
+                    getCodeTv.setBackgroundResource(R.drawable.add_children_gray);
+                    getCodeTv.setText("已发送" + time-- + "秒");
+                    if (time > 0)
+                        mHandler.sendEmptyMessageDelayed(RegisterCodeTimer.IN_RUNNING, 1000);
+                    else
+                        mHandler.sendEmptyMessage(RegisterCodeTimer.END_RUNNING);
                     break;
-
                 // 完成倒计时
                 case RegisterCodeTimer.END_RUNNING:
+                    getCodeTv.setBackgroundResource(R.drawable.view_bottom_button_bg);
+                    mHandler.removeMessages(RegisterCodeTimer.IN_RUNNING);
                     getCodeTv.setEnabled(true);
                     getCodeTv.setText("重新获取");
-                    getCodeTv.setBackgroundResource(R.drawable.view_bottom_button_bg);
-                    break;
-                // 获取验证码
-                case CODE_GET:
-                    codeEditText.setText(verificationCode);
-                    break;
-
-                default:
                     break;
             }
         }
@@ -132,12 +136,10 @@ public class FindPasswordActivity extends BaseActivity {
         context = this;
         title.setText("找回密码");
         right.setVisibility(View.INVISIBLE);
-        timerService = new Intent(this, RegisterCodeTimerService.class);
         RegisterCodeTimerService.setHandler(mHandler);
         getSavedDatas();
         cityTextView.setText(cityName);
         serviceTextView.setText(serviceName);
-        // checkLocationInfo(cityName, serviceName);
         if (mobile != null && !"".equals(mobile))
             NumEditText.setText(mobile);
 
@@ -154,26 +156,31 @@ public class FindPasswordActivity extends BaseActivity {
     }
 
     private void doServiceDialog() {
+        if (!Constants.isNetWork) {
+            ActivityUtil.showPopWindow4Tips(this, title_layout, false, "当前网络不可用，请稍后再试...");
+            return;
+        }
+        if (Constants.serverCityMap.size() <= 0) {
+            ActivityUtil.showPopWindow4Tips(this, title_layout, false, "正在获取业务列表...");
+            return;
+        }
         ServiceOrTypeDialog dialog = ServiceOrTypeDialog.getInstance(this);
-        dialog.setDialogProperties("选择运营商", Constants.serverList);
+        dialog.setDialogProperties("选择业务", Constants.serverList);
         dialog.setOnSaveServiceLister(new OnWheelViewListener() {
-
             @Override
             public void onSelected(int selectedIndex, String item) {
-                if (cityName == null || "".equals(cityName)) {
-                    ActivityUtil.showPopWindow4Tips(FindPasswordActivity.this, title_layout, false, "请选择所在地");
-                    return;
-                }
                 serviceName = item;
-                serviceTextView.setText(serviceName);
+                checkCity();
                 SharUtil.saveService(context, serviceName);
-                checkCity(Constants.serviceList.get(selectedIndex - 1));
+                SharUtil.saveCity(context, cityName);
+                serviceTextView.setText(serviceName);
+                cityTextView.setText(cityName);
             }
         });
         dialog.show();
     }
 
-    private void checkCity(IPList ipList) {
+    private void checkCity() {
         Constants.cityList = Constants.serverCityMap.get(serviceName);
         Constants.cityStrList.clear();
         if (Constants.cityList != null && Constants.cityList.size() > 0) {
@@ -182,7 +189,7 @@ public class FindPasswordActivity extends BaseActivity {
             }
         }
         if (Constants.cityStrList.size() > 0) {
-            cityTextView.setText(Constants.cityStrList.get(0));
+            cityName = Constants.cityStrList.get(0);
             Constants.SERVER_URL = "http://" + Constants.cityList.get(0).getServerip() + ":" + Constants.cityList.get(0).getServerport();
         }
     }
@@ -193,12 +200,13 @@ public class FindPasswordActivity extends BaseActivity {
     }
 
     protected void doCity() {
-        Constants.cityList = Constants.serverCityMap.get(serviceName);
-        Constants.cityStrList.clear();
-        if (Constants.cityList != null && Constants.cityList.size() > 0) {
-            for (City city : Constants.cityList) {
-                Constants.cityStrList.add(city.getProvinceName());
-            }
+        if (!Constants.isNetWork) {
+            ActivityUtil.showPopWindow4Tips(this, title_layout,  false, "当前网络不可用，请稍后再试...");
+            return;
+        }
+        if (Constants.cityStrList.size() == 0) {
+            ActivityUtil.showPopWindow4Tips(this, title_layout, false, "正在获取地区列表...");
+            return;
         }
         ServiceOrTypeDialog dialog = ServiceOrTypeDialog.getInstance(this);
         dialog.setDialogProperties("选择地区", Constants.cityStrList);
@@ -299,7 +307,11 @@ public class FindPasswordActivity extends BaseActivity {
 
     @OnClick(R.id.activity_find_password_item_rl_login)
     public void loginClick(View view) {
-        doSignCode();
+        if (Constants.APP_USER_TYPE.equals(serviceName)) {
+            setPwd();
+        } else {
+            doSignCode();
+        }
     }
 
     @OnClick(R.id.iv_title_left)
@@ -309,8 +321,12 @@ public class FindPasswordActivity extends BaseActivity {
 
     @OnClick(R.id.activity_register_item_tv_code)
     public void onGetCodeClick(View v) {
-        if (!isGettingCode)
-            doSignPhone();
+        if (Constants.APP_USER_TYPE.equals(serviceName)) {
+            doHczGetCode();
+        } else {
+            if (!isGettingCode)
+                doSignPhone();
+        }
     }
 
     private void doSignCode() {
@@ -389,10 +405,9 @@ public class FindPasswordActivity extends BaseActivity {
                     errCode = jsonObject.getString("statusCode");
                     if ("000000".equals(errCode)) {
                         ActivityUtil.showPopWindow4Tips(FindPasswordActivity.this, title_layout, true, "验证码发送成功");
-                        getCodeTv.setEnabled(false);
-                        getCodeTv.setBackgroundResource(R.drawable.add_children_gray);
-                        startService(timerService);
                     } else {
+                        time = 60;
+                        mHandler.sendEmptyMessageDelayed(RegisterCodeTimer.END_RUNNING, 0);
                         String message = jsonObject.getString("message");
                         ActivityUtil.showPopWindow4Tips(FindPasswordActivity.this, title_layout, false, message);
                     }
@@ -437,18 +452,19 @@ public class FindPasswordActivity extends BaseActivity {
         isGettingCode = true;
         String url = Constants.SERVER_URL + "?" + "mobile=" + phoneNum + "&requesttype=13";
         ActivityUtil.showPopWindow4Tips(this, title_layout, false, false, "获取验证码...", -1);
-        getCodeTv.setBackgroundResource(R.drawable.add_children_gray);
-        getCodeTv.setText("正在获取");
+        getCodeTv.setEnabled(false);
         new PutDataServer(new DataServiceResponder() {
 
             @Override
             public void onResult(DataServiceResult result) {
                 isGettingCode = false;
                 if (result != null && result.code.equals("0")) {
+                    time = 60;
+                    mHandler.sendEmptyMessageDelayed(RegisterCodeTimer.IN_RUNNING, 0);
                     doGetCode();
                 } else {
-                    getCodeTv.setBackgroundResource(R.drawable.view_bottom_button_bg);
-                    getCodeTv.setText("重新获取");
+                    time = 60;
+                    mHandler.sendEmptyMessageDelayed(RegisterCodeTimer.END_RUNNING, 0);
                     ActivityUtil.showPopWindow4Tips(FindPasswordActivity.this, title_layout, false, "您的手机号还没注册");
                 }
             }
@@ -467,5 +483,86 @@ public class FindPasswordActivity extends BaseActivity {
         cityName = SharUtil.getCity(context);
         serviceName = SharUtil.getService(context);
     }
+
+
+    /**
+     * 好成长业务忘记密码
+     */
+
+    /**
+     * 获取手机验证码
+     */
+    private void doHczGetCode() {
+        String phoneNum = NumEditText.getText().toString();
+        if (!ActivityUtil.isMobileNO(phoneNum)) {
+            ActivityUtil.showPopWindow4Tips(this, title_layout, false, "请输入正确的手机号");
+            getCodeTv.setEnabled(true);
+            return;
+        }
+        getCodeTv.setEnabled(false);
+        HczGetCodeNet getCodeNet = new HczGetCodeNet(this, new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                switch (msg.what) {
+                    case What.HTTP_REQUEST_CURD_SUCCESS:
+                        ActivityUtil.showPopWindow4Tips(FindPasswordActivity.this, title_layout, true, "发送验证码成功");
+                        time = 60;
+                        mHandler.sendEmptyMessageDelayed(RegisterCodeTimer.IN_RUNNING, 0);
+                        break;
+                    case What.HTTP_REQUEST_CURD_FAILURE:
+                        time = 60;
+                        ActivityUtil.showPopWindow4Tips(FindPasswordActivity.this, title_layout, false, "发送验证码失败");
+                        mHandler.sendEmptyMessageDelayed(RegisterCodeTimer.END_RUNNING, 0);
+                        break;
+                }
+            }
+        });
+        getCodeNet.putParams(phoneNum, 3);
+        getCodeNet.sendRequest();
+    }
+
+    private void setPwd() {
+        String mobile = NumEditText.getText().toString();
+        String code = codeEditText.getText().toString();
+        if ("".equals(code) || !code.matches("^[0-9]{6}$")) {
+            ActivityUtil.showPopWindow4Tips(this, title_layout, false, "验证码格式不正确");
+            return;
+        }
+        String password = NewPwdEditText.getText().toString();
+        if (ActivityUtil.checkPassword(password) < 3) {
+            ActivityUtil.showPopWindow4Tips(this, title_layout, false, "密码必须包含数字和字母");
+            return;
+        }
+        String passwords = PwdEditText.getText().toString();
+        if ("".equals(passwords)) {
+            ActivityUtil.showPopWindow4Tips(this, title_layout, false, "请再次输入新密码");
+            return;
+        }
+        if (!password.equals(passwords)) {
+            ActivityUtil.showPopWindow4Tips(this, title_layout, false, "两次新密码输入不一致");
+            return;
+        }
+        HczFindPwdNet findPwdNet = new HczFindPwdNet(this
+                , new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                switch (msg.what) {
+                    case What.HTTP_REQUEST_CURD_SUCCESS:
+                        ActivityUtil.showPopWindow4Tips(FindPasswordActivity.this, title_layout, true, "找回密码成功");
+                        Constants.isShowLogin = false;
+                        HczLoginActivity.gotoLogin(FindPasswordActivity.this);
+                        onBackPressed();
+                        break;
+                    case What.HTTP_REQUEST_CURD_FAILURE:
+                        ActivityUtil.showPopWindow4Tips(FindPasswordActivity.this, title_layout, false, msg.obj.toString());
+                        break;
+                }
+            }
+        });
+        findPwdNet.putParams(mobile, password, code);
+        findPwdNet.sendRequest();
+
+    }
+
 
 }

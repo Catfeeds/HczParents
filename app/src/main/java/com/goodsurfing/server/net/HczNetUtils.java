@@ -31,17 +31,25 @@ public abstract class HczNetUtils {
     private Handler mHandler;
     private String data;
     private String action;
+    String baseurl="http://s1.tensafe.net:9292";
 
     public HczNetUtils(Context context, String serverPath, Handler handler) {
+        this(context,"http://s1.tensafe.net:9292",serverPath,handler);
+//        mContext = context;
+//        mHandler = handler;
+//        action = serverPath;
+//        if (!serverPath.contains("https:")) {
+//        url = "" + serverPath;//线上
+////            url = "http://172.16.0.201:9292" + serverPath;//线下
+//        }else {
+//            url= serverPath;
+//        }
+    }
+    public HczNetUtils(Context context,  String baseUrl,String serverPath, Handler handler) {
         mContext = context;
         mHandler = handler;
         action = serverPath;
-        if (!serverPath.contains("https:")) {
-        url = "http://s1.tensafe.net:9292" + serverPath;//线上
-//            url = "http://172.16.0.201:9292" + serverPath;//线下
-        }else {
-            url= serverPath;
-        }
+        url= baseUrl+serverPath;
     }
 
     protected void setParams() {

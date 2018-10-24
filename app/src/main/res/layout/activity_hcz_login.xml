@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:background="@color/activity_bg_gray"
     android:orientation="vertical">
 
@@ -143,7 +144,8 @@
                             android:drawablePadding="10dip"
                             android:gravity="center_vertical"
                             android:hint="请输入手机号"
-                            android:inputType="text"
+                            android:inputType="phone"
+                            android:maxLength="11"
                             android:singleLine="true"
                             android:textColor="@color/item_edittext"
                             android:textColorHint="@color/item_edittext_hint"
@@ -294,8 +296,9 @@
                             android:drawablePadding="10dip"
                             android:gravity="center_vertical"
                             android:hint="请输入手机号"
-                            android:inputType="text"
+                            android:inputType="phone"
                             android:singleLine="true"
+                            android:maxLength="11"
                             android:textColor="@color/item_edittext"
                             android:textColorHint="@color/item_edittext_hint"
                             android:textSize="14sp" />
@@ -404,7 +407,7 @@
                         android:padding="@dimen/activity_margin_5dp"
                         android:text="手机动态码登录"
                         android:textColor="#606060"
-                        android:textSize="14sp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/hcz_login_item_forget_tv"
@@ -417,7 +420,7 @@
                         android:padding="@dimen/activity_margin_5dp"
                         android:text="忘记密码？"
                         android:textColor="#68a5db"
-                        android:textSize="14sp" />
+                        android:textSize="16sp" />
                 </LinearLayout>
             </LinearLayout>
 

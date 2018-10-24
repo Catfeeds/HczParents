@@ -1,6 +1,8 @@
 package com.goodsurfing.main;
 
 import android.Manifest;
+import android.app.Activity;
+import android.app.Dialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -9,9 +11,11 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.NetworkInfo.State;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -21,9 +25,13 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
+import android.text.TextUtils;
+import android.view.Display;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -35,9 +43,12 @@ import android.widget.Toast;
 import com.android.component.constants.What;
 import com.goodsurfing.adpter.MainViewPagerAdapter;
 import com.goodsurfing.app.R;
+import com.goodsurfing.beans.ExpireBean;
 import com.goodsurfing.beans.IPList;
 import com.goodsurfing.constants.Constants;
 import com.goodsurfing.server.GetServerListServer;
+import com.goodsurfing.server.net.HczAppFuncNet;
+import com.goodsurfing.server.net.HczGetExpiredateNet;
 import com.goodsurfing.server.net.HczGetServerNet;
 import com.goodsurfing.server.utils.BaseDataService.DataServiceResponder;
 import com.goodsurfing.server.utils.BaseDataService.DataServiceResult;
@@ -69,8 +80,8 @@ public class MainActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        //透明状态栏
+        setStatusBarFullTransparent();
         setContentView(R.layout.activity_tab_main);
         init();
         initViews();
@@ -106,6 +117,74 @@ public class MainActivity extends FragmentActivity {
             });
             getServerNet.sendRequest();
         }
+        if (Constants.funcBeans.size() == 0) {
+            if (!Constants.userId.equals("")) {
+                HczAppFuncNet appFuncNet = new HczAppFuncNet(this, new Handler());
+                appFuncNet.putParams(SharUtil.getServiceId());
+                appFuncNet.sendRequest();
+            }
+        }
+        if (!Constants.userId.equals("") && SharUtil.getService(this).equals("好上网卡") && SharUtil.getExpireShow()) {
+            HczGetExpiredateNet getExpiredateNet = new HczGetExpiredateNet(this, new Handler() {
+                public void handleMessage(Message msg) {
+                    super.handleMessage(msg);
+                    switch (msg.what) {
+                        case What.HTTP_REQUEST_CURD_SUCCESS:
+                            ExpireBean bean = (ExpireBean) msg.obj;
+                            if (bean.isNotice()) {
+                                SharUtil.saveExpireShow();
+                                showNoticeDialog(bean);
+                            }
+                            break;
+                        case What.HTTP_REQUEST_CURD_FAILURE:
+                            break;
+                    }
+                }
+            });
+            getExpiredateNet.putParams(Constants.userMobile);
+            getExpiredateNet.sendRequest();
+        }
+
+    }
+
+    private void showNoticeDialog(final ExpireBean about) {
+        final Dialog dialog = new Dialog(this, R.style.AlertDialogCustom);
+        View view = View.inflate(this, R.layout.layout_kefu_dialog, null);
+        TextView leftView = (TextView) view.findViewById(R.id.layout_kefu_left);
+        TextView rightView = (TextView) view.findViewById(R.id.layout_kefu_right);
+        TextView content = (TextView) view.findViewById(R.id.layout_content_kefu);
+        TextView title = (TextView) view.findViewById(R.id.layout_title_kefu);
+        title.setText("余额提醒");
+        content.setText(about.getMsg());
+        leftView.setText("知道了");
+        rightView.setText("去续费");
+        leftView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                dialog.dismiss();
+            }
+        });
+        rightView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                if (!TextUtils.isEmpty(about.getPaylink())) {
+                    Intent web = new Intent(MainActivity.this, WebActivity.class);
+                    web.putExtra("url", about.getPaylink());
+                    startActivity(web);
+                }
+                dialog.dismiss();
+            }
+        });
+        dialog.setContentView(view);
+        WindowManager m = getWindowManager();
+        Display d = m.getDefaultDisplay(); // 获取屏幕宽、高用
+        WindowManager.LayoutParams p = dialog.getWindow().getAttributes(); // 获取对话框当前的参数值
+        p.width = (int) (d.getWidth() * 0.65); // 宽度设置为屏幕的0.95
+        dialog.setCancelable(false);
+        dialog.getWindow().setAttributes(p);
+        dialog.show();
     }
 
     private void init() {
@@ -120,8 +199,9 @@ public class MainActivity extends FragmentActivity {
         Constants.devWidth = this.getWindowManager().getDefaultDisplay().getWidth();
         Constants.devHeight = this.getWindowManager().getDefaultDisplay().getHeight();
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
+                != PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION},
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION},
                     READ_CONTACTS_REQUEST);
         } else {
             upVersion();
@@ -218,7 +298,25 @@ public class MainActivity extends FragmentActivity {
         timell.setSelected(false);
         myll.setSelected(false);
     }
-
+    /**
+     * 全透状态栏
+     */
+    protected void setStatusBarFullTransparent() {
+        if (Build.VERSION.SDK_INT >= 21) {//21表示5.0
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.TRANSPARENT);
+        } else if (Build.VERSION.SDK_INT >= 19) {//19表示4.4
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            //虚拟键盘也透明
+            //getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        }
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+    }
+    private View contentViewGroup;
 
     private void initViews() {
         mainPageView = findViewById(R.id.hcz_main_pv);
@@ -230,52 +328,7 @@ public class MainActivity extends FragmentActivity {
         mainPageView.setNoScroll(true);
         initTabHost();
 
-
-//
-//        // 实例化布局对象
-//        layoutInflater = LayoutInflater.from(this);
-//        // 实例化TabHost对象，得到TabHost
-//        mTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
-//        mTabHost.setup(this, getSupportFragmentManager(), R.id.realtabcontent);
-//        if(mTabHost.getTabWidget()!=null){
-//            mTabHost.clearAllTabs();
-//        }
-//        // 得到fragment的个数
-//        for (int i = 0; i < 3; i++) {
-//            TabSpec tabSpec = mTabHost.newTabSpec(mTextviewArray[i]).setIndicator(getTabItemView(i));
-//            mTabHost.addTab(tabSpec, fragmentArray[i], null);
-//            mTabHost.getTabWidget().getChildAt(i).setBackgroundResource(R.color.white);
-//        }
-//        mTabHost.getTabWidget().setDividerDrawable(R.color.white);
-//        mTabHost.setOnTabChangedListener(new OnTabChangeListener() {
-//
-//            @Override
-//            public void onTabChanged(String arg0) {
-//                if (Constants.userId.equals("")) {
-//                    iconView.setVisibility(View.VISIBLE);
-//                } else {
-//                    iconView.setVisibility(View.GONE);
-//                }
-//                ActivityUtil.sendEvent4UM(MainActivity.this, "tabSwitch", arg0, 4);
-//            }
-//        });
-//        mTabHost.setCurrentTab(0);
     }
-
-//    private View getTabItemView(int index) {
-//        View view = layoutInflater.inflate(R.layout.tab_item_layout, null);
-//        ImageView imageView = (ImageView) view.findViewById(R.id.tab_imageview);
-//        imageView.setImageResource(mImageViewArray[index]);
-//        TextView textView = (TextView) view.findViewById(R.id.tab_textview);
-//        textView.setText(mTextviewArray[index]);
-//        ImageView iView = (ImageView) view.findViewById(R.id.start_red_icon);
-//        if (index != 2 || !Constants.userId.equals("")) {
-//            iView.setVisibility(View.GONE);
-//        }
-//        if (index == 2)
-//            iconView = iView;
-//        return view;
-//    }
 
     @Override
     protected void onNewIntent(Intent intent) {
@@ -286,6 +339,7 @@ public class MainActivity extends FragmentActivity {
         } else {
             iconView.setVisibility(View.GONE);
         }
+        getServerList();
     }
 
     @Override

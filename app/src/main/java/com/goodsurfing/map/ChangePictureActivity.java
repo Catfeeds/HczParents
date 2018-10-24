@@ -13,6 +13,7 @@ import android.widget.GridView;
 
 import com.goodsurfing.adpter.PhotoAdapter;
 import com.goodsurfing.app.R;
+import com.goodsurfing.base.BaseActivity;
 import com.goodsurfing.base.BasePhotoActivity;
 import com.goodsurfing.constants.Constants;
 
@@ -22,7 +23,7 @@ import com.goodsurfing.constants.Constants;
  * @author Administrator
  * 
  */
-public class ChangePictureActivity extends BasePhotoActivity implements OnClickListener, OnItemClickListener {
+public class ChangePictureActivity extends BaseActivity implements OnClickListener, OnItemClickListener {
 	private Button ibCancel;
 	private PhotoAdapter adapter;
 	private GridView photoGridView;

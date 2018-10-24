@@ -13,7 +13,7 @@ import java.util.List;
 
 public class HczCheckCityNet extends HczNetUtils {
     public HczCheckCityNet(Context context, Handler handler) {
-        super(context, Constants.HCZ_AREALIST_URL, handler);
+        super(context,"", Constants.HCZ_AREALIST_URL, handler);
     }
 
     public void putParams(String id) {

@@ -174,14 +174,14 @@ public class PersonInfoActivity extends BaseActivity {
                         idEt.setText(Constants.rewardCode);
                         adressEt.setText(Constants.adress);
                         switch (Constants.mode) {
-                            case Constants.MODE_LEARNING:
+                            case Constants.MODE_FREE:
                                 modeEt.setText("网络畅游模式");
                                 break;
                             case Constants.MODE_BAD:
                                 modeEt.setText("教育资源模式");
 
                                 break;
-                            case Constants.MODE_FREE:
+                            case Constants.MODE_LEARNING:
                                 modeEt.setText("不良内容拦截模式");
 
                                 break;
@@ -242,18 +242,18 @@ public class PersonInfoActivity extends BaseActivity {
 
     @OnClick(R.id.qrc_code_rl)
     public void onCodeClick(View v) {
-        if (showCodeView)
-            return;
-        mLastTime = mCurTime;
-        mCurTime = System.currentTimeMillis();
-        if (mCurTime - mLastTime < 200) {
-            click++;
-        } else {
-            click = 0;
-        }
-        if (click >= 3) {
-            showCodeImagview();
-        }
+//        if (showCodeView)
+//            return;
+//        mLastTime = mCurTime;
+//        mCurTime = System.currentTimeMillis();
+//        if (mCurTime - mLastTime < 200) {
+//            click++;
+//        } else {
+//            click = 0;
+//        }
+//        if (click >= 3) {
+//            showCodeImagview();
+//        }
     }
 
     /**

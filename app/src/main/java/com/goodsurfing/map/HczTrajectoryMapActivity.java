@@ -29,6 +29,7 @@ import com.baidu.mapapi.map.TextureMapView;
 import com.baidu.mapapi.model.LatLng;
 import com.goodsurfing.adpter.HczTrajectoryAdapter;
 import com.goodsurfing.app.R;
+import com.goodsurfing.base.BaseActivity;
 import com.goodsurfing.beans.DynamicBean;
 import com.goodsurfing.constants.Constants;
 import com.goodsurfing.hcz.HczLoginActivity;
@@ -54,7 +55,7 @@ import java.util.List;
  * 运动轨迹
  */
 @SuppressLint("NewApi")
-public class HczTrajectoryMapActivity extends Activity {
+public class HczTrajectoryMapActivity extends BaseActivity {
     protected static final int REFRESH = 1;
     protected static final int UP_REFRESH = 2;
     @ViewInject(R.id.tv_title)

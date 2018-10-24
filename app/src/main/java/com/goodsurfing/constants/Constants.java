@@ -17,6 +17,7 @@ import com.goodsurfing.app.R;
 import com.goodsurfing.beans.ChildBean;
 import com.goodsurfing.beans.City;
 import com.goodsurfing.beans.Friend;
+import com.goodsurfing.beans.FuncBean;
 import com.goodsurfing.beans.IPList;
 import com.goodsurfing.beans.TimeCardBean;
 import com.goodsurfing.beans.User;
@@ -39,6 +40,7 @@ public class Constants {
 	public static final String LOCK = "lock";
 	public static final String LOCK_KEY = "lock_key";
 	public static final String LOGIN_INFO = "LOGIN_INFO";
+	public static final String LOGIN_SERVICE_ID = "LOGIN_INFO_ID";
 	public static final String USER_MODE = "USER_MODE";
 	public static final String LOGIN_CITY = "LOGIN_CITY";
 	public static final String LOGIN_MOBEL = "LOGIN_MOBEL";
@@ -81,6 +83,8 @@ public class Constants {
 	public static final String HCZ_TIMECONTROL_KEY = "timeControl";
     public static final String HCZ_ISPLIST_URL = "https://www.haoup.net/Interfaces/Isp/IspList";
     public static final String HCZ_AREALIST_URL = "https://www.haoup.net/Interfaces/Isp/AreaList";
+    public static final String HCZ_APPFUNC_URL = "https://www.haoup.net/Interfaces/Isp/AppFunc";
+    public static final String HCZ_INTERFACES_URL = "http://119.39.127.250:8082/Interfaces";
     public static boolean isNetWork = true;
 	public static boolean canMoveAgin = false;
 	public static File IMG_DIR = null;
@@ -173,6 +177,7 @@ public class Constants {
 	public static ChildBean child;
 	public static List<IPList> serviceList;
 	public static List<City> cityList;
+	public static Map<String, Boolean> funcBeans= new LinkedHashMap<String, Boolean>();
 
 	public static void clear(Context app) {
 		typeMap.clear();

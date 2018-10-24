@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:background="@color/activity_bg_gray"
     android:orientation="vertical">
 
@@ -161,7 +162,6 @@
                     android:drawablePadding="10dip"
                     android:gravity="center_vertical"
                     android:hint="请输入宽带帐号或手机号"
-                    android:inputType="text"
                     android:singleLine="true"
                     android:textColor="@color/item_edittext"
                     android:textColorHint="@color/item_edittext_hint"
@@ -248,7 +248,7 @@
                     android:layout_weight="1"
                     android:text="用户许可协议"
                     android:textColor="#C8C8C8"
-                    android:textSize="12sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/activity_login_item_forget_tv"
@@ -259,8 +259,8 @@
                     android:clickable="true"
                     android:gravity="right"
                     android:text="忘记密码？"
-                    android:textColor="#51A7FB"
-                    android:textSize="12sp" />
+                    android:textColor="#68a5db"
+                    android:textSize="16sp" />
             </LinearLayout>
 
             <View

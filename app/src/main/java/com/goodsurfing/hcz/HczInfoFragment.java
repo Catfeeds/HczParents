@@ -195,6 +195,9 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
     public void onClick(View v) {
         if (CommonUtil.isFastDoubleClick())
             return;
+        if(v instanceof ViewGroup){
+            if (!getText4View((ViewGroup) v))return;
+        }
         switch (v.getId()) {
             case R.id.main_help_tv:
 //                ActivityUtil.callQQkefu(getActivity(), rootView);
@@ -205,7 +208,7 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
                 startActivity(help);
                 break;
             case R.id.main_mode_ll:
-            case R.id.tv_mode_button:
+            case R.id.item_mode_info:
                 ActivityUtil.sendEvent4UM(getActivity(), "functionSwitch", "functionSw", 15);
                 Intent mode = new Intent(getActivity(), ModeChangeActivity1.class);
                 startActivity(mode);
@@ -248,6 +251,16 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
             case R.id.add_child_ll:
                 startActivity(new Intent(getActivity(), AddChildActivity.class));
                 break;
+        }
+    }
+    private boolean getText4View(ViewGroup v) {
+        TextView textView = (TextView) v.getChildAt(1);
+        String txt=textView.getText().toString();
+        if(Constants.funcBeans.get(txt)!=null&&!Constants.funcBeans.get(txt)){
+            ActivityUtil.showPopWindow4Tips(getActivity(), rootView, false, "功能暂未开放，敬请期待！");
+            return false;
+        }else {
+            return true;
         }
     }
 
@@ -357,11 +370,12 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
     }
 
     class ModeView {
-        private TextView mode_text, mode_tips, mode_button;
+        private TextView mode_text, mode_tips;
+        private View view;
         ModeView(View itemView) {
+            view=itemView.findViewById(R.id.item_mode_info);
             mode_text = itemView.findViewById(R.id.tv_mode_text);
             mode_tips = itemView.findViewById(R.id.tv_mode_tips);
-            mode_button = itemView.findViewById(R.id.tv_mode_button);
         }
         void bindView() {
             String tips = "";
@@ -378,7 +392,7 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
             }
             mode_tips.setText(tips);
             mode_text.setText(mode);
-            mode_button.setOnClickListener(HczInfoFragment.this);
+            view.setOnClickListener(HczInfoFragment.this);
         }
     }
 

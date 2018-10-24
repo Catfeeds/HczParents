@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -57,6 +58,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.component.constants.What;
+import com.goodsurfing.app.HaoUpApplication;
 import com.goodsurfing.app.R;
 import com.goodsurfing.constants.Constants;
 import com.goodsurfing.hcz.HczMainActivity;
@@ -674,11 +676,13 @@ public class ActivityUtil {
                 view = View.inflate(context, R.layout.activity_head_log, null);
                 window = new PopupWindow(view, LayoutParams.FILL_PARENT, context.getResources().getDimensionPixelSize(R.dimen.activity_tips_height), false);
             }
+            int y=0;
             if (showTabhost) {
-                window.showAtLocation(parent, Gravity.TOP | Gravity.START, 0, context.getResources().getDimensionPixelSize(R.dimen.activity_head_title) + context.getResources().getDimensionPixelSize(R.dimen.activity_add_ll_head_45dp));
+                y=context.getResources().getDimensionPixelSize(R.dimen.activity_head_title) + context.getResources().getDimensionPixelSize(R.dimen.activity_add_ll_head_45dp)+getStatusBarHeight(context);
             } else {
-                window.showAtLocation(parent, Gravity.TOP | Gravity.START, 0, context.getResources().getDimensionPixelSize(R.dimen.activity_head_title));
+                y=context.getResources().getDimensionPixelSize(R.dimen.activity_head_title)+getStatusBarHeight(context);
             }
+            window.showAtLocation(parent, Gravity.TOP | Gravity.START, 0,y);
             final TextView title = (TextView) view.findViewById(R.id.tv_top_msg);
             final ImageView left = (ImageView) view.findViewById(R.id.iv_top_left);
             if (showTime > 0) {
@@ -1061,6 +1065,35 @@ public class ActivityUtil {
         } else {
           return  tem+ "秒";
         }
+    }
+    public static int getStatusBarHeight() {
+        Class<?> c = null;
+
+        Object obj = null;
+
+        Field field = null;
+
+        int x = 0, sbar = 0;
+
+        try {
+
+            c = Class.forName("com.android.internal.R$dimen");
+
+            obj = c.newInstance();
+
+            field = c.getField("status_bar_height");
+
+            x = Integer.parseInt(field.get(obj).toString());
+
+            sbar = HaoUpApplication.getInstance().getResources().getDimensionPixelSize(x);
+
+        } catch (Exception e1) {
+
+            e1.printStackTrace();
+
+        }
+
+        return sbar;
     }
 
 }

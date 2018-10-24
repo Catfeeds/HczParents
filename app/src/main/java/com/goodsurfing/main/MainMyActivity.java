@@ -15,8 +15,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.Editable;
+import android.text.InputFilter;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.text.method.DigitsKeyListener;
 import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -54,6 +57,7 @@ import com.goodsurfing.hcz.HczLoginActivity;
 import com.goodsurfing.hcz.HczPersonInfoActivity;
 import com.goodsurfing.hcz.HczSetPwdActivity;
 import com.goodsurfing.server.LoginServer;
+import com.goodsurfing.server.net.HczAppFuncNet;
 import com.goodsurfing.server.net.HczGetCodeNet;
 import com.goodsurfing.server.net.HczGetServerNet;
 import com.goodsurfing.server.net.HczLoginNet;
@@ -562,6 +566,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
                 serviceName = item;
                 checkRigst(selectedIndex);
                 checkCity();
+                checHint();
                 serviceView.setText(serviceName);
                 SharUtil.saveService(context, serviceName);
                 SharUtil.saveCity(context, cityName);
@@ -576,6 +581,18 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
         dialog.show();
     }
 
+    private void checHint() {
+        if(serviceName.equals("中国联通")) {
+            loginNumEditText.setHint("请输入宽带帐号或手机号");
+            loginNumEditText.setKeyListener(DigitsKeyListener.getInstance("0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"));
+            loginNumEditText.setFilters( new InputFilter[]{ new  InputFilter.LengthFilter( 15 )});
+        }else {
+            loginNumEditText.setHint("请输入手机号");
+            loginNumEditText.setInputType(InputType.TYPE_CLASS_PHONE);
+            loginNumEditText.setFilters( new InputFilter[]{ new  InputFilter.LengthFilter( 11 )});
+        }
+    }
+
     private void checkRigst(int selectedIndex) {
         Constants.isRegistShow = Constants.serviceList.get(selectedIndex-1).getShow_btn().equals("1");
         registerUrl = Constants.serviceList.get(selectedIndex-1).getOpen_url();
@@ -588,6 +605,10 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
             registerTipsTv.setVisibility(View.VISIBLE);
             registerLineView.setVisibility(View.VISIBLE);
         }
+        SharUtil.saveServiceId(Constants.serviceList.get(selectedIndex-1).getId());
+        HczAppFuncNet appFuncNet = new HczAppFuncNet(getActivity(),new Handler());
+        appFuncNet.putParams(Constants.serviceList.get(selectedIndex-1).getId());
+        appFuncNet.sendRequest();
     }
 
     private void checkCity() {
@@ -805,7 +826,6 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
         String account = "";
         String password = "";
         String code = "";
-
         if (loginTypeNum == 1) {
             account = hczloginNumEditText.getText().toString();
             password = hczloginPwdEditText.getText().toString();
@@ -817,6 +837,10 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
             final String city = hczCityTextView.getText().toString();
             if (null == city || city.equals("")) {
                 ActivityUtil.showPopWindow4Tips(getActivity(), cityTextView, false, "请选择地区");
+                return;
+            }
+            if ("".equals(account)) {
+                ActivityUtil.showPopWindow4Tips(getActivity(), hczloginNumEditText, false, "请输入手机号");
                 return;
             }
             if ("".equals(password)) {
@@ -839,15 +863,15 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
                 ActivityUtil.showPopWindow4Tips(getActivity(), cityTextView, false, "请选择地区");
                 return;
             }
+            if ("".equals(account)) {
+                ActivityUtil.showPopWindow4Tips(getActivity(), hczloginNumEditText, false, "请输入手机号");
+                return;
+            }
             if (null == code || "".equals(code)) {
                 ActivityUtil.showPopWindow4Tips(getActivity(), hczloginNumEditText, false, "请输入正确的验证码");
                 return;
             }
 
-        }
-        if ("".equals(account)) {
-            ActivityUtil.showPopWindow4Tips(getActivity(), hczloginNumEditText, false, "请输入手机号");
-            return;
         }
         ActivityUtil.showPopWindow4Tips(getActivity(), hczCityTextView, false, false, "正在登录...", -1);
         HczLoginNet hczLoginNet = new HczLoginNet(getActivity(), new Handler() {
@@ -1052,7 +1076,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
 
     @OnClick(R.id.hcz_login_item_forget_tv)
     public void onFindPasswrodClick(View view) {
-        Intent intent = new Intent(getActivity(), HczFindPwdActivity.class);
+        Intent intent = new Intent(getActivity(), FindPasswordActivity.class);
         startActivity(intent);
     }
 

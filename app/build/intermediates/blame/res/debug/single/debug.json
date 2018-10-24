@@ -4,16 +4,16 @@
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\add_app_deful_icon.png"
     },
     {
-        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable_item_gridview_mode.xml.flat",
-        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable\\item_gridview_mode.xml"
+        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_btn_code_lock_default_holo.png.flat",
+        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\btn_code_lock_default_holo.png"
     },
     {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_custom_big.xml.flat",
         "source": "C:\\Users\\OK\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5f291b337f7893b6b0c5ae724bf26e2f\\res\\layout-v21\\notification_template_custom_big.xml"
     },
     {
-        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_btn_code_lock_default_holo.png.flat",
-        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\btn_code_lock_default_holo.png"
+        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable_item_gridview_mode.xml.flat",
+        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable\\item_gridview_mode.xml"
     },
     {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_tab_net_out1.png.flat",
@@ -48,12 +48,12 @@
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\setting_children_defult_yys.png"
     },
     {
-        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_seek_bar_img.png.flat",
-        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\seek_bar_img.png"
-    },
-    {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_shareweixin.xml.flat",
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\layout\\activity_shareweixin.xml"
+    },
+    {
+        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_seek_bar_img.png.flat",
+        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\seek_bar_img.png"
     },
     {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_my_set_shuoshi.png.flat",
@@ -108,12 +108,12 @@
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\layout\\app_use_time_layout.xml"
     },
     {
-        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_second1.xml.flat",
-        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\layout\\fragment_second1.xml"
-    },
-    {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_login_services.png.flat",
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\ic_login_services.png"
+    },
+    {
+        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_second1.xml.flat",
+        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\layout\\fragment_second1.xml"
     },
     {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_mode_change_select.png.flat",
@@ -208,12 +208,12 @@
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable\\zoom_in_btn.xml"
     },
     {
-        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_battery.xml.flat",
-        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable\\ic_battery.xml"
-    },
-    {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable_regist_bottom_la_bg.xml.flat",
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable\\regist_bottom_la_bg.xml"
+    },
+    {
+        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_battery.xml.flat",
+        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable\\ic_battery.xml"
     },
     {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",

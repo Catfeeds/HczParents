@@ -1,6 +1,7 @@
 package com.goodsurfing.hcz;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -9,9 +10,11 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.NetworkInfo.State;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -20,8 +23,11 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
+import android.text.TextUtils;
+import android.view.Display;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -31,9 +37,14 @@ import android.widget.Toast;
 import com.android.component.constants.What;
 import com.goodsurfing.adpter.MainViewPagerAdapter;
 import com.goodsurfing.app.R;
+import com.goodsurfing.beans.ExpireBean;
 import com.goodsurfing.beans.IPList;
 import com.goodsurfing.constants.Constants;
+import com.goodsurfing.main.MainActivity;
 import com.goodsurfing.main.MainMyActivity;
+import com.goodsurfing.main.WebActivity;
+import com.goodsurfing.server.net.HczAppFuncNet;
+import com.goodsurfing.server.net.HczGetExpiredateNet;
 import com.goodsurfing.server.net.HczGetServerNet;
 import com.goodsurfing.service.UpdateManager;
 import com.goodsurfing.utils.ActivityUtil;
@@ -61,18 +72,33 @@ public class HczMainActivity extends FragmentActivity {
     // Tab选项卡的文字
 //    private String mTextviewArray[] = {"首页", "一键锁屏", "我的"};
 
-    public static  ImageView iconView;
+    public static ImageView iconView;
     public MainPageView mainPageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        setStatusBarFullTransparent();
         setContentView(R.layout.activity_tab_main);
         init();
         initViews();
         getServerList();
+    }
+    /**
+     * 全透状态栏
+     */
+    protected void setStatusBarFullTransparent() {
+        if (Build.VERSION.SDK_INT >= 21) {//21表示5.0
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.TRANSPARENT);
+        } else if (Build.VERSION.SDK_INT >= 19) {//19表示4.4
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
     }
 
     @Override
@@ -103,7 +129,76 @@ public class HczMainActivity extends FragmentActivity {
             });
             getServerNet.sendRequest();
         }
+        if (Constants.funcBeans.size() == 0) {
+            if (!Constants.userId.equals("")) {
+                HczAppFuncNet appFuncNet = new HczAppFuncNet(this, new Handler());
+                appFuncNet.putParams(SharUtil.getServiceId());
+                appFuncNet.sendRequest();
+            }
+        }
+        if (!Constants.userId.equals("") && SharUtil.getService(this).equals("好上网卡") && SharUtil.getExpireShow()) {
+            HczGetExpiredateNet getExpiredateNet = new HczGetExpiredateNet(this, new Handler() {
+                public void handleMessage(Message msg) {
+                    super.handleMessage(msg);
+                    switch (msg.what) {
+                        case What.HTTP_REQUEST_CURD_SUCCESS:
+                            ExpireBean bean = (ExpireBean) msg.obj;
+                            if (bean.isNotice()) {
+                                SharUtil.saveExpireShow();
+                                showNoticeDialog(bean);
+                            }
+                            break;
+                        case What.HTTP_REQUEST_CURD_FAILURE:
+                            break;
+                    }
+                }
+            });
+            getExpiredateNet.putParams(Constants.userMobile);
+            getExpiredateNet.sendRequest();
+        }
+
     }
+
+    private void showNoticeDialog(final ExpireBean about) {
+        final Dialog dialog = new Dialog(this, R.style.AlertDialogCustom);
+        View view = View.inflate(this, R.layout.layout_kefu_dialog, null);
+        TextView leftView = (TextView) view.findViewById(R.id.layout_kefu_left);
+        TextView rightView = (TextView) view.findViewById(R.id.layout_kefu_right);
+        TextView content = (TextView) view.findViewById(R.id.layout_content_kefu);
+        TextView title = (TextView) view.findViewById(R.id.layout_title_kefu);
+        title.setText("余额提醒");
+        content.setText(about.getMsg());
+        leftView.setText("知道了");
+        rightView.setText("去续费");
+        leftView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                dialog.dismiss();
+            }
+        });
+        rightView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                if (!TextUtils.isEmpty(about.getPaylink())) {
+                    Intent web = new Intent(HczMainActivity.this, WebActivity.class);
+                    web.putExtra("url", about.getPaylink());
+                    startActivity(web);
+                }
+                dialog.dismiss();
+            }
+        });
+        dialog.setContentView(view);
+        WindowManager m = getWindowManager();
+        Display d = m.getDefaultDisplay(); // 获取屏幕宽、高用
+        WindowManager.LayoutParams p = dialog.getWindow().getAttributes(); // 获取对话框当前的参数值
+        p.width = (int) (d.getWidth() * 0.65); // 宽度设置为屏幕的0.95
+        dialog.setCancelable(false);
+        dialog.getWindow().setAttributes(p);
+        dialog.show();
+    }
+
 
     private void init() {
         IntentFilter filter = new IntentFilter();
@@ -117,8 +212,9 @@ public class HczMainActivity extends FragmentActivity {
         Constants.devWidth = this.getWindowManager().getDefaultDisplay().getWidth();
         Constants.devHeight = this.getWindowManager().getDefaultDisplay().getHeight();
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
+                != PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION},
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION},
                     READ_CONTACTS_REQUEST);
         } else {
             upVersion();
@@ -237,6 +333,7 @@ public class HczMainActivity extends FragmentActivity {
         } else {
             iconView.setVisibility(View.GONE);
         }
+        getServerList();
     }
 
     @Override

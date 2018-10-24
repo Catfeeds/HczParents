@@ -1,5 +1,6 @@
 package com.goodsurfing.base;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -10,7 +11,7 @@ import com.goodsurfing.utils.CommonUtil;
 /**
  * Created by hailonghan on 15/6/11.
  */
-public abstract class BasePhotoActivity extends SwipeBackActivity {
+public abstract class BasePhotoActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

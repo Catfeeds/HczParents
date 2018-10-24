@@ -17,6 +17,7 @@ import com.goodsurfing.base.BaseActivity;
 import com.goodsurfing.beans.ChildBean;
 import com.goodsurfing.constants.Constants;
 import com.goodsurfing.server.net.HczGetChildsNet;
+import com.goodsurfing.utils.ActivityUtil;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
@@ -79,7 +80,11 @@ public class ChildListActivity extends BaseActivity {
 
     @OnClick(R.id.tv_title_right)
     public void onHeadRightClick(View view) {
-        startActivity(new Intent(this, AddChildActivity.class));
+        if(Constants.child==null) {
+            startActivity(new Intent(this, AddChildActivity.class));
+        }else {
+            ActivityUtil.showPopWindow4Tips(this, nodataView, false, "暂时只支持绑定一个设备");
+        }
     }
 
     @Override

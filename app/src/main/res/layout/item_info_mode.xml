@@ -7,7 +7,7 @@
     >
 
     <RelativeLayout
-        android:id="@+id/item_mode_info_"
+        android:id="@+id/item_mode_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="15dp"
@@ -68,7 +68,7 @@
     </RelativeLayout>
 
     <TextView
-        android:layout_below="@id/item_mode_info_"
+        android:layout_below="@id/item_mode_info"
         android:layout_width="match_parent"
         android:layout_height="@dimen/activity_margin_5dp"
         android:background="#f5f5f7" />

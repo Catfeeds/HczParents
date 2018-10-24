@@ -47,6 +47,7 @@ import com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener;
 import com.baidu.mapapi.search.geocode.ReverseGeoCodeOption;
 import com.baidu.mapapi.search.geocode.ReverseGeoCodeResult;
 import com.goodsurfing.app.R;
+import com.goodsurfing.base.BaseActivity;
 import com.goodsurfing.beans.DynamicBean;
 import com.goodsurfing.beans.Friend;
 import com.goodsurfing.beans.LocationBean;
@@ -67,7 +68,7 @@ import com.lidroid.xutils.view.annotation.event.OnClick;
  * 实时定位
  */
 @SuppressLint("NewApi")
-public class HczMapActivity extends Activity implements OnClickListener {
+public class HczMapActivity extends BaseActivity implements OnClickListener {
     private static final int requestcode = 101;
     protected static final int REFRESH = 1;
     protected static final int UP_REFRESH = 2;

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:2:1-357:12
-INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:2:1-357:12
-INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:2:1-357:12
-INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:2:1-357:12
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:2:1-354:12
+INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:2:1-354:12
+INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:2:1-354:12
+INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:2:1-354:12
 MERGED from [com.prolificinteractive:material-calendarview:1.4.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\material-calendarview-1.4.0.aar\59f9e2dbfa1299caa10c8698b8e2085c\AndroidManifest.xml:2:1-14:12
 MERGED from [com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.3.0.aar\0e4a5a2bf579abd0d412975a65bb0232\AndroidManifest.xml:17:1-55:12
 MERGED from [com.android.support:support-v4:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\8da0c658d4683ecb70b96d55f276a54e\AndroidManifest.xml:17:1-22:12
@@ -18,9 +18,9 @@ MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\OK\.gradle\caches\tr
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\c4938ef5b94fd48c53a27c9fe685999c\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\aaa8a5a168c12049575a376d00a90e1c\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\953c09780113965b24cd71c6998dfa33\AndroidManifest.xml:17:1-22:12
-INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:2:1-357:12
-INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:2:1-357:12
-INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:2:1-357:12
+INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:2:1-354:12
+INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:2:1-354:12
+INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:2:1-354:12
 	package
 		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:3:5-34
 		INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml
@@ -35,746 +35,752 @@ INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:2:1-3
 		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:4:5-29
 		INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml
 		INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml
-uses-sdk
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:7:5-9:41
-INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:7:5-9:41
-INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:7:5-9:41
-MERGED from [com.prolificinteractive:material-calendarview:1.4.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\material-calendarview-1.4.0.aar\59f9e2dbfa1299caa10c8698b8e2085c\AndroidManifest.xml:8:5-10:41
-MERGED from [com.prolificinteractive:material-calendarview:1.4.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\material-calendarview-1.4.0.aar\59f9e2dbfa1299caa10c8698b8e2085c\AndroidManifest.xml:8:5-10:41
-MERGED from [com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.3.0.aar\0e4a5a2bf579abd0d412975a65bb0232\AndroidManifest.xml:19:5-43
-MERGED from [com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.3.0.aar\0e4a5a2bf579abd0d412975a65bb0232\AndroidManifest.xml:19:5-43
-MERGED from [com.android.support:support-v4:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\8da0c658d4683ecb70b96d55f276a54e\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\8da0c658d4683ecb70b96d55f276a54e\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\e60c2363981c1feb1a3f0a86a509b67d\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\e60c2363981c1feb1a3f0a86a509b67d\AndroidManifest.xml:20:5-44
-MERGED from [org.quanqi:mpandroidchart:1.7.5] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\mpandroidchart-1.7.5.aar\c1cd37813013a5205640d3d271cc9c98\AndroidManifest.xml:7:5-9:41
-MERGED from [org.quanqi:mpandroidchart:1.7.5] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\mpandroidchart-1.7.5.aar\c1cd37813013a5205640d3d271cc9c98\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\0e86c37d380224d4482a8c7efed0b265\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\0e86c37d380224d4482a8c7efed0b265\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\2bd1cdcc263f78f1d84a9232730feac2\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\2bd1cdcc263f78f1d84a9232730feac2\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\41b94ea6cbfc5785bfca5e0ecb38eaef\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\41b94ea6cbfc5785bfca5e0ecb38eaef\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\0a54165835b88a91ec6474021b9a4cbf\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\0a54165835b88a91ec6474021b9a4cbf\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\5f291b337f7893b6b0c5ae724bf26e2f\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\5f291b337f7893b6b0c5ae724bf26e2f\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\60af78251a9db63f8edd49c95479bda8\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\60af78251a9db63f8edd49c95479bda8\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\c4938ef5b94fd48c53a27c9fe685999c\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\c4938ef5b94fd48c53a27c9fe685999c\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\aaa8a5a168c12049575a376d00a90e1c\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\aaa8a5a168c12049575a376d00a90e1c\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\953c09780113965b24cd71c6998dfa33\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\953c09780113965b24cd71c6998dfa33\AndroidManifest.xml:20:5-44
-INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:7:5-9:41
-INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:7:5-9:41
-	android:targetSdkVersion
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:9:9-38
-		INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml
-		INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml
-	android:minSdkVersion
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:8:9-35
-		INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml
-		INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.BLUETOOTH
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:11:5-68
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:7:5-68
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:11:22-65
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:7:22-65
 uses-permission#android.permission.GET_ACCOUNTS
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:12:5-71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:8:5-71
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:12:22-68
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:8:22-68
 uses-permission#android.permission.USE_CREDENTIALS
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:13:5-74
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:9:5-74
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:13:22-71
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:9:22-71
 uses-permission#android.permission.MANAGE_ACCOUNTS
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:14:5-74
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:10:5-74
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:14:22-71
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:10:22-71
 uses-permission#android.permission.AUTHENTICATE_ACCOUNTS
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:15:5-80
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:11:5-80
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:15:22-77
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:11:22-77
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:16:5-79
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:12:5-79
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:16:22-76
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:12:22-76
 uses-permission#android.permission.INTERNET
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:17:5-67
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:13:5-67
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:17:22-64
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:13:22-64
 uses-permission#com.android.launcher.permission.READ_SETTINGS
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:18:5-85
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:14:5-85
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:18:22-82
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:14:22-82
 uses-permission#android.permission.CHANGE_WIFI_STATE
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:19:5-76
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:15:5-76
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:19:22-73
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:15:22-73
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:20:5-76
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:16:5-76
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:20:22-73
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:16:22-73
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:21:5-75
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:17:5-75
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:21:22-72
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:17:22-72
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:22:5-81
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:18:5-81
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:22:22-78
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:18:22-78
 uses-permission#android.permission.BROADCAST_STICKY
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:23:5-75
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:19:5-75
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:23:22-72
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:19:22-72
 uses-permission#android.permission.REQUEST_INSTALL_PACKAGES
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:24:5-83
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:20:5-83
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:24:22-80
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:20:22-80
 uses-permission#android.permission.CALL_PHONE
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:25:5-69
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:21:5-69
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:25:22-66
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:21:22-66
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:26:5-79
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:22:5-79
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:26:22-76
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:22:22-76
 uses-permission#android.permission.READ_CONTACTS
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:27:5-72
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:23:5-72
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:27:22-69
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:23:22-69
 uses-permission#android.permission.WRITE_CONTACTS
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:28:5-73
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:24:5-73
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:28:22-70
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:24:22-70
 uses-permission#android.permission.BAIDU_LOCATION_SERVICE
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:29:5-81
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:25:5-81
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:29:22-78
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:25:22-78
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:30:5-81
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:26:5-81
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:30:22-78
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:26:22-78
 uses-permission#android.permission.ACCESS_GPS
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:31:5-69
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:27:5-69
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:31:22-66
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:27:22-66
 uses-permission#android.permission.CAMERA
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:32:5-65
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:28:5-65
 MERGED from [com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.3.0.aar\0e4a5a2bf579abd0d412975a65bb0232\AndroidManifest.xml:21:5-65
 MERGED from [com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.3.0.aar\0e4a5a2bf579abd0d412975a65bb0232\AndroidManifest.xml:21:5-65
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:32:22-62
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:28:22-62
 application
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:34:5-355:19
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:30:5-352:19
 MERGED from [com.prolificinteractive:material-calendarview:1.4.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\material-calendarview-1.4.0.aar\59f9e2dbfa1299caa10c8698b8e2085c\AndroidManifest.xml:12:5-20
 MERGED from [com.prolificinteractive:material-calendarview:1.4.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\material-calendarview-1.4.0.aar\59f9e2dbfa1299caa10c8698b8e2085c\AndroidManifest.xml:12:5-20
 MERGED from [com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.3.0.aar\0e4a5a2bf579abd0d412975a65bb0232\AndroidManifest.xml:45:5-53:19
 MERGED from [com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.3.0.aar\0e4a5a2bf579abd0d412975a65bb0232\AndroidManifest.xml:45:5-53:19
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:40:9-45
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:36:9-45
 	android:label
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:39:9-41
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:35:9-41
 	android:exported
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:37:9-33
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:33:9-33
 	android:icon
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:38:9-45
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:34:9-45
 	android:allowBackup
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:36:9-36
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:32:9-36
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:41:9-67
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:37:9-62
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:35:9-60
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:31:9-60
 meta-data#com.baidu.lbsapi.API_KEY
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:42:9-44:64
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:38:9-40:64
 	android:value
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:44:13-61
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:40:13-61
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:43:13-52
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:39:13-52
+meta-data#android.max_aspect
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:41:9-76
+	android:value
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:41:54-73
+	android:name
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:41:20-53
 provider#android.support.v4.content.FileProvider
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:45:9-53:20
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:42:9-50:20
 	android:grantUriPermissions
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:49:13-47
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:46:13-47
 	android:authorities
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:47:13-67
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:44:13-67
 	android:exported
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:48:13-37
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:45:13-37
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:46:13-67
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:43:13-67
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:50:13-52:54
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:47:13-49:54
 	android:resource
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:52:17-51
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:49:17-51
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:51:17-67
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:48:17-67
 activity#com.goodsurfing.main.WelcomeActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:54:9-63:20
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:51:9-60:20
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:57:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:54:13-49
 	android:label
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:56:13-45
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:53:13-45
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:55:13-64
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:52:13-64
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:58:13-62:29
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:55:13-59:29
 action#android.intent.action.MAIN
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:59:17-69
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:56:17-69
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:59:25-66
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:56:25-66
 category#android.intent.category.LAUNCHER
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:61:17-77
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:58:17-77
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:61:27-74
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:58:27-74
 activity#com.goodsurfing.main.MoreActivity
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:61:9-63:71
+	android:theme
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:63:13-59
+	android:name
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:62:13-61
+activity#com.goodsurfing.hcz.HczChargeListActivity
 ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:64:9-66:71
 	android:theme
 		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:66:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:65:13-61
-activity#com.goodsurfing.hcz.HczChargeListActivity
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:65:13-69
+activity#com.goodsurfing.hcz.HczChargeChoicesActivity
 ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:67:9-69:71
 	android:theme
 		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:69:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:68:13-69
-activity#com.goodsurfing.hcz.HczChargeChoicesActivity
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:68:13-72
+activity#com.goodsurfing.hcz.DynamicActivity
 ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:70:9-72:71
 	android:theme
 		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:72:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:71:13-72
-activity#com.goodsurfing.hcz.DynamicActivity
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:71:13-63
+activity#com.goodsurfing.main.BindPhoneActivity
 ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:73:9-75:71
 	android:theme
 		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:75:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:74:13-63
-activity#com.goodsurfing.main.BindPhoneActivity
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:74:13-66
+activity#com.goodsurfing.main.UserAgreementActivity
 ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:76:9-78:71
 	android:theme
 		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:78:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:77:13-66
-activity#com.goodsurfing.main.UserAgreementActivity
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:77:13-70
+activity#com.goodsurfing.main.PayOkActivity
 ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:79:9-81:71
 	android:theme
 		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:81:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:80:13-70
-activity#com.goodsurfing.main.PayOkActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:82:9-84:71
-	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:84:13-59
-	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:83:13-62
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:80:13-62
 activity#com.goodsurfing.map.MapActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:85:9-88:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:82:9-85:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:87:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:84:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:88:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:85:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:86:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:83:13-59
 activity#com.goodsurfing.map.HczMapActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:89:9-92:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:86:9-89:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:91:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:88:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:92:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:89:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:90:13-62
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:87:13-62
 activity#com.goodsurfing.map.HczTrajectoryMapActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:93:9-96:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:90:9-93:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:95:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:92:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:96:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:93:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:94:13-72
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:91:13-72
 activity#com.goodsurfing.addchild.BindScanActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:97:9-101:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:94:9-98:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:100:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:97:13-49
 	android:launchMode
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:99:13-44
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:96:13-44
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:101:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:98:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:98:13-69
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:95:13-69
 activity#com.goodsurfing.main.EditPhoneActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:102:9-105:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:99:9-102:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:104:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:101:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:105:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:102:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:103:13-66
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:100:13-66
 activity#com.goodsurfing.main.MainActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:106:9-110:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:103:9-107:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:109:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:106:13-49
 	android:launchMode
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:108:13-44
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:105:13-44
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:110:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:107:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:107:13-61
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:104:13-61
 activity#com.goodsurfing.hcz.HczMainActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:111:9-115:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:108:9-112:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:114:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:111:13-49
 	android:launchMode
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:113:13-44
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:110:13-44
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:115:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:112:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:112:13-63
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:109:13-63
 activity#com.goodsurfing.main.TimeControllerActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:116:9-119:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:113:9-116:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:118:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:115:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:119:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:116:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:117:13-71
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:114:13-71
 activity#com.goodsurfing.hcz.TimeControllerActivity1
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:120:9-123:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:117:9-120:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:122:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:119:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:123:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:120:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:121:13-71
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:118:13-71
 activity#com.goodsurfing.main.ModeChangeActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:124:9-127:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:121:9-124:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:126:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:123:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:127:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:124:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:125:13-67
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:122:13-67
 activity#com.goodsurfing.fundlock.GestureEditActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:128:9-131:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:125:9-128:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:130:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:127:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:131:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:128:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:129:13-72
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:126:13-72
 activity#com.goodsurfing.fundlock.GestureVerifyActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:132:9-135:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:129:9-132:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:134:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:131:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:135:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:132:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:133:13-74
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:130:13-74
 activity#com.goodsurfing.map.AddChildrenActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:136:9-139:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:133:9-136:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:138:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:135:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:139:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:136:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:137:13-67
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:134:13-67
 activity#com.goodsurfing.map.SettingChildrenActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:140:9-143:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:137:9-140:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:142:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:139:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:143:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:140:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:141:13-71
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:138:13-71
 activity#com.goodsurfing.map.SettingChildrenNameActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:144:9-147:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:141:9-144:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:146:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:143:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:147:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:144:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:145:13-75
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:142:13-75
 activity#com.goodsurfing.map.InfoChildrenActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:148:9-151:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:145:9-148:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:150:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:147:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:151:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:148:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:149:13-68
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:146:13-68
 activity#com.goodsurfing.map.ChangePictureActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:152:9-154:61
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:149:9-151:61
+	android:screenOrientation
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:151:13-49
+	android:name
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:150:13-69
+activity#com.goodsurfing.addchild.ShowChildAppLoadCodeActivity
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:152:9-155:71
 	android:screenOrientation
 		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:154:13-49
-	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:153:13-69
-activity#com.goodsurfing.addchild.ShowChildAppLoadCodeActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:155:9-158:71
-	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:157:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:158:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:155:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:156:13-81
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:153:13-81
 activity#com.goodsurfing.addchild.AddChildActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:159:9-163:62
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:156:9-160:62
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:162:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:159:13-49
 	android:launchMode
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:161:13-44
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:158:13-44
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:163:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:160:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:160:13-69
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:157:13-69
 activity#com.goodsurfing.addchild.ChildInfoActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:164:9-167:62
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:161:9-164:62
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:166:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:163:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:167:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:164:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:165:13-70
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:162:13-70
 activity#com.goodsurfing.addchild.ChildListActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:168:9-172:62
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:165:9-169:62
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:171:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:168:13-49
 	android:launchMode
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:170:13-44
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:167:13-44
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:172:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:169:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:169:13-70
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:166:13-70
 activity#com.goodsurfing.main.TerminalControlActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:174:9-177:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:171:9-174:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:176:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:173:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:177:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:174:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:175:13-72
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:172:13-72
 activity#com.goodsurfing.hcz.HczPersonInfoActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:178:9-181:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:175:9-178:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:180:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:177:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:181:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:178:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:179:13-69
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:176:13-69
 activity#com.goodsurfing.hcz.HczLoginActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:182:9-185:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:179:9-182:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:184:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:181:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:185:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:182:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:183:13-64
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:180:13-64
 activity#com.goodsurfing.hcz.HczFindPwdActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:186:9-189:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:183:9-186:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:188:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:185:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:189:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:186:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:187:13-66
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:184:13-66
 activity#com.goodsurfing.hcz.HczSetPwdActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:190:9-193:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:187:9-190:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:192:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:189:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:193:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:190:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:191:13-65
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:188:13-65
 activity#com.goodsurfing.main.LoginActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:194:9-198:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:191:9-195:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:197:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:194:13-49
 	android:launchMode
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:196:13-43
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:193:13-43
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:198:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:195:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:195:13-62
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:192:13-62
 activity#com.goodsurfing.main.WebActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:199:9-202:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:196:9-199:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:201:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:198:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:202:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:199:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:200:13-60
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:197:13-60
 activity#com.goodsurfing.main.WebFiltersActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:203:9-206:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:200:9-203:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:205:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:202:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:206:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:203:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:204:13-67
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:201:13-67
 activity#com.goodsurfing.main.BlackAndWhiteListActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:207:9-210:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:204:9-207:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:209:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:206:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:210:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:207:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:208:13-74
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:205:13-74
 activity#com.goodsurfing.main.AddBlackWhiteListActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:211:9-214:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:208:9-211:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:213:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:210:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:214:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:211:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:212:13-74
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:209:13-74
 activity#com.goodsurfing.main.AddWebsActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:215:9-218:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:212:9-215:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:217:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:214:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:218:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:215:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:216:13-64
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:213:13-64
 activity#com.goodsurfing.app.wxapi.ShareWeiXinActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:219:9-222:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:216:9-219:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:221:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:218:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:222:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:219:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:220:13-73
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:217:13-73
 activity#com.goodsurfing.main.TimerCountsListActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:223:9-226:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:220:9-223:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:225:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:222:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:226:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:223:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:224:13-72
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:221:13-72
 activity#com.goodsurfing.main.AddTimerCardsActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:227:9-230:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:224:9-227:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:229:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:226:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:230:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:227:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:228:13-70
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:225:13-70
 activity#com.goodsurfing.main.GuideView
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:231:9-234:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:228:9-231:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:233:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:230:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:234:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:231:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:232:13-58
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:229:13-58
 activity#com.goodsurfing.main.ChargeChoicesActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:235:9-238:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:232:9-235:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:237:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:234:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:238:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:235:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:236:13-70
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:233:13-70
 activity#com.goodsurfing.main.ChargeListActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:239:9-250:20
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:236:9-247:20
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:241:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:238:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:242:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:239:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:240:13-67
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:237:13-67
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.DEFAULT+data:scheme:wx7b49afd96ad69fba
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:243:13-249:29
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:240:13-246:29
 action#android.intent.action.VIEW
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:244:17-69
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:241:17-69
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:244:25-66
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:241:25-66
 category#android.intent.category.DEFAULT
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:246:17-76
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:243:17-76
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:246:27-73
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:243:27-73
 data
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:248:17-61
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:245:17-61
 	android:scheme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:248:23-58
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:245:23-58
 activity#com.goodsurfing.main.FindPasswordActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:251:9-254:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:248:9-251:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:253:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:250:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:254:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:251:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:252:13-69
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:249:13-69
 activity#com.goodsurfing.hcz.ApplicationControlsActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:255:9-258:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:252:9-255:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:257:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:254:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:258:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:255:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:256:13-75
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:253:13-75
 activity#com.goodsurfing.main.EditPasswordActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:259:9-262:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:256:9-259:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:261:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:258:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:262:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:259:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:260:13-69
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:257:13-69
 activity#com.goodsurfing.hcz.ModeChangeActivity1
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:263:9-266:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:260:9-263:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:265:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:262:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:266:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:263:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:264:13-67
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:261:13-67
 activity#com.goodsurfing.hcz.HczBindActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:267:9-270:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:264:9-267:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:269:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:266:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:270:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:267:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:268:13-63
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:265:13-63
 activity#com.goodsurfing.main.AboutActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:271:9-274:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:268:9-271:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:273:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:270:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:274:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:271:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:272:13-62
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:269:13-62
 activity#com.goodsurfing.main.RegisterActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:275:9-279:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:272:9-276:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:278:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:275:13-49
 	android:configChanges
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:277:13-74
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:274:13-74
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:279:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:276:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:276:13-65
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:273:13-65
 activity#com.goodsurfing.main.BindActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:280:9-283:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:277:9-280:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:282:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:279:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:283:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:280:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:281:13-61
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:278:13-61
 activity#com.goodsurfing.main.RegisterNextActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:284:9-287:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:281:9-284:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:286:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:283:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:287:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:284:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:285:13-69
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:282:13-69
 activity#com.goodsurfing.main.PersonInfoActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:288:9-291:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:285:9-288:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:290:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:287:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:291:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:288:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:289:13-67
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:286:13-67
 activity#com.goodsurfing.main.ModifyPasswordActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:292:9-295:71
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:289:9-292:71
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:294:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:291:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:295:13-59
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:292:13-59
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:293:13-71
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:290:13-71
 activity#com.alipay.sdk.app.H5PayActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:298:9-302:79
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:295:9-299:79
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:301:13-47
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:298:13-47
 	android:windowSoftInputMode
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:302:13-67
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:299:13-67
 	android:exported
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:300:13-37
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:297:13-37
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:299:13-60
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:296:13-60
 meta-data#UMENG_APPKEY
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:304:9-306:56
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:301:9-303:56
 	android:value
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:306:13-53
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:303:13-53
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:305:13-40
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:302:13-40
 meta-data#UMENG_CHANNEL
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:307:9-309:38
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:304:9-306:38
 	android:value
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:309:13-35
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:306:13-35
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:308:13-41
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:305:13-41
 service#com.baidu.location.f
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:311:9-314:49
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:308:9-311:49
 	android:process
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:314:13-38
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:311:13-38
 	android:enabled
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:313:13-35
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:310:13-35
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:312:13-48
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:309:13-48
 receiver#net.sourceforge.simcpux.AppRegister
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:316:9-320:20
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:313:9-317:20
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:316:19-69
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:313:19-69
 intent-filter#action:name:com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:317:13-319:29
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:314:13-316:29
 action#com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:318:17-100
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:315:17-100
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:318:25-97
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:315:25-97
 activity#com.tencent.tauth.AuthActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:322:9-334:20
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:319:9-331:20
 	android:launchMode
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:324:13-44
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:321:13-44
 	android:noHistory
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:325:13-37
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:322:13-37
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:323:13-58
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:320:13-58
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:101492008
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:326:13-333:29
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:323:13-330:29
 category#android.intent.category.BROWSABLE
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:330:17-78
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:327:17-78
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:330:27-75
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:327:27-75
 activity#com.tencent.connect.common.AssistActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:335:9-338:75
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:332:9-335:75
 	android:screenOrientation
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:337:13-49
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:334:13-49
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:338:13-72
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:335:13-72
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:336:13-69
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:333:13-69
 activity#com.goodsurfing.app.wxapi.WXEntryActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:340:9-344:75
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:337:9-341:75
 	android:launchMode
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:343:13-48
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:340:13-48
 	android:exported
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:342:13-36
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:339:13-36
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:344:13-72
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:341:13-72
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:341:13-69
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:338:13-69
 activity#com.goodsurfing.app.wxapi.WXPayEntryActivity
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:345:9-349:75
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:342:9-346:75
 	android:launchMode
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:348:13-48
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:345:13-48
 	android:exported
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:347:13-36
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:344:13-36
 	android:theme
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:349:13-72
-	android:name
 		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:346:13-72
-service#com.goodsurfing.service.RegisterCodeTimerService
-ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:352:9-354:38
-	android:enabled
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:354:13-35
 	android:name
-		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:353:13-76
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:343:13-72
+service#com.goodsurfing.service.RegisterCodeTimerService
+ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:349:9-351:38
+	android:enabled
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:351:13-35
+	android:name
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml:350:13-76
+uses-sdk
+INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml
+INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml
+MERGED from [com.prolificinteractive:material-calendarview:1.4.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\material-calendarview-1.4.0.aar\59f9e2dbfa1299caa10c8698b8e2085c\AndroidManifest.xml:8:5-10:41
+MERGED from [com.prolificinteractive:material-calendarview:1.4.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\material-calendarview-1.4.0.aar\59f9e2dbfa1299caa10c8698b8e2085c\AndroidManifest.xml:8:5-10:41
+MERGED from [com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.3.0.aar\0e4a5a2bf579abd0d412975a65bb0232\AndroidManifest.xml:19:5-43
+MERGED from [com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.3.0.aar\0e4a5a2bf579abd0d412975a65bb0232\AndroidManifest.xml:19:5-43
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\8da0c658d4683ecb70b96d55f276a54e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\8da0c658d4683ecb70b96d55f276a54e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\e60c2363981c1feb1a3f0a86a509b67d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\e60c2363981c1feb1a3f0a86a509b67d\AndroidManifest.xml:20:5-44
+MERGED from [org.quanqi:mpandroidchart:1.7.5] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\mpandroidchart-1.7.5.aar\c1cd37813013a5205640d3d271cc9c98\AndroidManifest.xml:7:5-9:41
+MERGED from [org.quanqi:mpandroidchart:1.7.5] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\mpandroidchart-1.7.5.aar\c1cd37813013a5205640d3d271cc9c98\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\0e86c37d380224d4482a8c7efed0b265\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\0e86c37d380224d4482a8c7efed0b265\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\2bd1cdcc263f78f1d84a9232730feac2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\2bd1cdcc263f78f1d84a9232730feac2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\41b94ea6cbfc5785bfca5e0ecb38eaef\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\41b94ea6cbfc5785bfca5e0ecb38eaef\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\0a54165835b88a91ec6474021b9a4cbf\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\0a54165835b88a91ec6474021b9a4cbf\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\5f291b337f7893b6b0c5ae724bf26e2f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\5f291b337f7893b6b0c5ae724bf26e2f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\60af78251a9db63f8edd49c95479bda8\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\60af78251a9db63f8edd49c95479bda8\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\c4938ef5b94fd48c53a27c9fe685999c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\c4938ef5b94fd48c53a27c9fe685999c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\aaa8a5a168c12049575a376d00a90e1c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\aaa8a5a168c12049575a376d00a90e1c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\953c09780113965b24cd71c6998dfa33\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\953c09780113965b24cd71c6998dfa33\AndroidManifest.xml:20:5-44
+INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml
+INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml
+		INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml
+		ADDED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml
+		INJECTED from G:\StudioWorkspase\HaoUp1.0\app\src\main\AndroidManifest.xml
 uses-feature#android.hardware.camera
 ADDED from [com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\OK\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.3.0.aar\0e4a5a2bf579abd0d412975a65bb0232\AndroidManifest.xml:24:5-26:36
 	android:required

@@ -1968,7 +1968,7 @@ public final class R {
     public static final int item_dynamic_ll0=0x7f0801ac;
     public static final int item_dynamic_ll1=0x7f0801ad;
     public static final int item_dynamic_ll2=0x7f0801ae;
-    public static final int item_mode_info_=0x7f0801af;
+    public static final int item_mode_info=0x7f0801af;
     public static final int item_photo_iv=0x7f0801b0;
     public static final int item_photo_name=0x7f0801b1;
     public static final int item_timer_card_creat=0x7f0801b2;
