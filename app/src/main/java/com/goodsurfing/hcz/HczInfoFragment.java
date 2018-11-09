@@ -58,6 +58,7 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
     private MainInfoAdapter adapter;
     private TextView helpTextView;
     private TextView tipsLocationTv;
+    private ImageView tipsAppIv;
     private View headView;
     private View modeView;
     private View chartView;
@@ -141,6 +142,11 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
                 addChildLl.setVisibility(View.VISIBLE);
                 tipsLayout.setVisibility(View.GONE);
             }
+            if(Constants.child!=null&&Constants.child.isOpenAppStatus()){
+                tipsAppIv.setImageResource(R.drawable.ic_main_app_bg_tips);
+            }else {
+                tipsAppIv.setImageResource(R.drawable.ic_main_app_bg);
+            }
         }
     }
 
@@ -156,7 +162,6 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
     private void setTitleTime() {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         String date = formatter.format(new Date(new Date().getTime()));
-//        String date = formatter.format(  new Date(new Date().getTime()-24*60*60*1000));
         getBundleUserTrajectory(date);
 
 
@@ -178,7 +183,6 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
                         locationBean.setDate(bean.getCreatedAt());
                         locationBean.setLat(bean.getLat() + "");
                         locationBean.setLng(bean.getLng() + "");
-//                        tipsLayout.setVisibility(View.VISIBLE);
                         tipsLocationTv.setText(locationBean.getAddress());
                         break;
                     case What.HTTP_REQUEST_CURD_FAILURE:
@@ -273,7 +277,7 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
             addChildLl.setVisibility(View.VISIBLE);
             return;
         }
-        reflashLocation();
+//        reflashLocation();
         HczGetStatisticsNet getStatisticsNet = new HczGetStatisticsNet(getActivity(), handler);
         getStatisticsNet.putParams(date);
         getStatisticsNet.sendRequest();
@@ -366,6 +370,7 @@ public class HczInfoFragment extends BaseFragment implements OnClickListener {
             lockLayout.setOnClickListener(HczInfoFragment.this);
             dynamicLayout.setOnClickListener(HczInfoFragment.this);
             appLayout.setOnClickListener(HczInfoFragment.this);
+            tipsAppIv=appLayout.findViewById(R.id.app_ll_iv);
         }
     }
 

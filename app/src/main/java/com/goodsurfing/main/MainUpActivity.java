@@ -183,8 +183,9 @@ public class MainUpActivity extends BaseFragment implements OnClickListener {
                 break;
             case R.id.main_more_ll:
                 ActivityUtil.sendEvent4UM(getActivity(), "functionSwitch", "more", 16);
-                Intent more = new Intent(getActivity(), MoreActivity.class);
-                startActivity(more);
+                Intent intent = new Intent(getActivity(), WebActivity.class);
+                intent.putExtra("url","https://h5.youzan.com/wscshop/goods/2xk7mhk21rook");
+                startActivity(intent);
                 break;
             case R.id.main_net_ll:
                 ((MainActivity) getActivity()).mainPageView.setCurrentItem(1);

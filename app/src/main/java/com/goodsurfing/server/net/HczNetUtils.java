@@ -1,9 +1,12 @@
 package com.goodsurfing.server.net;
 
+import android.app.Application;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
@@ -18,7 +21,9 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.goodsurfing.app.HaoUpApplication;
 import com.goodsurfing.constants.Constants;
+import com.goodsurfing.hcz.ModeChangeActivity1;
 import com.goodsurfing.utils.ActivityUtil;
+import com.goodsurfing.utils.LogUtil;
 import com.goodsurfing.utils.SignUtils;
 
 import java.util.HashMap;
@@ -31,10 +36,10 @@ public abstract class HczNetUtils {
     private Handler mHandler;
     private String data;
     private String action;
-    String baseurl="http://s1.tensafe.net:9292";
+    String baseurl = "http://s1.tensafe.net:9292";
 
     public HczNetUtils(Context context, String serverPath, Handler handler) {
-        this(context,"http://s1.tensafe.net:9292",serverPath,handler);
+        this(context, "http://s1.tensafe.net:9292", serverPath, handler);
 //        mContext = context;
 //        mHandler = handler;
 //        action = serverPath;
@@ -45,11 +50,12 @@ public abstract class HczNetUtils {
 //            url= serverPath;
 //        }
     }
-    public HczNetUtils(Context context,  String baseUrl,String serverPath, Handler handler) {
+
+    public HczNetUtils(Context context, String baseUrl, String serverPath, Handler handler) {
         mContext = context;
         mHandler = handler;
         action = serverPath;
-        url= baseUrl+serverPath;
+        url = baseUrl + serverPath;
     }
 
     protected void setParams() {
@@ -82,11 +88,16 @@ public abstract class HczNetUtils {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.i("onResponse", action + ">>" + response);
+                LogUtil.log("onResponse", action + ">>" + response);
                 try {
                     JSONObject result = JSON.parseObject(response);
                     if (result.getString("status").equals("ok")) {
-                        onHczSuccess(result.getString("data"));
+                        String errorCode = result.getString("message");
+                        if (TextUtils.isEmpty(result.getString("data"))) {
+                            onHczSuccess(HttpErrorCode.getCode2String(errorCode));
+                        } else {
+                            onHczSuccess(result.getString("data"));
+                        }
                     } else {
                         String errorCode = result.getString("message");
                         onHczFailure(HttpErrorCode.getCode2String(errorCode));

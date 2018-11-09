@@ -37,11 +37,6 @@ public class BindScanActivity extends BaseActivity {
     @ViewInject(R.id.bind_code_tv)
     private TextView getCodeBtn;
 
-
-    @ViewInject(R.id.down_load_app_tv)
-    private TextView downLoadBtn;
-
-
     @ViewInject(R.id.dbv)
     DecoratedBarcodeView mDBV;
     private CaptureManager captureManager;
@@ -98,8 +93,4 @@ public class BindScanActivity extends BaseActivity {
     }
 
 
-    @OnClick(R.id.down_load_app_tv)
-    public void gotoDownApp(View view) {
-        startActivity(new Intent(this, ShowChildAppLoadCodeActivity.class));
-    }
 }

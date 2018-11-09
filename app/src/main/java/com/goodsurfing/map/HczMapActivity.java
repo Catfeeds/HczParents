@@ -134,6 +134,7 @@ public class HczMapActivity extends BaseActivity implements OnClickListener {
         super.onResume();
         mMapView.onResume();
         if (!"".equals(Constants.userId) && Constants.child != null) {
+            reflashLocation();
             setDynamicDate();
         } else {
             childrenNumRLayout.setVisibility(View.GONE);
@@ -167,7 +168,7 @@ public class HczMapActivity extends BaseActivity implements OnClickListener {
         try {
             dynamicBean = (DynamicBean) getIntent().getSerializableExtra("dynamic");
         } catch (Exception e) {
-
+            dynamicBean = new DynamicBean();
         }
         bdMap = mMapView.getMap();
         title.setText("当前位置");

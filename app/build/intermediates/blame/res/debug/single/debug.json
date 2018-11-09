@@ -300,6 +300,10 @@
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable\\children_head_select_7.xml"
     },
     {
+        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_layout_vip_btn.png.flat",
+        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xxhdpi\\layout_vip_btn.png"
+    },
+    {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable_wheel_val.xml.flat",
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable\\wheel_val.xml"
     },
@@ -506,10 +510,6 @@
     {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_tv.png.flat",
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\ic_tv.png"
-    },
-    {
-        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_guide_filve.png.flat",
-        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\guide_filve.png"
     },
     {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_main_end_un.png.flat",
@@ -796,6 +796,10 @@
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\fragment_main_up1_tips_right.png"
     },
     {
+        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout_vip_dialog.xml.flat",
+        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\layout\\layout_vip_dialog.xml"
+    },
+    {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\layout_user_xieyi_dialog.xml.flat",
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\layout\\user_xieyi_dialog.xml"
     },
@@ -838,10 +842,6 @@
     {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_main_location_bg1.xml.flat",
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable\\ic_main_location_bg1.xml"
-    },
-    {
-        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_guide_one.png.flat",
-        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\guide_one.png"
     },
     {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable_view_btn_gray__bg.xml.flat",
@@ -942,10 +942,6 @@
     {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_icon_markf.png.flat",
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-ldpi\\icon_markf.png"
-    },
-    {
-        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_guide_two.png.flat",
-        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\guide_two.png"
     },
     {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_drawer_function5.png.flat",
@@ -1132,6 +1128,10 @@
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\layout\\activity_unchecked_webs.xml"
     },
     {
+        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_layout_vip_btn.png.flat",
+        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\layout_vip_btn.png"
+    },
+    {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_photo_show_check_3.png.flat",
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\photo_show_check_3.png"
     },
@@ -1214,10 +1214,6 @@
     {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_icon_markg.png.flat",
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-ldpi\\icon_markg.png"
-    },
-    {
-        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_guide_filver.png.flat",
-        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\guide_filver.png"
     },
     {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable_children_head_select_8.xml.flat",
@@ -1340,12 +1336,12 @@
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\title_tab_btn_helpe_un.png"
     },
     {
-        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_main_more_un.png.flat",
-        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\ic_main_more_un.png"
+        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_main_app_bg_tips.png.flat",
+        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\ic_main_app_bg_tips.png"
     },
     {
-        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_guide_four.png.flat",
-        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\guide_four.png"
+        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_main_more_un.png.flat",
+        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\ic_main_more_un.png"
     },
     {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_guide_filver.png.flat",
@@ -1420,6 +1416,10 @@
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-ldpi\\icon_marka.png"
     },
     {
+        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_laboratory.xml.flat",
+        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\layout\\activity_laboratory.xml"
+    },
+    {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_indicator_code_lock_point_area_default_holo.png.flat",
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\indicator_code_lock_point_area_default_holo.png"
     },
@@ -1486,10 +1486,6 @@
     {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_main_time_bg.xml.flat",
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable\\ic_main_time_bg.xml"
-    },
-    {
-        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_guide_six.png.flat",
-        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\guide_six.png"
     },
     {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\layout_mode_change_dialog.xml.flat",
@@ -1748,6 +1744,10 @@
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\layout\\activity_dynamic.xml"
     },
     {
+        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_layout_vip_iv.png.flat",
+        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\layout_vip_iv.png"
+    },
+    {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_setting_children_head_add_iv.png.flat",
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\setting_children_head_add_iv.png"
     },
@@ -1840,6 +1840,10 @@
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\layout\\layout_service_or_type_dialog.xml"
     },
     {
+        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_my_dns.png.flat",
+        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\ic_my_dns.png"
+    },
+    {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\layout_hint_toast.xml.flat",
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\layout\\hint_toast.xml"
     },
@@ -1902,10 +1906,6 @@
     {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_xsearch_loading.png.flat",
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\xsearch_loading.png"
-    },
-    {
-        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_guide_three.png.flat",
-        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\guide_three.png"
     },
     {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\anim_update_loading_progressbar_anim.xml.flat",
@@ -2054,6 +2054,10 @@
     {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable_children_head_bottom_3.xml.flat",
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable\\children_head_bottom_3.xml"
+    },
+    {
+        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_download_hint.png.flat",
+        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xxhdpi\\download_hint.png"
     },
     {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_add_chridren_green.png.flat",
@@ -2268,8 +2272,16 @@
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable\\item_web_filter_cell_state2_bg.xml"
     },
     {
+        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_layout_vip_iv.png.flat",
+        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xxhdpi\\layout_vip_iv.png"
+    },
+    {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_pay_ok.xml.flat",
         "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\layout\\activity_pay_ok.xml"
+    },
+    {
+        "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_my_test.png.flat",
+        "source": "G:\\StudioWorkspase\\HaoUp1.0\\app\\src\\main\\res\\drawable-xhdpi\\ic_my_test.png"
     },
     {
         "merged": "G:\\StudioWorkspase\\HaoUp1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal.9.png.flat",

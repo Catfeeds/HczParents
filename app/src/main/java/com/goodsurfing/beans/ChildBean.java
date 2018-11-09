@@ -24,6 +24,7 @@ public class ChildBean implements Serializable {
 	 * Device : OPPO_OPPO R9m
 	 * Gender : 0
 	 * System : 5.1
+	 * openAppStatus : false
 	 */
 
 	private int ClientDeviceId;
@@ -43,8 +44,23 @@ public class ChildBean implements Serializable {
 	private int Gender;
 	private String System;
 	private String NetType;
+	private boolean openAppStatus;
+	/**
+	 * openDNS : 1
+	 * locktime : 0
+	 */
+
+	private int openDNS;
 
 	public ChildBean() {
+	}
+
+	public boolean isOpenAppStatus() {
+		return openAppStatus;
+	}
+
+	public void setOpenAppStatus(boolean openAppStatus) {
+		this.openAppStatus = openAppStatus;
 	}
 
 	public int getClientDeviceId() {
@@ -181,5 +197,13 @@ public class ChildBean implements Serializable {
 
 	public void setSystem(String System) {
 		this.System = System;
+	}
+
+	public int getOpenDNS() {
+		return openDNS;
+	}
+
+	public void setOpenDNS(int openDNS) {
+		this.openDNS = openDNS;
 	}
 }

@@ -317,6 +317,48 @@
                     android:src="@drawable/ic_right" />
             </RelativeLayout>
 
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:background="#e7e7e6" />
+
+            <RelativeLayout
+                android:id="@+id/activity_my_open"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/activity_fragment_my_rl_head_50dp"
+                android:background="@drawable/white" >
+
+                <ImageView
+                    android:id="@+id/activity_my_open_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="18dp"
+                    android:src="@drawable/ic_my_test" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dip"
+                    android:layout_toRightOf="@id/activity_my_open_iv"
+                    android:text="实验室"
+                    android:textColor="#505050"
+                    android:textSize="15sp" >
+                </TextView>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="18dp"
+                    android:src="@drawable/ic_right" />
+            </RelativeLayout>
+
+
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="0.5dp"

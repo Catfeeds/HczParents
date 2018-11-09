@@ -56,6 +56,7 @@ public class Constants {
 	public static final String HCZ_GETBINDCODE_URL = "/api/verify/bindChild" ;
 	public static final String HCZ_GETCHILD_URL = "/api/client/clients" ;
 	public static final String HCZ_GETBINDCHILD_URL = "/api/client/GetClient" ;
+	public static final String HCZ_GETBINDVIP_URL = "/Api/AppLogin/GivePackage" ;
 	public static final String HCZ_LOCKSCREEN_URL = "/api/lock/lockScreen" ;
 	public static final String HCZ_SWITCHMODE_URL = "/api/mode/mode" ;
 	public static final String HCZ_TIMECONTROL_URL = "/api/timeControl/screenTimeControl" ;
@@ -76,9 +77,11 @@ public class Constants {
 	public static final String HCZ_OTHERLOGIN_URL = "/api/ThirdLogin/Login" ;
 	public static final String HCZ_OTHERBIND_URL = "/api/ThirdLogin/bind" ;
 	public static final String HCZ_SETAPPTIME_URL = "/Api/Client/SetApptime";
+	public static final String HCZ_SETOPENDNS_URL = "/Api/Client/ChangeDns";
 	public static final String HCZ_GETPACKAGE_URL = "/Api/Package/GetPackage";
 	public static final String HCZ_CREATEORDER_URL = "/Api/Order/CreateOrder";
 	public static final String HCZ_NOTIFYORDER_URL = "/Api/Order/NotifyOrder";
+	public static final String HCZ_FIRSTGIVE_URL = "/Api/AppLogin/FirstGive";
 	public static final String HCZ_LOCKSCREEN_KEY = "lockScreen";
 	public static final String HCZ_TIMECONTROL_KEY = "timeControl";
     public static final String HCZ_ISPLIST_URL = "https://www.haoup.net/Interfaces/Isp/IspList";

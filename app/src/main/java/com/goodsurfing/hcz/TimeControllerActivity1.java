@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.Display;
 import android.view.View;
@@ -144,7 +145,10 @@ public class TimeControllerActivity1 extends BaseActivity {
             public void handleMessage(Message msg) {
                 switch (msg.what) {
                     case What.HTTP_REQUEST_CURD_SUCCESS:
-                        ActivityUtil.showPopWindow4Tips(TimeControllerActivity1.this, title_layout, true, "设置成功");
+                        if(msg.obj!=null&&!TextUtils.isEmpty(msg.obj.toString())){
+                            ActivityUtil.showPopWindow4Tips(TimeControllerActivity1.this, title_layout, true, msg.obj.toString());
+                        }else
+                            ActivityUtil.showPopWindow4Tips(TimeControllerActivity1.this, title_layout, true, "设置成功");
                         Editor editor = getSharedPreferences("TIMER_TABLE", Activity.MODE_PRIVATE).edit(); // 获取编辑器
                         editor.putString(Constants.TIMESTR_KEY + Constants.userId, timers);
                         editor.commit();

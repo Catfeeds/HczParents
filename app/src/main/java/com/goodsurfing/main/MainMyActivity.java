@@ -52,10 +52,10 @@ import com.goodsurfing.fundlock.GestureEditActivity;
 import com.goodsurfing.fundlock.GestureVerifyActivity;
 import com.goodsurfing.hcz.HczBindActivity;
 import com.goodsurfing.hcz.HczChargeChoicesActivity;
-import com.goodsurfing.hcz.HczFindPwdActivity;
 import com.goodsurfing.hcz.HczLoginActivity;
 import com.goodsurfing.hcz.HczPersonInfoActivity;
 import com.goodsurfing.hcz.HczSetPwdActivity;
+import com.goodsurfing.hcz.LaboratoryActivity;
 import com.goodsurfing.server.LoginServer;
 import com.goodsurfing.server.net.HczAppFuncNet;
 import com.goodsurfing.server.net.HczGetCodeNet;
@@ -148,7 +148,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
         hczMyView.findViewById(R.id.activity_my_ss_cb).setOnClickListener(this);
         hczMyView.findViewById(R.id.activity_my_fl).setOnClickListener(this);
         hczMyView.findViewById(R.id.activity_qq_help).setOnClickListener(this);
-
+        hczMyView.findViewById(R.id.activity_my_open).setOnClickListener(this);
 
     }
 
@@ -419,6 +419,9 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
                     startActivity(new Intent(getActivity(), AddChildActivity.class));
                 }
                 break;
+            case  R.id.activity_my_open:
+                startActivity(new Intent(getActivity(),LaboratoryActivity.class));
+                break;
 
         }
 
@@ -510,7 +513,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
         }
     }
 
-    // 登录界面
+    // 好上网登录界面
 
     protected static final int REFRESH = 100;
     private Context context;
@@ -582,20 +585,20 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
     }
 
     private void checHint() {
-        if(serviceName.equals("中国联通")) {
+        if (serviceName.equals("中国联通")) {
             loginNumEditText.setHint("请输入宽带帐号或手机号");
             loginNumEditText.setKeyListener(DigitsKeyListener.getInstance("0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"));
-            loginNumEditText.setFilters( new InputFilter[]{ new  InputFilter.LengthFilter( 15 )});
-        }else {
+            loginNumEditText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(15)});
+        } else {
             loginNumEditText.setHint("请输入手机号");
             loginNumEditText.setInputType(InputType.TYPE_CLASS_PHONE);
-            loginNumEditText.setFilters( new InputFilter[]{ new  InputFilter.LengthFilter( 11 )});
+            loginNumEditText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(11)});
         }
     }
 
     private void checkRigst(int selectedIndex) {
-        Constants.isRegistShow = Constants.serviceList.get(selectedIndex-1).getShow_btn().equals("1");
-        registerUrl = Constants.serviceList.get(selectedIndex-1).getOpen_url();
+        Constants.isRegistShow = Constants.serviceList.get(selectedIndex - 1).getShow_btn().equals("1");
+        registerUrl = Constants.serviceList.get(selectedIndex - 1).getOpen_url();
         if (!Constants.isRegistShow) {
             registerLyout.setVisibility(View.GONE);
             registerTipsTv.setVisibility(View.GONE);
@@ -605,9 +608,9 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
             registerTipsTv.setVisibility(View.VISIBLE);
             registerLineView.setVisibility(View.VISIBLE);
         }
-        SharUtil.saveServiceId(Constants.serviceList.get(selectedIndex-1).getId());
-        HczAppFuncNet appFuncNet = new HczAppFuncNet(getActivity(),new Handler());
-        appFuncNet.putParams(Constants.serviceList.get(selectedIndex-1).getId());
+        SharUtil.saveServiceId(Constants.serviceList.get(selectedIndex - 1).getId());
+        HczAppFuncNet appFuncNet = new HczAppFuncNet(getActivity(), new Handler());
+        appFuncNet.putParams(Constants.serviceList.get(selectedIndex - 1).getId());
         appFuncNet.sendRequest();
     }
 
@@ -615,7 +618,7 @@ public class MainMyActivity extends BaseFragment implements OnClickListener {
         if (Constants.APP_USER_TYPE.equals(serviceName)) {
             hczLayout.setVisibility(View.VISIBLE);
             hswLayout.setVisibility(View.GONE);
-            Constants.isRegistShow=false;
+            Constants.isRegistShow = false;
         } else {
             hczLayout.setVisibility(View.GONE);
             hswLayout.setVisibility(View.VISIBLE);

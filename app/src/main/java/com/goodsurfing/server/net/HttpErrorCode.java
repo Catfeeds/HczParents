@@ -8,6 +8,7 @@ public class HttpErrorCode {
     private static Map<String, String> errMap = new HashMap<String, String>();
 
     static {
+        errMap.put("1000", "操作成功");
         errMap.put("1001", "签名错误");
         errMap.put("1002", "参数错误");
         errMap.put("1003", "当前IP超过每日发送次数");
@@ -19,8 +20,8 @@ public class HttpErrorCode {
         errMap.put("1009", "注册错误");
         errMap.put("1010", "切换失败");
         errMap.put("1011", "App不存在");
-        errMap.put("1012", "操作失败");
-        errMap.put("1013", "孩子设备不在线，无法操作");
+        errMap.put("1012", "操作失败,请稍候再试");
+        errMap.put("1013", "孩子手机已离线，操作将稍后生效");
         errMap.put("1014", "新注册用户UUID已存在");
         errMap.put("1015", "手机号码已存在");
         errMap.put("1016", "孩子已解除绑定");
@@ -32,6 +33,7 @@ public class HttpErrorCode {
         errMap.put("1022", "号码已经绑定");
         errMap.put("1023", "订单不存在");
         errMap.put("1024", "会员已到期,请前往我的续费");
+        errMap.put("1025", "孩子手机已离线，操作失败");
         errMap.put("10000", "服务器忙,请稍后再试");
     }
 

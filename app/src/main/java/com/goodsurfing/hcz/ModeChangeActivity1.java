@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -93,6 +94,9 @@ private View rootView;
             public void handleMessage(Message msg) {
                 switch (msg.what) {
                     case What.HTTP_REQUEST_CURD_SUCCESS:
+                        if(msg.obj!=null&&!TextUtils.isEmpty(msg.obj.toString())){
+                            ActivityUtil.showPopWindow4Tips(ModeChangeActivity1.this, rootView, true, msg.obj.toString());
+                        }else
                         ActivityUtil.showPopWindow4Tips(ModeChangeActivity1.this, rootView, true, "模式切换成功");
                         Constants.mode = modeBeans.get(item).getModeId();
                         modeAdapter.notifyDataSetChanged();

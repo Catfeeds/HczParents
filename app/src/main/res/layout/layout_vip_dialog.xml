@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/layout_vip_title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_margin_top_30dp"
+            android:layout_marginLeft="@dimen/activity_margin_top_30dp"
+            android:layout_marginRight="@dimen/activity_margin_top_30dp"
+            android:text="绑定成功"
+            android:gravity="center"
+            android:textColor="@color/text_color_333333"
+            android:textSize="@dimen/activity_title_text_size_26sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_margin_top_40dp"
+            android:layout_marginLeft="@dimen/activity_margin_top_30dp"
+            android:layout_marginRight="@dimen/activity_margin_top_30dp"
+            android:src="@drawable/layout_vip_iv" />
+
+        <TextView
+            android:id="@+id/layout_vip_content_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_margin_top_30dp"
+            android:layout_marginRight="@dimen/activity_margin_top_30dp"
+            android:layout_marginBottom="@dimen/activity_margin_20dp"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/text_color_333333"
+            android:textSize="14sp" />
+
+
+        <View
+            android:layout_width="@dimen/activity_margin_top_30dp"
+            android:layout_height="4dp"
+            android:layout_marginLeft="@dimen/activity_margin_top_30dp"
+            android:layout_marginRight="@dimen/activity_margin_top_30dp"
+            android:layout_marginTop="@dimen/activity_margin_15dp"
+            android:background="#07c598" />
+
+
+        <TextView
+            android:id="@+id/layout_vip_time_tv"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/activity_margin_top_30dp"
+            android:layout_marginRight="@dimen/activity_margin_top_30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_margin_15dp"
+            android:textColor="@color/text_color_333333"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/layout_vip_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_margin_top_30dp"
+            android:layout_marginRight="@dimen/activity_margin_top_30dp"
+            android:layout_marginBottom="@dimen/activity_margin_top_40dp"
+            android:layout_marginTop="@dimen/activity_add_ll_head_45dp"
+            android:background="@drawable/layout_vip_btn" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

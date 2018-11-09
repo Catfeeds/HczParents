@@ -194,7 +194,7 @@ public class HczBindActivity extends BaseActivity {
                 }
             }
         });
-        getCodeNet.putParams(phoneNum, 3);
+        getCodeNet.putParams(phoneNum, 4);
         getCodeNet.sendRequest();
     }
 

@@ -7,10 +7,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,7 +20,10 @@ import android.widget.Toast;
 import com.android.component.constants.What;
 import com.goodsurfing.app.R;
 import com.goodsurfing.base.BaseActivity;
+import com.goodsurfing.beans.ExpireBean;
 import com.goodsurfing.constants.Constants;
+import com.goodsurfing.main.MainActivity;
+import com.goodsurfing.main.WebActivity;
 import com.goodsurfing.server.net.HczGetBindCodeNet;
 import com.goodsurfing.server.net.HczScanBindNet;
 import com.goodsurfing.utils.ActivityUtil;
@@ -155,6 +160,8 @@ public class AddChildActivity extends BaseActivity {
 
     @OnClick(R.id.down_load_app_tv)
     public void gotoDownApp(View view) {
-        startActivity(new Intent(this, ShowChildAppLoadCodeActivity.class));
+        Intent intent = new Intent(this, WebActivity.class);
+        intent.putExtra("url","https://h5.youzan.com/wscshop/goods/2xk7mhk21rook");
+        startActivity(intent);
     }
 }

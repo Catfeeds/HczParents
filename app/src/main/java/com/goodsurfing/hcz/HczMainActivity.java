@@ -29,21 +29,25 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.component.constants.What;
+import com.goodsurfing.addchild.ChildListActivity;
 import com.goodsurfing.adpter.MainViewPagerAdapter;
 import com.goodsurfing.app.R;
 import com.goodsurfing.beans.ExpireBean;
 import com.goodsurfing.beans.IPList;
+import com.goodsurfing.beans.User;
 import com.goodsurfing.constants.Constants;
 import com.goodsurfing.main.MainActivity;
 import com.goodsurfing.main.MainMyActivity;
 import com.goodsurfing.main.WebActivity;
 import com.goodsurfing.server.net.HczAppFuncNet;
+import com.goodsurfing.server.net.HczGetCreatVipNet;
 import com.goodsurfing.server.net.HczGetExpiredateNet;
 import com.goodsurfing.server.net.HczGetServerNet;
 import com.goodsurfing.service.UpdateManager;
@@ -136,8 +140,8 @@ public class HczMainActivity extends FragmentActivity {
                 appFuncNet.sendRequest();
             }
         }
-        if (!Constants.userId.equals("") && SharUtil.getService(this).equals("好上网卡") && SharUtil.getExpireShow()) {
-            HczGetExpiredateNet getExpiredateNet = new HczGetExpiredateNet(this, new Handler() {
+        if (!Constants.userId.equals("") && SharUtil.getService(this).equals(Constants.APP_USER_TYPE)) {
+            HczGetCreatVipNet getExpiredateNet = new HczGetCreatVipNet(this, new Handler() {
                 public void handleMessage(Message msg) {
                     super.handleMessage(msg);
                     switch (msg.what) {
@@ -147,55 +151,46 @@ public class HczMainActivity extends FragmentActivity {
                                 SharUtil.saveExpireShow();
                                 showNoticeDialog(bean);
                             }
+                            try {
+                                Constants.dealTime = bean.getExpiredate()+"";
+                                User user = CommonUtil.getUser(HczMainActivity.this);
+                                user.setEditTime(Constants.dealTime);
+                                CommonUtil.setUser(HczMainActivity.this, user);
+                            }catch (Exception e){
+                                e.printStackTrace();
+                            }
                             break;
                         case What.HTTP_REQUEST_CURD_FAILURE:
                             break;
                     }
                 }
             });
-            getExpiredateNet.putParams(Constants.userMobile);
+            getExpiredateNet.putParams();
             getExpiredateNet.sendRequest();
         }
 
     }
 
+
     private void showNoticeDialog(final ExpireBean about) {
         final Dialog dialog = new Dialog(this, R.style.AlertDialogCustom);
-        View view = View.inflate(this, R.layout.layout_kefu_dialog, null);
-        TextView leftView = (TextView) view.findViewById(R.id.layout_kefu_left);
-        TextView rightView = (TextView) view.findViewById(R.id.layout_kefu_right);
-        TextView content = (TextView) view.findViewById(R.id.layout_content_kefu);
-        TextView title = (TextView) view.findViewById(R.id.layout_title_kefu);
-        title.setText("余额提醒");
+        View view = View.inflate(this, R.layout.layout_vip_dialog, null);
+        TextView content = (TextView) view.findViewById(R.id.layout_vip_content_tv);
+        TextView titleView = (TextView) view.findViewById(R.id.layout_vip_title_tv);
+        TextView rightView = (TextView) view.findViewById(R.id.layout_vip_time_tv);
+        Button btn = view.findViewById(R.id.layout_vip_btn);
+        titleView.setText("注册成功");
         content.setText(about.getMsg());
-        leftView.setText("知道了");
-        rightView.setText("去续费");
-        leftView.setOnClickListener(new View.OnClickListener() {
+        rightView.setText("有效期至: "+about.getExpiredate());
+        btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
-                dialog.dismiss();
-            }
-        });
-        rightView.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-                if (!TextUtils.isEmpty(about.getPaylink())) {
-                    Intent web = new Intent(HczMainActivity.this, WebActivity.class);
-                    web.putExtra("url", about.getPaylink());
-                    startActivity(web);
-                }
                 dialog.dismiss();
             }
         });
         dialog.setContentView(view);
-        WindowManager m = getWindowManager();
-        Display d = m.getDefaultDisplay(); // 获取屏幕宽、高用
-        WindowManager.LayoutParams p = dialog.getWindow().getAttributes(); // 获取对话框当前的参数值
-        p.width = (int) (d.getWidth() * 0.65); // 宽度设置为屏幕的0.95
         dialog.setCancelable(false);
-        dialog.getWindow().setAttributes(p);
         dialog.show();
     }
 

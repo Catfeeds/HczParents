@@ -3,6 +3,7 @@ package com.goodsurfing.hcz;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -153,10 +154,13 @@ public class AppListFragment extends BaseFragment {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case What.HTTP_REQUEST_CURD_SUCCESS:
-                    ActivityUtil.showPopWindow4Tips(getActivity(),rootView, true, true, "设置成功", 2000);
+                    if (msg.obj != null && !TextUtils.isEmpty(msg.obj.toString())) {
+                        ActivityUtil.showPopWindow4Tips(getActivity(), rootView, true, msg.obj.toString());
+                    } else
+                        ActivityUtil.showPopWindow4Tips(getActivity(), rootView, true, true, "设置成功", 2000);
                     break;
                 case What.HTTP_REQUEST_CURD_FAILURE:
-                    ActivityUtil.showPopWindow4Tips(getActivity(),rootView, false, true, "设置失败", 2000);
+                    ActivityUtil.showPopWindow4Tips(getActivity(), rootView, false, true, "设置失败", 2000);
                     break;
             }
         }
@@ -174,7 +178,7 @@ public class AppListFragment extends BaseFragment {
             HczLoginActivity.gotoLogin(getActivity());
             return;
         }
-        if (Constants.child==null) {
+        if (Constants.child == null) {
             ActivityUtil.showPopWindow4Tips(getActivity(), rootView, false, true, "请绑定孩子手机后操作...", 2000);
             return;
         }
@@ -184,13 +188,13 @@ public class AppListFragment extends BaseFragment {
             public void handleMessage(Message msg) {
                 switch (msg.what) {
                     case What.HTTP_REQUEST_CURD_SUCCESS:
-                        ActivityUtil.showPopWindow4Tips(getActivity(),rootView, true, true, "刷新成功", 2000);
+                        ActivityUtil.showPopWindow4Tips(getActivity(), rootView, true, true, "刷新成功", 2000);
                         listAdapter.clear();
                         listAdapter.addAll(((List<AppBean>) msg.obj));
                         Adapter.notifyDataSetChanged();
                         break;
                     case What.HTTP_REQUEST_CURD_FAILURE:
-                        ActivityUtil.showPopWindow4Tips(getActivity(),rootView, false, true, msg.obj.toString(), 2000);
+                        ActivityUtil.showPopWindow4Tips(getActivity(), rootView, false, true, msg.obj.toString(), 2000);
                         break;
                 }
             }

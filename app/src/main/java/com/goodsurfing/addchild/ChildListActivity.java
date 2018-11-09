@@ -1,5 +1,6 @@
 package com.goodsurfing.addchild;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -7,6 +8,7 @@ import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -15,9 +17,14 @@ import com.goodsurfing.adpter.ChildListAdapter;
 import com.goodsurfing.app.R;
 import com.goodsurfing.base.BaseActivity;
 import com.goodsurfing.beans.ChildBean;
+import com.goodsurfing.beans.ExpireBean;
+import com.goodsurfing.beans.User;
 import com.goodsurfing.constants.Constants;
+import com.goodsurfing.server.net.HczGetBindVipNet;
 import com.goodsurfing.server.net.HczGetChildsNet;
 import com.goodsurfing.utils.ActivityUtil;
+import com.goodsurfing.utils.CommonUtil;
+import com.goodsurfing.utils.SharUtil;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
@@ -90,8 +97,38 @@ public class ChildListActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (!Constants.userId.equals(""))
+        if (!Constants.userId.equals("")) {
             getChildList();
+            getBindVip();
+        }
+    }
+
+    private void getBindVip() {
+        HczGetBindVipNet getChildNet = new HczGetBindVipNet(this, new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                switch (msg.what) {
+                    case What.HTTP_REQUEST_CURD_SUCCESS:
+                        ExpireBean bean = (ExpireBean) msg.obj;
+                        if (bean.isNotice()) {
+                            showNoticeDialog(bean);
+                        }
+                        try {
+                            Constants.dealTime = bean.getExpiredate()+"";
+                            User user = CommonUtil.getUser(ChildListActivity.this);
+                            user.setEditTime(Constants.dealTime);
+                            CommonUtil.setUser(ChildListActivity.this, user);
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
+                        break;
+                    case What.HTTP_REQUEST_CURD_FAILURE:
+                        break;
+                }
+            }
+        });
+        getChildNet.putParams();
+        getChildNet.sendRequest();
     }
 
     private void getChildList() {
@@ -114,6 +151,26 @@ public class ChildListActivity extends BaseActivity {
         getChildNet.sendRequest();
     }
 
+    private void showNoticeDialog(final ExpireBean about) {
+        final Dialog dialog = new Dialog(this, R.style.AlertDialogCustom);
+        View view = View.inflate(this, R.layout.layout_vip_dialog, null);
+        TextView content = (TextView) view.findViewById(R.id.layout_vip_content_tv);
+        TextView rightView = (TextView) view.findViewById(R.id.layout_vip_time_tv);
+        Button btn = view.findViewById(R.id.layout_vip_btn);
+        content.setText(about.getMsg());
+        rightView.setText("有效期至: "+about.getExpiredate());
+        btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                ActivityUtil.goMainActivity(ChildListActivity.this);
+                dialog.dismiss();
+            }
+        });
+        dialog.setContentView(view);
+        dialog.setCancelable(false);
+        dialog.show();
+    }
     private void setNodataView(){
         if(childs.size()==0){
             nodataView.setVisibility(View.VISIBLE);

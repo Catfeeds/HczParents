@@ -15,6 +15,21 @@ public class ExpireBean {
 	private String msg;
 	private String paylink;
 
+	public ExpireBean(String expiredate, String msg) {
+		this.expiredate = expiredate;
+		this.msg = msg;
+	}
+
+	public ExpireBean(boolean notice, String expiredate, String msg, String paylink) {
+		this.notice = notice;
+		this.expiredate = expiredate;
+		this.msg = msg;
+		this.paylink = paylink;
+	}
+
+	public ExpireBean() {
+	}
+
 	public boolean isNotice() {
 		return notice;
 	}

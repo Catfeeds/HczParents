@@ -3,6 +3,7 @@ package com.goodsurfing.hcz;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -182,9 +183,16 @@ public class AuditAppListFragment extends BaseFragment  {
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
 				case What.HTTP_REQUEST_CURD_SUCCESS:
+					if(msg.obj!=null&&!TextUtils.isEmpty(msg.obj.toString())){
+						ActivityUtil.showPopWindow4Tips(getActivity(), rootView, true, msg.obj.toString());
+					}else
+						ActivityUtil.showPopWindow4Tips(getActivity(), rootView, true,"设置成功");
 					break;
 				case What.HTTP_REQUEST_CURD_FAILURE:
 					ActivityUtil.showPopWindow4Tips(getActivity(),rootView, false, true, "设置失败", 2000);
+					break;
+				case 10000:
+					ActivityUtil.showPopWindow4Tips(getActivity(),rootView, false, true, "设置失败,可用时长小于已用时长", 2000);
 					break;
 			}
 		}

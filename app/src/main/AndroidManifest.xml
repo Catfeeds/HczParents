@@ -61,6 +61,11 @@
         <activity
             android:name="com.goodsurfing.main.MoreActivity"
             android:theme="@style/HaoUp.Transparent.Theme"></activity>
+
+        <activity
+            android:name="com.goodsurfing.hcz.LaboratoryActivity"
+            android:theme="@style/HaoUp.Transparent.Theme"></activity>
+
         <activity
             android:name="com.goodsurfing.hcz.HczChargeListActivity"
             android:theme="@style/HaoUp.Transparent.Theme"></activity>

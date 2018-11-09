@@ -67,12 +67,16 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="74dp"
         android:orientation="horizontal">
-
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/activity_margin_10dp"
+            android:src="@drawable/download_hint" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="如果孩子手机没安装孩子端，请"
+            android:text="如果没有好上网手机，请点击"
             android:textColor="#b8b8b8"
             android:textSize="14sp" />
 
@@ -81,7 +85,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:autoLink="all"
-            android:text="点击下载"
+            android:text="立即购买"
             android:textColor="#f39848"
             android:textSize="14sp" />
     </LinearLayout>

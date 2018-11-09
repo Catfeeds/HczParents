@@ -27,6 +27,7 @@ import com.goodsurfing.beans.AppBean;
 import com.goodsurfing.beans.AppUseBean;
 import com.goodsurfing.beans.WebFilterBean;
 import com.goodsurfing.constants.Constants;
+import com.goodsurfing.hcz.TimeControllerActivity1;
 import com.goodsurfing.server.net.HczSetAppTimeNet;
 import com.goodsurfing.server.net.HczSwitchAppNet;
 import com.goodsurfing.utils.ActivityUtil;
@@ -151,7 +152,10 @@ public class AppListAdapter extends ArrayAdapter<AppBean> {
                 switch (msg.what) {
                     case What.HTTP_REQUEST_CURD_SUCCESS:
                         appBean.setStatus(appBean.getStatus() == 1 ? 2 : 1);
-                        handler.sendEmptyMessage(What.HTTP_REQUEST_CURD_SUCCESS);
+                        Message message = new Message();
+                        message.what=msg.what;
+                        message.obj =msg.obj;
+                        handler.sendMessage(message);
                         break;
                     case What.HTTP_REQUEST_CURD_FAILURE:
                         handler.sendEmptyMessage(What.HTTP_REQUEST_CURD_FAILURE);
@@ -184,7 +188,6 @@ public class AppListAdapter extends ArrayAdapter<AppBean> {
                                 case What.HTTP_REQUEST_CURD_SUCCESS:
                                     appBean.setAvailableTime(time);
                                     switchApp(appBean);
-//                                    handler.sendEmptyMessage(What.HTTP_REQUEST_CURD_SUCCESS);
                                     notifyDataSetChanged();
                                     break;
                                 case What.HTTP_REQUEST_CURD_FAILURE:
@@ -196,7 +199,7 @@ public class AppListAdapter extends ArrayAdapter<AppBean> {
                     setAppTimeNet.putParams(appBean.getClientAppId() + "", time);
                     setAppTimeNet.sendRequest();
                 }else {
-                    ActivityUtil.showPopWindow4Tips(mContext,comfirm, false, true, "设置失败,可用时长小于已用时长", 2000);
+                    handler.sendEmptyMessage(10000);
                 }
                 dlg.dismiss();
                 notifyDataSetChanged();
